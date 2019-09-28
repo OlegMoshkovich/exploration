@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+const green = "#C0F75E"
+const red = '#D44346'
 
 export const AppContainer = styled.div`
 display:flex;
@@ -34,4 +36,18 @@ font-size:10px;
 &:hover {
   background-color: #C0F75E;
 }
+`
+export const LinkCircle = styled.div`
+position: absolute;
+display:flex;
+justify-content: center;
+align-items: center;
+text-position:center;
+font-size:10px;
+top:100px;
+right:100px;
+width:40px;
+height:40px;
+border-radius:50%;
+background-color:${green}
 `

@@ -1,6 +1,6 @@
 export const components = [{
     width: "30px", animation: [
-        // { marginRight: '500px' },
+        { marginLeft: '500px' },
         // { left: '40%' },
         // { top: '60px' },
         { scale: 0.6 },

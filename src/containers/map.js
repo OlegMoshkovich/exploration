@@ -1,8 +1,16 @@
 import React from 'react'
+import { LinkCircleWrapper } from '../components/LinkCircle'
 
 function Map() {
 
-    return <h1>Users</h1>
+    return (
+        <div>
+
+            <LinkCircleWrapper route={'/'} linkName={'home'} />
+
+        </div>
+
+    )
 
 }
 export default Map

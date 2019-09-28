@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Router, Route, Switch } from "react-router";
-import { components } from './data'
-import './App.css';
-import { Circle } from './components/circle'
-import { useWindowHeight } from './hooks/customHooks'
-import { AppContainer, Container, Box } from './components/styles'
+import React, { useState } from 'react';
+import { components } from '../data'
+import '../styles/App.css';
+import { Circle } from './circle'
+import { AppContainer, Container, Box, LinkCircle } from './styles'
+import { Link } from 'react-router-dom'
+
 
 
 function App() {
@@ -35,6 +35,7 @@ function App() {
         }
 
       </Container>
+      <Link to={'/map'}><LinkCircle>map</LinkCircle></Link>
 
     </AppContainer >
 

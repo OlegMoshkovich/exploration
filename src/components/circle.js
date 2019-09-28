@@ -26,10 +26,6 @@ color:white;
   }
 `;
 
-const Title = styled.div`
-margin: 0px 0px 0px 10px; 
-border:
-`
 
 
 export const Circle = (props) => {
@@ -38,6 +34,7 @@ export const Circle = (props) => {
         { marginRight: '500px' },
         { scale: 0.2 },
     ];
+    console.log('from the circle', pause)
 
     return (
         <Container key={props.index + 'somthing'}>
@@ -45,14 +42,10 @@ export const Circle = (props) => {
             <TweenOne
                 animation={animation}
                 reverse={props.pause || pause}
-                repeat={2} // demo 演示需要，时间轴循环
+                repeat={1} // demo 演示需要，时间轴循环
                 yoyo // demo 演示需要，时间轴循环
-                style={{ transform: 'scale(1)' }}
             >
                 <Element onClick={() => { pause ? setPause(false) : setPause(true) }} width={props.width} color={pause ? red : green} />
-
-
-
             </TweenOne>
 
             {/* <Title>title </Title> */}
