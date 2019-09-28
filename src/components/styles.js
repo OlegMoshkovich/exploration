@@ -25,13 +25,13 @@ export const Box = styled.div`
 position:absolute;
 top:100px;
 left:100px;
-height: 50px;
-width: 50px;
+height: 70px;
+width: 70px;
 border-radius:50%;
-background-color:black;
+background-color:	#F3C242;
 color:yellow;
 font-size:10px;
 &:hover {
-  background-color: yellow;
+  background-color: #C0F75E;
 }
 `

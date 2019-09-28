@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import TweenOne from 'rc-tween-one';
 import styled from 'styled-components';
 
-
-
+const green = "#C0F75E"
+const red = '#D44346'
 
 const Container = styled.div`
 display:flex;
@@ -19,10 +19,10 @@ display:flex;
 height: ${props => props.width};
 width: ${props => props.width};
 border-radius:50%;
-background-color:blue;
+background-color:	${props => props.color};
 color:white;
 &:hover {
-    background-color: yellow;
+    background-color: ${green};
   }
 `;
 
@@ -49,7 +49,7 @@ export const Circle = (props) => {
                 yoyo // demo 演示需要，时间轴循环
                 style={{ transform: 'scale(1)' }}
             >
-                <Element onClick={() => { pause ? setPause(false) : setPause(true) }} width={props.width} />
+                <Element onClick={() => { pause ? setPause(false) : setPause(true) }} width={props.width} color={pause ? red : green} />
 
 
 

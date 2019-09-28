@@ -1,5 +1,5 @@
 export const components = [{
-    width: "20px", animation: [
+    width: "30px", animation: [
         // { marginRight: '500px' },
         // { left: '40%' },
         // { top: '60px' },
@@ -9,7 +9,7 @@ export const components = [{
         // { left: '0%' },
     ]
 }, {
-    width: "20px", animation: [
+    width: "30px", animation: [
         // { marginRight: '500px' },
         // { left: '40%' },
         // { top: '60px' },
@@ -19,7 +19,7 @@ export const components = [{
         // { left: '0%' },
     ]
 }, {
-    width: "20px", animation: [
+    width: "30px", animation: [
         // { marginLeft: '200px' },
         // { left: '40%' },
         // { top: '60px' },
@@ -29,7 +29,7 @@ export const components = [{
         // { left: '0%' },
     ]
 }, {
-    width: "20px", animation: [
+    width: "30px", animation: [
         // { marginLeft: '200px' },
         // { left: '40%' },
         // { top: '60px' },
@@ -39,7 +39,7 @@ export const components = [{
         // { left: '0%' },
     ]
 }, {
-    width: "20px", animation: [
+    width: "30px", animation: [
         // { marginLeft: '200px' },
         // { left: '40%' },
         // { top: '60px' },
@@ -50,7 +50,7 @@ export const components = [{
     ]
 },
 {
-    width: "20px", animation: [
+    width: "30px", animation: [
         // { marginLeft: '200px' },
         // { left: '40%' },
         // { top: '60px' },
