@@ -49,5 +49,6 @@ right:100px;
 width:40px;
 height:40px;
 border-radius:50%;
-background-color:${green}
+background-color:${green};
+z-index:100
 `
