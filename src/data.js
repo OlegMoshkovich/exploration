@@ -14,7 +14,7 @@ export const components = [{
         // { left: '40%' },
         // { top: '60px' },
         { scale: .6 },
-        { scale: 1.8 },
+        { scale: 4.8 },
         // { top: 0 },
         // { left: '0%' },
     ]
@@ -50,6 +50,38 @@ export const components = [{
     ]
 },
 {
+    width: "30px", animation: [
+        { marginRight: '100px' },
+        // { left: '40%' },
+        // { top: '60px' },
+        { scale: .6 },
+        // { scale: 1 },
+        // { top: 0 },
+        // { left: '0%' },
+    ]
+},
+{
+    width: "30px", animation: [
+        { marginRight: '100px' },
+        // { left: '40%' },
+        // { top: '60px' },
+        { scale: .6 },
+        // { scale: 1 },
+        // { top: 0 },
+        // { left: '0%' },
+    ]
+},
+{
+    width: "30px", animation: [
+        { marginRight: '100px' },
+        // { left: '40%' },
+        // { top: '60px' },
+        { scale: .6 },
+        // { scale: 1 },
+        // { top: 0 },
+        // { left: '0%' },
+    ]
+}, {
     width: "30px", animation: [
         { marginRight: '100px' },
         // { left: '40%' },

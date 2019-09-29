@@ -54,6 +54,15 @@ function App() {
           })
         }
       </Container>
+      {/* <Container direction='rox' top="400px" offset="left" offSetDistance="625px" >
+        {
+          components.map((component, index) => {
+            return (
+              <Circle repeat={repeat} width={component.width} animation={component.animation} pause={pause} index={index} />
+            )
+          })
+        }
+      </Container> */}
 
       <TextContainer>
         <div> press the circles to activate the animation -- then press play</div>
