@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppContainer, Container, Box, LinkCircle, LinkContainer } from './styles'
+import { LinkCircle, LinkContainer } from './styles'
 import { Link } from 'react-router-dom'
 
 export const Nav = () => {

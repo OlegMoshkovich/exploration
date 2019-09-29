@@ -51,7 +51,7 @@ export const components = [{
 },
 {
     width: "30px", animation: [
-        // { marginLeft: '200px' },
+        { marginRight: '100px' },
         // { left: '40%' },
         // { top: '60px' },
         { scale: .6 },

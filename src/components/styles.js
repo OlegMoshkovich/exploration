@@ -1,6 +1,21 @@
 import styled from 'styled-components';
 const green = "#C0F75E"
 const red = '#D44346'
+// const purple = '#A56DF2'
+const teal = '#B7F1FD'
+
+
+export const Iterations = styled.input`
+position: absolute;
+top:200px;
+left:700px;
+font-size:40px;
+width: 60px;
+background-color: ${teal};
+color:${red};
+type:number;
+text-align:center; 
+`
 
 export const AppContainer = styled.div`
 display:flex;
@@ -14,13 +29,13 @@ height: ${props => props.height};
 
 export const Container = styled.div`
 position:absolute;
-top:30px;
-left:300px;
+top:${props => props.top || '30px'};
+${props => props.offset || 'left'}:${props => props.offSetDistance || '300px'};
 display:flex;
-flex-direction:column;
+flex-direction:${props => props.direction || 'column'} ;
 align-direction:center;
 justify-content:space-around;
-border: 4px solid red;
+border: 4px solid ${props => props.borderColor || red};
 height: 600px;
 width:300px;
 // margin: 50px 400px 0px 0px;

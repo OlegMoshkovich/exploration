@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/App';
+import App from './containers/App';
 import Map from './containers/map'
 import { Tiny } from './containers/tiny'
 import * as serviceWorker from './serviceWorker';

@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import { LinkCircleWrapper } from '../components/LinkCircle'
 import ReactMapGL from 'react-map-gl';
-import styled from 'styled-components';
 import { Nav } from '../components/NavMenu'
 
 

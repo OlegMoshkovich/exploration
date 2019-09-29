@@ -13,11 +13,7 @@ justify-content:center;
 align-items:center;
 height: 100%;
 //  border: 1px solid pink;
-`;
-
-
-
-
+`
 
 export const Circle = (props) => {
     const [pause, setPause] = useState(true)
@@ -25,18 +21,19 @@ export const Circle = (props) => {
         { marginRight: '500px' },
         { scale: 0.2 },
     ];
-    console.log('from the circle', pause)
+    // console.log('from the circle', pause)
 
     return (
-        <Container key={props.index + 'somthing'}>
+        <Container key={props.index + 'container'}>
 
             <TweenOne
+                key={props.index + 'tween'}
                 animation={animation}
                 reverse={props.pause || pause}
-                repeat={1} // demo 演示需要，时间轴循环
+                repeat={props.repeat || 1} // demo 演示需要，时间轴循环
                 yoyo // demo 演示需要，时间轴循环
             >
-                <Element onClick={() => { pause ? setPause(false) : setPause(true) }} width={props.width} color={pause ? red : green} />
+                <Element key={props.index + 'element'} onClick={() => { pause ? setPause(false) : setPause(true) }} width={props.width} color={pause ? red : green} />
             </TweenOne>
         </Container >
 
