@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import TweenOne from 'rc-tween-one';
 import styled from 'styled-components';
+import { Element } from './styles';
 
 const green = "#C0F75E"
 const red = '#D44346'
@@ -14,17 +15,7 @@ height: 100%;
 //  border: 1px solid pink;
 `;
 
-const Element = styled.div`
-display:flex;
-height: ${props => props.width};
-width: ${props => props.width};
-border-radius:50%;
-background-color:	${props => props.color};
-color:white;
-&:hover {
-    background-color: ${green};
-  }
-`;
+
 
 
 
@@ -47,11 +38,6 @@ export const Circle = (props) => {
             >
                 <Element onClick={() => { pause ? setPause(false) : setPause(true) }} width={props.width} color={pause ? red : green} />
             </TweenOne>
-
-            {/* <Title>title </Title> */}
-
-
-
         </Container >
 
 

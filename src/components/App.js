@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { components } from '../data'
 import '../styles/App.css';
 import { Circle } from './circle'
-import { AppContainer, Container, Box, LinkCircle, LinkContainer } from './styles'
+import { AppContainer, Container, Box, LinkCircle, LinkContainer, TextContainer } from './styles'
 import { Link } from 'react-router-dom'
 import { Nav } from './NavMenu'
+import styled from 'styled-components'
+
+
 
 
 
@@ -18,6 +21,7 @@ function App() {
   return (
 
     <AppContainer height={height}>
+      <Nav />
       <Box onClick={() => {
         return (
           pause ? setPause(false) : setPause(true),
@@ -37,7 +41,10 @@ function App() {
 
       </Container>
 
-      <Nav />
+      <TextContainer>
+        <div> press the circles to activate the animation -- then press play</div>
+        <div>  ... and while we are at shall we contemplate how we can turn thinking into doing</div>
+      </TextContainer>
 
 
     </AppContainer >

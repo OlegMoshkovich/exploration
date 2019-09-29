@@ -64,14 +64,38 @@ display:flex;
 flex-direction:column;
 justify-content: space-around;
 align-items: center;
-
 top:100px;
 right:100px;
-
 width:60px;
 height:150px;
 border: 4px solid white;
 // background-color:${green};
 z-index:100
+`
 
-  `
+export const Element = styled.div`
+display:flex;
+height: ${props => props.width};
+width: ${props => props.width};
+border-radius:50%;
+background-color:	${props => props.color};
+color:white;
+&:hover {
+    background-color: ${green};
+   
+  }
+`
+
+export const TextContainer = styled.div`
+position:absolute;
+display:flex;
+flex-direction:column;
+justify-content:flex-start;
+border:1px solid white;
+// width:400px;
+color:white;
+top:430px;
+left:500px;
+z-index:200;
+font-family: 'Nunito', sans-serif;
+`
