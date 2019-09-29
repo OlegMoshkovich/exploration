@@ -6,7 +6,7 @@ export const AppContainer = styled.div`
 display:flex;
 flex-direction:row;
 justify-content:center;
-background-color:white;
+background-color:black;
 //  border: 1px solid red;
 height: ${props => props.height};
 // width:200px;
@@ -17,10 +17,10 @@ display:flex;
 flex-direction:column;
 align-direction:center;
 justify-content:space-around;
-// border: 1px solid red;
-height: 400px;
+border: 4px solid red;
+height: 600px;
 width:300px;
-margin: 0px 400px 0px 0px;
+margin: 50px 400px 0px 0px;
 `;
 
 export const Box = styled.div`
