@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { LinkCircleWrapper } from '../components/LinkCircle'
 import ReactMapGL from 'react-map-gl';
 import styled from 'styled-components';
+import { Nav } from '../components/NavMenu'
 
 
 
@@ -48,8 +49,8 @@ class Map extends Component {
         return (
             <div>
 
-                <LinkCircleWrapper route={'/'} linkName={'home'} />
-
+                {/* <LinkCircleWrapper route={'/'} linkName={'home'} /> */}
+                <Nav />
                 <ReactMapGL
                     {...this.state.viewport}
                     mapboxApiAccessToken={'pk.eyJ1Ijoib2xlZ21vc2hrb3ZpY2giLCJhIjoiY2pmeTFidnQzMGUwaDMycTd6aGlseXF6ayJ9._4zzVy5_Q5lPjIiN56SMyQ'}

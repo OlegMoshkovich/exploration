@@ -14,7 +14,7 @@ export const components = [{
         // { left: '40%' },
         // { top: '60px' },
         { scale: .6 },
-        // { scale: 1 },
+        { scale: 1.8 },
         // { top: 0 },
         // { left: '0%' },
     ]

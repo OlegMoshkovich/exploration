@@ -13,6 +13,9 @@ height: ${props => props.height};
 `;
 
 export const Container = styled.div`
+position:absolute;
+top:30px;
+left:300px;
 display:flex;
 flex-direction:column;
 align-direction:center;
@@ -20,7 +23,7 @@ justify-content:space-around;
 border: 4px solid red;
 height: 600px;
 width:300px;
-margin: 50px 400px 0px 0px;
+// margin: 50px 400px 0px 0px;
 `;
 
 export const Box = styled.div`
@@ -32,13 +35,14 @@ width: 70px;
 border-radius:50%;
 background-color:	#F3C242;
 color:yellow;
-font-size:10px;
+font-size:40px;
 &:hover {
   background-color: #C0F75E;
+  cursor:pointer;
 }
 `
 export const LinkCircle = styled.div`
-position: absolute;
+// position: absolute;
 display:flex;
 justify-content: center;
 align-items: center;
@@ -49,6 +53,25 @@ right:100px;
 width:40px;
 height:40px;
 border-radius:50%;
+border: 1px solid white;
 background-color:${green};
 z-index:100
 `
+
+export const LinkContainer = styled.div`
+position: absolute;
+display:flex;
+flex-direction:column;
+justify-content: space-around;
+align-items: center;
+
+top:100px;
+right:100px;
+
+width:60px;
+height:150px;
+border: 4px solid white;
+// background-color:${green};
+z-index:100
+
+  `
