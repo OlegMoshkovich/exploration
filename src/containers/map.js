@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ReactMapGL, { Marker } from 'react-map-gl';
+import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import DeckGL from 'deck.gl';
 import { Nav } from '../components/NavMenu'
 import { BaseControl } from 'react-map-gl';
@@ -10,6 +10,7 @@ import Draggable from 'react-draggable';
 
 const Rectangle = styled.div`
 position:absolute;
+display:${props => props.display};
 top:100px;
 left:100px;
 width: 50px;
@@ -39,8 +40,8 @@ class Map extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            display: 'block',
             style: 'mapbox://styles/mapbox/light-v9',
-
             viewport: {
                 width: window.innerWidth,
                 height: window.innerHeight,
@@ -57,6 +58,7 @@ class Map extends Component {
             deltaPosition: {
                 x: 0, y: 0
             },
+            popupInfo: null
 
         }
     }
@@ -121,20 +123,39 @@ class Map extends Component {
     onStop = () => {
         this.setState({ activeDrags: --this.state.activeDrags });
     };
+    _renderPopup() {
+        const { popupInfo } = this.state;
+
+        return (
+            popupInfo && (
+                <Popup
+                    tipSize={5}
+                    anchor="top"
+                    longitude={popupInfo.longitude}
+                    latitude={popupInfo.latitude}
+                    closeOnClick={false}
+                    onClose={() => this.setState({ popupInfo: null })}
+                >
+
+                </Popup>
+            )
+        );
+    }
 
     render() {
         const dragHandlers = { onStart: this.onStart, onStop: this.onStop };
-        const { deltaPosition, controlledPosition } = this.state;
+        const { deltaPosition, controlledPosition, display } = this.state;
+
         return (
             <div>
 
 
-                < Draggable {...dragHandlers}>
-                    <Nav />
-                </Draggable >
+                {/* < Draggable {...dragHandlers}> */}
+                <Nav />
+                {/* </Draggable > */}
 
                 < Draggable {...dragHandlers}>
-                    <Rectangle >
+                    <Rectangle display={this.state.display}>
                         drag
                     </Rectangle >
                 </Draggable >
@@ -149,6 +170,8 @@ class Map extends Component {
                     }}
                 >
                     <Marker
+
+
                         latitude={this.state.marker.latitude}
                         longitude={this.state.marker.longitude}
                         offsetLeft={-20}
@@ -159,7 +182,7 @@ class Map extends Component {
                         onDragEnd={this._onMarkerDragEnd}
 
                     >
-                        <Pin />
+                        <Pin onClick={() => this.setState(display === 'none' ? { display: 'block' } : { display: 'none' })} />
                     </Marker>
                 </ReactMapGL>
             </div >
