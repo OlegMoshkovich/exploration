@@ -10,7 +10,7 @@ import { Route, BrowserRouter as Router } from 'react-router-dom'
 const routing = (
     <Router>
         <div>
-            <Route path="/map" component={Map} />
+            <Route path="/home" component={App} />
             <Route exact path="/" component={Map} />
             <Route exact path="/tiny" component={Tiny} />
         </div>

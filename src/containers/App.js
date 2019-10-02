@@ -67,6 +67,7 @@ function App() {
       <TextContainer>
         <div> press the circles to activate the animation -- then press play</div>
         <div>  ... and while we are at shall we contemplate how we can turn thinking into doing</div>
+        <div>  ... and another one regarding the pace of improvement - does not matter how slow - as long as you are moving</div>
       </TextContainer>
 
 

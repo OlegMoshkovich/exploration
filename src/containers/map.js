@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import ReactMapGL, { Marker, Popup } from 'react-map-gl';
-import DeckGL from 'deck.gl';
+import ReactMapGL, { Marker, Popup, InteractiveMap } from 'react-map-gl';
+
 import { Nav } from '../components/NavMenu'
-import { BaseControl } from 'react-map-gl';
+
 import Pin from '../map/pin';
 import styled from 'styled-components'
 import Draggable from 'react-draggable';
@@ -10,29 +10,30 @@ import Draggable from 'react-draggable';
 
 const Rectangle = styled.div`
 position:absolute;
-display:${props => props.display};
+display:${props => props.display || 'block'};
 top:100px;
 left:100px;
-width: 50px;
-height: 50px;
+width: auto;
+border-radius:10%;
+height: auto;
+padding:20px;
 background-color: #C0F75E;
 border:1px solid #F3C242;
 z-index:105;
 font-size:10px;
-
+`
+const Circle = styled.div`
+position = relative;
+// top:2px;
+// left:2px;
+width: 20px;
+height: 20px;
+border-radius:50%;
+background-color: #F3C242;
+border:1px solid #F3C242;
+z-index:106;
 `
 
-
-
-const INITIAL_VIEW_STATE = {
-    longitude: -74,
-    latitude: 40.7,
-    zoom: 11,
-    minZoom: 5,
-    maxZoom: 16,
-    pitch: 0,
-    bearing: 0
-};
 
 
 class Map extends Component {
@@ -40,8 +41,9 @@ class Map extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            display: 'block',
+            display: 'none',
             style: 'mapbox://styles/mapbox/light-v9',
+            showPopup: true,
             viewport: {
                 width: window.innerWidth,
                 height: window.innerHeight,
@@ -144,7 +146,8 @@ class Map extends Component {
 
     render() {
         const dragHandlers = { onStart: this.onStart, onStop: this.onStop };
-        const { deltaPosition, controlledPosition, display } = this.state;
+        const { deltaPosition, controlledPosition, display, showPopup, marker } = this.state;
+
 
         return (
             <div>
@@ -155,25 +158,32 @@ class Map extends Component {
                 {/* </Draggable > */}
 
                 < Draggable {...dragHandlers}>
-                    <Rectangle display={this.state.display}>
-                        drag
+                    {/* <Frame name={'hello'} display={this.state.display} /> */}
+                    <Rectangle display={this.state.display}  >
+                        <Circle onClick={() => {
+                            console.log('state', this.state.display)
+                            return this.setState(display === 'none' ? { display: 'block' } : { display: 'none' })
+                        }} />
+                        {/* <div onClick={() => this.setState(display === 'none' ? { display: 'block' } : { display: 'none' })}>{parseFloat(this.state.marker.longitude).toFixed(3)}</div> */}
+
                     </Rectangle >
                 </Draggable >
 
 
-                <ReactMapGL
+                <InteractiveMap
                     {...this.state.viewport}
                     mapboxApiAccessToken={'pk.eyJ1Ijoib2xlZ21vc2hrb3ZpY2giLCJhIjoiY2pmeTFidnQzMGUwaDMycTd6aGlseXF6ayJ9._4zzVy5_Q5lPjIiN56SMyQ'}
                     onViewportChange={(viewport) => {
                         this.setState({ viewport });
 
                     }}
+                // onClick={console.log('map is clicked')}
                 >
                     <Marker
 
-
-                        latitude={this.state.marker.latitude}
-                        longitude={this.state.marker.longitude}
+                        captureClick={true}
+                        latitude={marker.latitude}
+                        longitude={marker.longitude}
                         offsetLeft={-20}
                         offsetTop={-10}
                         draggable={true}
@@ -182,9 +192,30 @@ class Map extends Component {
                         onDragEnd={this._onMarkerDragEnd}
 
                     >
-                        <Pin onClick={() => this.setState(display === 'none' ? { display: 'block' } : { display: 'none' })} />
+                        <Pin onClick={(e) => {
+
+                            return (
+                                this.setState(display === 'none' ? { display: 'block' } : { display: '' }),
+                                this.setState(showPopup === false ? { showPopup: true } : { showPopup: '' })
+
+                            )
+                        }} />
+
                     </Marker>
-                </ReactMapGL>
+                    {showPopup && <Popup
+                        latitude={marker.latitude}
+                        longitude={marker.longitude}
+                        closeButton={true}
+                        closeOnClick={false}
+                        onClose={() => this.setState({ showPopup: false })}
+                        anchor="left" >
+                        < Draggable {...dragHandlers}>
+                            <Rectangle />
+                        </Draggable>
+
+                        <img src={'https://static.dezeen.com/uploads/2016/12/allmannajuvet-tourist-route-peter-zumthor-norway-arne-espeland-dezeen-sq.jpg'} style={{ 'width': '100px', 'height': '100px', 'padding': '10px' }} />
+                    </Popup>}
+                </InteractiveMap>
             </div >
         )
     }
