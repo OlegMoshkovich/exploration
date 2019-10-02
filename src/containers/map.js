@@ -5,6 +5,7 @@ import { Nav } from '../components/NavMenu'
 import { BaseControl } from 'react-map-gl';
 import Pin from '../map/pin';
 import styled from 'styled-components'
+import Draggable from 'react-draggable';
 
 
 const Rectangle = styled.div`
@@ -16,8 +17,11 @@ height: 50px;
 background-color: #C0F75E;
 border:1px solid #F3C242;
 z-index:105;
+font-size:10px;
 
 `
+
+
 
 const INITIAL_VIEW_STATE = {
     longitude: -74,
@@ -29,27 +33,7 @@ const INITIAL_VIEW_STATE = {
     bearing: 0
 };
 
-class CustomMarker extends BaseControl {
-    _render() {
-        const { longitude, latitude } = this.props;
 
-        const [x, y] = this._context.viewport.project([longitude, latitude]);
-
-        const markerStyle = {
-            position: 'absolute',
-            background: '#fff',
-            left: x,
-            top: y
-        };
-
-        return (
-            <div ref={this._containerRef}
-                style={markerStyle} >
-                ({longitude}, {latitude})
-        </div>
-        );
-    }
-}
 class Map extends Component {
 
     constructor(props) {
@@ -68,7 +52,11 @@ class Map extends Component {
             marker: {
                 longitude: -74,
                 latitude: 40.7,
-            }
+            },
+            activeDrags: 0,
+            deltaPosition: {
+                x: 0, y: 0
+            },
 
         }
     }
@@ -83,7 +71,7 @@ class Map extends Component {
     }
 
     _onViewportChange(viewport) {
-        console.log('on view change', viewport)
+
         this.setState({
             viewport: { ...this.state.viewport, ...viewport }
         });
@@ -125,20 +113,31 @@ class Map extends Component {
         });
     };
 
+
+    onStart = () => {
+        this.setState({ activeDrags: ++this.state.activeDrags });
+    };
+
+    onStop = () => {
+        this.setState({ activeDrags: --this.state.activeDrags });
+    };
+
     render() {
+        const dragHandlers = { onStart: this.onStart, onStop: this.onStop };
+        const { deltaPosition, controlledPosition } = this.state;
         return (
             <div>
 
-                {/* <LinkCircleWrapper route={'/'} linkName={'home'} /> */}
-                <Nav />
-                <Rectangle />
-                {/* 
-                <DeckGL initialViewState={INITIAL_VIEW_STATE} >
-                    <StaticMap
-                        style={this.state.style}
-                        mapboxApiAccessToken={'pk.eyJ1Ijoib2xlZ21vc2hrb3ZpY2giLCJhIjoiY2pmeTFidnQzMGUwaDMycTd6aGlseXF6ayJ9._4zzVy5_Q5lPjIiN56SMyQ'} />
-                </DeckGL> */}
 
+                < Draggable {...dragHandlers}>
+                    <Nav />
+                </Draggable >
+
+                < Draggable {...dragHandlers}>
+                    <Rectangle >
+                        drag
+                    </Rectangle >
+                </Draggable >
 
 
                 <ReactMapGL
@@ -146,7 +145,7 @@ class Map extends Component {
                     mapboxApiAccessToken={'pk.eyJ1Ijoib2xlZ21vc2hrb3ZpY2giLCJhIjoiY2pmeTFidnQzMGUwaDMycTd6aGlseXF6ayJ9._4zzVy5_Q5lPjIiN56SMyQ'}
                     onViewportChange={(viewport) => {
                         this.setState({ viewport });
-                        console.log('viewport property from the map', viewport)
+
                     }}
                 >
                     <Marker
