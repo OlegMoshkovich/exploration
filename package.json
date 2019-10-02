@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "deck.gl": "^7.3.1",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.3.0",
     "eslint-config-react": "^1.1.7",
     "eslint-plugin-prettier": "^3.1.1",
+    "install": "^0.13.0",
+    "npm": "^6.11.3",
     "rc-animate": "^2.10.0",
     "rc-tween-one": "^2.6.3",
     "react": "^16.9.0",

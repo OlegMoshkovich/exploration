@@ -11,7 +11,7 @@ const routing = (
     <Router>
         <div>
             <Route path="/map" component={Map} />
-            <Route exact path="/" component={App} />
+            <Route exact path="/" component={Map} />
             <Route exact path="/tiny" component={Tiny} />
         </div>
     </Router>

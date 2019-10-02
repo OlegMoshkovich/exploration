@@ -3,6 +3,7 @@ const green = "#C0F75E"
 const red = '#D44346'
 // const purple = '#A56DF2'
 const teal = '#B7F1FD'
+const yeallow = '#F3C242'
 
 
 export const Iterations = styled.input`
