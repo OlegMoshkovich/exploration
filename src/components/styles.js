@@ -50,6 +50,7 @@ height: 70px;
 width: 70px;
 border-radius:50%;
 background-color:	#F3C242;
+
 color:yellow;
 font-size:40px;
 &:hover {
@@ -66,10 +67,11 @@ text-position:center;
 font-size:10px;
 top:100px;
 right:100px;
-width:40px;
-height:40px;
+width:${props => props.size};;
+height:${props => props.size};;
 border-radius:50%;
-border: 1px solid white;
+// border: 1px solid white;
+border:1px solid #F3C242;
 background-color:${green};
 z-index:100
 `
@@ -84,9 +86,15 @@ top:100px;
 right:100px;
 width:60px;
 height:150px;
-border: 4px solid white;
+border:1px solid #F3C242;
 // background-color:${green};
 z-index:100
+`
+export const LinkText = styled.div`
+color: black;
+z-index:100;
+text-decoration: none;
+ font-size:10px;
 `
 
 export const Element = styled.div`

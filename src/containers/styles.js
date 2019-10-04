@@ -12,11 +12,11 @@ height: auto;
 padding:5px 5px 5px 5px;
 background-color: #C0F75E;
 border:1px solid #F3C242;
-color: #F3C242;
+// color: #F3C242;
+color: black;
 z-index:105;
-font-size:20px;
-font-weight:bold;
-
+font-size:10px;
+font-weight:'Thin';
 `
 
 export const Image = styled.img`
@@ -37,17 +37,6 @@ z-index:105;
 font-size:10px;
 `
 
-// export const Circle = styled.div`
-// position = relative;
-// // top:2px;
-// // left:2px;
-// width: 20px;
-// height: 20px;
-// border-radius:50%;
-// background-color: #F3C242;
-// border:1px solid #F3C242;
-// z-index:106;
-// `
 
 export const Circle = styled.div`
 position = absolute;
@@ -58,20 +47,7 @@ height: 20px;
 border-radius:50%;
 background-color: #F3C242;
 border:1px solid #F3C242;
-
+font-size:5px;
 z-index:106;
 
 // `
-// export const Circle = styled.div`
-// position:absolute;
-// display:${props => props.display || 'block'};
-// bottom:200px;
-// left:100px;
-// width: auto;
-// border-radius:5%;
-// height: auto;
-// padding:5px 5px 5px 5px;
-// background-color: #C0F75E;
-// border:1px solid #F3C242;
-// z-index:105;
-// font-size:10px;`

@@ -15,18 +15,18 @@ class Map extends Component {
         this.state = {
             display: 'block',
             style: 'mapbox://styles/mapbox/light-v9',
-            showPopup: false,
+            showPopup: true,
             viewport: {
                 width: window.innerWidth,
                 height: window.innerHeight,
-                longitude: 6.4636,
-                latitude: 59.6528,
-                zoom: 6,
+                longitude: -74,
+                latitude: 40.7,
+                zoom: 11,
                 maxZoom: 16
             },
             marker: {
-                longitude: 6.4636,
-                latitude: 59.6528,
+                longitude: -74,
+                latitude: 40.7,
             },
             activeDrags: 0,
             deltaPosition: {
@@ -128,7 +128,7 @@ class Map extends Component {
                 <Nav />
                 < Draggable {...dragHandlers}>
                     <Rectangle display={this.state.display}  >
-                        <div style={{ padding: '0px 10px 1px 0px' }}>Points of View</div>
+                        Building interface
                     </Rectangle >
                 </Draggable >
 
@@ -157,74 +157,55 @@ class Map extends Component {
                     </Marker>
 
 
-                    {showPopup &&
-                        <Popup
-                            latitude={marker.latitude}
-                            longitude={marker.longitude}
-                            closeButton={true}
-                            closeOnClick={false}
-                            onClose={() => this.setState({ showPopup: false })}
-                            anchor="left" >
+                    {showPopup && <Popup
+                        latitude={marker.latitude}
+                        longitude={marker.longitude}
+                        closeButton={true}
+                        closeOnClick={false}
+                        onClose={() => this.setState({ showPopup: false })}
+                        anchor="left" >
 
-                            < Draggable {...dragHandlers}>
-                                <Rectangle bottom={'250px'} left={'-420px'}>
-                                    <img src={'https://i.pinimg.com/originals/63/94/d1/6394d12d7791bb1c0a64d3845c60d5c6.jpg'}
-                                        style={{ 'width': '100px', 'padding': '10px' }} />
-                                </Rectangle>
-                            </Draggable>
-                            < Draggable {...dragHandlers}>
-                                <Rectangle bottom={'-240px'} left={'-200px'}>
-                                    <Image src={'https://nordnorge.com/sites/n/nordnorge.com/files/570f0fc155e7b311737aa885d54880c8.jpg'}
-                                    // style={{ 'width': '100px', 'padding': '10px' }} 
-                                    />
-                                    <Circle >
-                                        move me
-                                    </Circle >
-                                </Rectangle>
-                            </Draggable>
-                            < Draggable {...dragHandlers}>
-                                <Rectangle bottom={'-240px'} left={'-200px'}>
-                                    <Image src={'https://images.adsttc.com/media/images/57ed/0c31/e58e/ce02/a000/011f/large_jpg/010620_Photo_Per_Berntsen.jpg?1475152917'}
-                                    // style={{ 'width': '100px', 'padding': '10px' }} 
-                                    />
-                                    <Circle >
-                                        move me
-                                    </Circle >
-                                </Rectangle>
-                            </Draggable>
+                        < Draggable {...dragHandlers}>
+                            <Rectangle bottom={'250px'} left={'-420px'}>
+                                <img src={'https://i.pinimg.com/originals/63/94/d1/6394d12d7791bb1c0a64d3845c60d5c6.jpg'}
+                                    style={{ 'width': '100px', 'padding': '10px' }} />
+                            </Rectangle>
+                        </Draggable>
 
-                            < Draggable {...dragHandlers}>
-                                <Rectangle bottom={'-140px'} left={'300px'}>
+                        < Draggable {...dragHandlers}>
+                            <Rectangle bottom={'-240px'} left={'-200px'}>
+                                <Image src={'https://images.adsttc.com/media/images/57ed/0c31/e58e/ce02/a000/011f/large_jpg/010620_Photo_Per_Berntsen.jpg?1475152917'}
+                                // style={{ 'width': '100px', 'padding': '10px' }} 
+                                />
+                            </Rectangle>
+                        </Draggable>
 
-                                    <iframe src="https://player.vimeo.com/video/239261005#t=29s" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style={{ padding: '15px 0px 5px 0px' }}></iframe>
-                                    <Circle >
-                                        move me
-                                    </Circle >
-                                </Rectangle>
-                            </Draggable>
+                        < Draggable {...dragHandlers}>
+                            <Rectangle bottom={'-240px'} left={'-200px'}>
+                                <Image src={'https://images.adsttc.com/media/images/57ed/0c31/e58e/ce02/a000/011f/large_jpg/010620_Photo_Per_Berntsen.jpg?1475152917'}
+                                // style={{ 'width': '100px', 'padding': '10px' }} 
+                                />
+                            </Rectangle>
+                        </Draggable>
+
+                        < Draggable {...dragHandlers}>
+                            <Rectangle bottom={'200px'} left={'200px'}>
+                                <Image src={'https://www.iconeye.com/images/2017/06/Zumthor_norway_Mine_1.jpg'}
+                                // style={{ 'width': '100px', 'padding': '10px' }} 
+                                />
+                            </Rectangle>
+                        </Draggable>
 
 
+                        <Image src={'https://static.dezeen.com/uploads/2016/12/allmannajuvet-tourist-route-peter-zumthor-norway-arne-espeland-dezeen-sq.jpg'}
+                            style={{ 'width': '100px', 'height': '100px', 'padding': '10px 10px 0px 10px' }}
+                        />
 
-
-
-                            < Draggable {...dragHandlers}>
-                                <Rectangle bottom={'200px'} left={'200px'}>
-                                    <Image src={'https://www.iconeye.com/images/2017/06/Zumthor_norway_Mine_1.jpg'}
-                                    // style={{ 'width': '100px', 'padding': '10px' }} 
-                                    />
-                                </Rectangle>
-                            </Draggable>
-
-
-                            <Image src={'https://static.dezeen.com/uploads/2016/12/allmannajuvet-tourist-route-peter-zumthor-norway-arne-espeland-dezeen-sq.jpg'}
-                                style={{ 'width': '100px', 'height': '100px', 'padding': '10px 10px 0px 10px' }}
-                            />
-
-                            <Text>
-                                - Peter Zhumthor
+                        <Text>
+                            - Peter Zhumthor
                         </Text>
 
-                        </Popup>}
+                    </Popup>}
                 </InteractiveMap>
             </div >
         )
