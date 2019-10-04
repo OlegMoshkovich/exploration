@@ -24,7 +24,8 @@ class Map extends Component {
                 longitude: 6.4636,
                 latitude: 59.6528,
                 zoom: 6,
-                maxZoom: 16
+                maxZoom: 16,
+
             },
             marker: {
                 longitude: 6.4636,
@@ -49,6 +50,7 @@ class Map extends Component {
     }
 
     _onViewportChange(viewport) {
+        console.log('vieport on the change', viewport)
 
         this.setState({
             viewport: { ...this.state.viewport, ...viewport }
@@ -120,13 +122,15 @@ class Map extends Component {
         );
     }
 
-    _goToViewport = ({ longitude, latitude }) => {
+    _goToViewport = (latitude, longitude, speed = 5000, zoom = 17) => {
         this._onViewportChange({
-            longitude,
-            latitude,
-            zoom: 11,
+            latitude: latitude,
+            // : 40.75234736086995,
+            longitude: longitude,
+            // : -73.97752525741629,
+            zoom: zoom,
             transitionInterpolator: new FlyToInterpolator(),
-            transitionDuration: 3000
+            transitionDuration: speed
         });
     };
 
@@ -139,10 +143,7 @@ class Map extends Component {
             <div>
                 <Nav />
                 <FlyContainer>
-                    {/* <AnimatedCircle width={'20px'} />
-                    <AnimatedCircle width={'20px'} />
-                    <AnimatedCircle width={'20px'} />
-                    <AnimatedCircle width={'20px'} /> */}
+
 
                     {/* <AnimatedCircle width={'20px'}
                         repeat={2}
@@ -151,13 +152,19 @@ class Map extends Component {
                             { scale: 1.2 },
                         ]} /> */}
 
-                    <FlyCircle onClick={() => console.log('circle is clicked')} />
+
+                    < FlyCircle onClick={() => this._goToViewport(40.74623043587812, -73.93683978026445, 7000)} > SSY</FlyCircle>
+                    <FlyCircle onClick={() => this._goToViewport(40.75234736086995, - 73.97752525741629, 20000, 5)} >NY</FlyCircle>
+                    <FlyCircle onClick={() => this._goToViewport(40.75234736086995, - 73.97752525741629, 20000)} >GC</FlyCircle>
+                    < FlyCircle onClick={() => this._goToViewport(40.74623043587812, -73.93683978026445, 7000)} > </FlyCircle>
+                    <FlyCircle onClick={() => this._goToViewport(40.75234736086995, - 73.97752525741629, 20000, 5)} ></FlyCircle>
+                    <FlyCircle onClick={() => this._goToViewport(40.75234736086995, - 73.97752525741629, 20000)} ></FlyCircle>
+                    {/* <FlyCircle />
                     <FlyCircle />
                     <FlyCircle />
-                    <FlyCircle />
-                    <FlyCircle />
-                    <FlyCircle />
+                    <FlyCircle /> */}
                 </FlyContainer>
+
 
                 < Draggable {...dragHandlers} style={{ cursor: 'all-scroll' }}>
                     <Rectangle display={this.state.display}  >
@@ -175,6 +182,23 @@ class Map extends Component {
                     <Marker
                         latitude={marker.latitude}
                         longitude={marker.longitude}
+                        offsetLeft={-20}
+                        offsetTop={-10}
+                        draggable={true}
+                        onDragStart={this._onMarkerDragStart}
+                        onDrag={this._onMarkerDrag}
+                        onDragEnd={this._onMarkerDragEnd}
+                    >
+                        <Pin onClick={(e) => {
+                            return (
+                                this.setState(showPopup === false ? { showPopup: true } : { showPopup: true })
+                            )
+                        }} />
+                    </Marker>
+
+                    <Marker
+                        latitude={40.75234736086995}
+                        longitude={-73.97752525741629}
                         offsetLeft={-20}
                         offsetTop={-10}
                         draggable={true}
