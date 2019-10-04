@@ -4,8 +4,8 @@ import styled from 'styled-components'
 export const Rectangle = styled.div`
 position:absolute;
 display:${props => props.display || 'block'};
-bottom:200px;
-left:100px;
+bottom:${props => props.bottom || '100px'};
+left:${props => props.left || '100px'};
 width: auto;
 border-radius:5%;
 height: auto;
