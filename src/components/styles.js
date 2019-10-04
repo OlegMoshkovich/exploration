@@ -3,7 +3,7 @@ const green = "#C0F75E"
 const red = '#D44346'
 // const purple = '#A56DF2'
 const teal = '#B7F1FD'
-const yeallow = '#F3C242'
+const yellow = '#F3C242'
 
 
 export const Iterations = styled.input`
@@ -88,7 +88,7 @@ width:60px;
 height:150px;
 border:1px solid #F3C242;
 // background-color:${green};
-z-index:100
+z-index:300;
 `
 export const LinkText = styled.div`
 color: black;

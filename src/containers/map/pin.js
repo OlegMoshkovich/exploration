@@ -6,7 +6,8 @@ const ICON = `M20.2,15.7L20.2,15.7c1.1-1.6,1.8-3.6,1.8-5.7c0-5.6-4.5-10-10-10S2,
 
 const pinStyle = {
     fill: '#D44346',
-    stroke: '#C0F75E'
+    stroke: '#C0F75E',
+    cursor: 'pointer'
 };
 
 export default class Pin extends PureComponent {

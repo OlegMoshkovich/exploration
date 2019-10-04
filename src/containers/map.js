@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-import ReactMapGL, { Marker, Popup, InteractiveMap } from 'react-map-gl';
+import ReactMapGL, { Marker, Popup, InteractiveMap, FlyToInterpolator } from 'react-map-gl';
 
 import { Nav } from '../components/NavMenu'
 import Pin from './map/pin';
 import styled from 'styled-components'
 import Draggable from 'react-draggable';
-import { Rectangle, Image, Text, Circle } from './styles'
+import { Rectangle, Image, Text, Circle, FlyCircle, FlyContainer } from './styles'
+import { Circle as AnimatedCircle } from '../components/circle';
+
 
 
 class Map extends Component {
@@ -118,6 +120,16 @@ class Map extends Component {
         );
     }
 
+    _goToViewport = ({ longitude, latitude }) => {
+        this._onViewportChange({
+            longitude,
+            latitude,
+            zoom: 11,
+            transitionInterpolator: new FlyToInterpolator(),
+            transitionDuration: 3000
+        });
+    };
+
     render() {
         const dragHandlers = { onStart: this.onStart, onStop: this.onStop };
         const { deltaPosition, controlledPosition, display, showPopup, marker } = this.state;
@@ -126,9 +138,30 @@ class Map extends Component {
         return (
             <div>
                 <Nav />
-                < Draggable {...dragHandlers}>
+                <FlyContainer>
+                    {/* <AnimatedCircle width={'20px'} />
+                    <AnimatedCircle width={'20px'} />
+                    <AnimatedCircle width={'20px'} />
+                    <AnimatedCircle width={'20px'} /> */}
+
+                    {/* <AnimatedCircle width={'20px'}
+                        repeat={2}
+                        animation={[
+                            // { scale: .6 },
+                            { scale: 1.2 },
+                        ]} /> */}
+
+                    <FlyCircle onClick={() => console.log('circle is clicked')} />
+                    <FlyCircle />
+                    <FlyCircle />
+                    <FlyCircle />
+                    <FlyCircle />
+                    <FlyCircle />
+                </FlyContainer>
+
+                < Draggable {...dragHandlers} style={{ cursor: 'all-scroll' }}>
                     <Rectangle display={this.state.display}  >
-                        <div style={{ padding: '0px 10px 1px 0px' }}>Points of View</div>
+                        <div style={{ padding: '0px 10px 1px 0px', cursor: ' all-scroll' }}>Points of View</div>
                     </Rectangle >
                 </Draggable >
 
@@ -178,7 +211,10 @@ class Map extends Component {
                                     // style={{ 'width': '100px', 'padding': '10px' }} 
                                     />
                                     <Circle >
-                                        move me
+
+                                        <div style={{ cursor: 'all-scroll' }}>
+                                            move me
+                                        </div>
                                     </Circle >
                                 </Rectangle>
                             </Draggable>
@@ -188,7 +224,10 @@ class Map extends Component {
                                     // style={{ 'width': '100px', 'padding': '10px' }} 
                                     />
                                     <Circle >
-                                        move me
+                                        <div style={{ cursor: 'all-scroll' }}>
+                                            move me
+                                        </div>
+
                                     </Circle >
                                 </Rectangle>
                             </Draggable>
@@ -198,7 +237,9 @@ class Map extends Component {
 
                                     <iframe src="https://player.vimeo.com/video/239261005#t=29s" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style={{ padding: '15px 0px 5px 0px' }}></iframe>
                                     <Circle >
-                                        move me
+                                        <div style={{ cursor: 'all-scroll' }}>
+                                            move me
+                                        </div>
                                     </Circle >
                                 </Rectangle>
                             </Draggable>
@@ -212,6 +253,7 @@ class Map extends Component {
                                     <Image src={'https://www.iconeye.com/images/2017/06/Zumthor_norway_Mine_1.jpg'}
                                     // style={{ 'width': '100px', 'padding': '10px' }} 
                                     />
+
                                 </Rectangle>
                             </Draggable>
 

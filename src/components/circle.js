@@ -12,6 +12,8 @@ flex-direction:row;
 justify-content:center;
 align-items:center;
 height: 100%;
+z-index:200;
+
 //  border: 1px solid pink;
 `
 
