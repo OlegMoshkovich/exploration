@@ -2,38 +2,10 @@ import React, { Component } from 'react'
 import ReactMapGL, { Marker, Popup, InteractiveMap } from 'react-map-gl';
 
 import { Nav } from '../components/NavMenu'
-
-import Pin from '../map/pin';
+import Pin from './map/pin';
 import styled from 'styled-components'
 import Draggable from 'react-draggable';
-
-
-const Rectangle = styled.div`
-position:absolute;
-display:${props => props.display || 'block'};
-top:100px;
-left:100px;
-width: auto;
-border-radius:10%;
-height: auto;
-padding:20px;
-background-color: #C0F75E;
-border:1px solid #F3C242;
-z-index:105;
-font-size:10px;
-`
-const Circle = styled.div`
-position = relative;
-// top:2px;
-// left:2px;
-width: 20px;
-height: 20px;
-border-radius:50%;
-background-color: #F3C242;
-border:1px solid #F3C242;
-z-index:106;
-`
-
+import { Rectangle, Image, Text, Circle } from './styles'
 
 
 class Map extends Component {
@@ -41,7 +13,7 @@ class Map extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            display: 'none',
+            display: 'block',
             style: 'mapbox://styles/mapbox/light-v9',
             showPopup: true,
             viewport: {
@@ -87,9 +59,11 @@ class Map extends Component {
             height: window.innerHeight
         });
     }
+
     onStyleChange = style => {
         this.setState({ style });
     };
+
     _logDragEvent(name, event) {
         this.setState({
             events: {
@@ -117,7 +91,6 @@ class Map extends Component {
         });
     };
 
-
     onStart = () => {
         this.setState({ activeDrags: ++this.state.activeDrags });
     };
@@ -125,6 +98,7 @@ class Map extends Component {
     onStop = () => {
         this.setState({ activeDrags: --this.state.activeDrags });
     };
+
     _renderPopup() {
         const { popupInfo } = this.state;
 
@@ -160,10 +134,14 @@ class Map extends Component {
                 < Draggable {...dragHandlers}>
                     {/* <Frame name={'hello'} display={this.state.display} /> */}
                     <Rectangle display={this.state.display}  >
-                        <Circle onClick={() => {
+                        {/* <Circle
+                        onClick={() => {
                             console.log('state', this.state.display)
                             return this.setState(display === 'none' ? { display: 'block' } : { display: 'none' })
-                        }} />
+                        }}
+                        > */}
+                        Building interface
+                        {/* </Circle> */}
                         {/* <div onClick={() => this.setState(display === 'none' ? { display: 'block' } : { display: 'none' })}>{parseFloat(this.state.marker.longitude).toFixed(3)}</div> */}
 
                     </Rectangle >
@@ -179,9 +157,10 @@ class Map extends Component {
                     }}
                 // onClick={console.log('map is clicked')}
                 >
+
                     <Marker
 
-                        captureClick={true}
+                        // captureClick={true}
                         latitude={marker.latitude}
                         longitude={marker.longitude}
                         offsetLeft={-20}
@@ -195,13 +174,15 @@ class Map extends Component {
                         <Pin onClick={(e) => {
 
                             return (
-                                this.setState(display === 'none' ? { display: 'block' } : { display: '' }),
-                                this.setState(showPopup === false ? { showPopup: true } : { showPopup: '' })
+                                // this.setState(display === 'none' ? { display: 'block' } : { display: '' }),
+                                this.setState(showPopup === false ? { showPopup: true } : { showPopup: true })
 
                             )
                         }} />
 
                     </Marker>
+
+
                     {showPopup && <Popup
                         latitude={marker.latitude}
                         longitude={marker.longitude}
@@ -210,10 +191,39 @@ class Map extends Component {
                         onClose={() => this.setState({ showPopup: false })}
                         anchor="left" >
                         < Draggable {...dragHandlers}>
-                            <Rectangle />
+                            <Rectangle>
+                                <Image src={'https://www.iconeye.com/images/2017/06/Zumthor_norway_Mine_1.jpg'}
+                                // style={{ 'width': '100px', 'padding': '10px' }} 
+                                />
+                            </Rectangle>
                         </Draggable>
 
-                        <img src={'https://static.dezeen.com/uploads/2016/12/allmannajuvet-tourist-route-peter-zumthor-norway-arne-espeland-dezeen-sq.jpg'} style={{ 'width': '100px', 'height': '100px', 'padding': '10px' }} />
+                        < Draggable {...dragHandlers}>
+                            <Rectangle>
+                                <Image src={'https://images.adsttc.com/media/images/57ed/0c31/e58e/ce02/a000/011f/large_jpg/010620_Photo_Per_Berntsen.jpg?1475152917'}
+                                // style={{ 'width': '100px', 'padding': '10px' }} 
+                                />
+                            </Rectangle>
+                        </Draggable>
+
+                        < Draggable {...dragHandlers}>
+                            <Rectangle>
+                                <img src={'https://i.pinimg.com/originals/63/94/d1/6394d12d7791bb1c0a64d3845c60d5c6.jpg'}
+                                    style={{ 'width': '100px', 'padding': '10px' }} />
+                            </Rectangle>
+                        </Draggable>
+
+                        {/* < Draggable {...dragHandlers}>
+                            <Rectangle> */}
+                        <img src={'https://static.dezeen.com/uploads/2016/12/allmannajuvet-tourist-route-peter-zumthor-norway-arne-espeland-dezeen-sq.jpg'} style={{ 'width': '100px', 'height': '100px', 'padding': '10px 10px 0px 10px' }} />
+                        {/* </Rectangle>
+                        </Draggable> */}
+                        <Text>
+                            - Peter Zhumthor
+                        </Text>
+
+
+
                     </Popup>}
                 </InteractiveMap>
             </div >
