@@ -19,6 +19,7 @@ import {
   FlyContainer,
   FlyText
 } from "./styles";
+import { Destination } from "./flyNav";
 
 class Map extends Component {
   constructor(props) {
@@ -167,38 +168,35 @@ class Map extends Component {
     return (
       <div>
         <Nav />
+
         {/* Destinations */}
+
         <FlyContainer>
-          <FlyCircle onClick={() => this._goToViewport(59.6528, 6.4636, 20000)}>
-            <FlyText> PZ </FlyText>
-          </FlyCircle>
-          <FlyCircle
-            onClick={() =>
-              this._goToViewport(
-                40.75234736086995,
-                -73.97752525741629,
-                20000,
-                5
-              )
-            }
-          >
-            <FlyText> NY </FlyText>
-          </FlyCircle>
-          <FlyCircle
-            onClick={() =>
+          <Destination
+            name={"PZ"}
+            navigate={() => this._goToViewport(59.6528, 6.4636, 20000)}
+          />
+
+          <Destination
+            name={"NY"}
+            navigate={() =>
               this._goToViewport(40.75234736086995, -73.97752525741629, 20000)
             }
-          >
-            <FlyText> GC </FlyText>
-          </FlyCircle>
-          <FlyCircle
-            onClick={() =>
+          />
+          <Destination
+            name={"GC"}
+            navigate={() =>
+              this._goToViewport(40.75234736086995, -73.97752525741629, 20000)
+            }
+          />
+          <Destination
+            name={"HI"}
+            navigate={() =>
               this._goToViewport(40.74623043587812, -73.93683978026445, 7000)
             }
-          >
-            <FlyText> HI </FlyText>
-          </FlyCircle>
+          />
         </FlyContainer>
+
         {/* title */}
         <Draggable
           {...dragHandlers}
@@ -217,6 +215,7 @@ class Map extends Component {
             </div>
           </Rectangle>
         </Draggable>
+
         <InteractiveMap
           {...this.state.viewport}
           mapboxApiAccessToken={
