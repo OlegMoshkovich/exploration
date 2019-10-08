@@ -19,7 +19,9 @@ import {
   FlyContainer,
   FlyText
 } from "./styles";
+import { Title } from "./title";
 import { Destination } from "./flyNav";
+import { DestinationMarker } from "./marker";
 
 class Map extends Component {
   constructor(props) {
@@ -170,7 +172,6 @@ class Map extends Component {
         <Nav />
 
         {/* Destinations */}
-
         <FlyContainer>
           <Destination
             name={"PZ"}
@@ -198,23 +199,7 @@ class Map extends Component {
         </FlyContainer>
 
         {/* title */}
-        <Draggable
-          {...dragHandlers}
-          style={{
-            cursor: "all-scroll"
-          }}
-        >
-          <Rectangle display={this.state.display}>
-            <div
-              style={{
-                padding: "0px 0px 3px 0px",
-                cursor: " all-scroll"
-              }}
-            >
-              Memories
-            </div>
-          </Rectangle>
-        </Draggable>
+        <Title />
 
         <InteractiveMap
           {...this.state.viewport}
@@ -228,18 +213,33 @@ class Map extends Component {
           }}
         >
           {/* Peter Zumthor */}
-          <Marker
-            latitude={marker.latitude}
-            longitude={marker.longitude}
+
+          <DestinationMarker
+            toggle={() => {
+              return this.setState(
+                showPopup === false
+                  ? {
+                      showPopup: true
+                    }
+                  : {
+                      showPopup: true
+                    }
+              );
+            }}
+          />
+
+          {/* <Marker
+            longitude={6.4636}
+            latitude={59.6528}
             offsetLeft={-20}
             offsetTop={-10}
-            draggable={true}
+            draggable={false}
             onDragStart={this._onMarkerDragStart}
             onDrag={this._onMarkerDrag}
             onDragEnd={this._onMarkerDragEnd}
           >
             <Pin
-              onClick={e => {
+              onClick={() => {
                 return this.setState(
                   showPopup === false
                     ? {
@@ -251,7 +251,8 @@ class Map extends Component {
                 );
               }}
             />
-          </Marker>
+          </Marker> */}
+
           {/* Grand Central */}
           <Marker
             latitude={40.75234736086995}
