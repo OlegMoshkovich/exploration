@@ -34,8 +34,8 @@ class Map extends Component {
         width: window.innerWidth,
         height: window.innerHeight,
         longitude: 6.4636,
-        latitude: 59.6528,
-        zoom: 6,
+        latitude: 40.6528,
+        zoom: 1.5,
         maxZoom: 16
       },
       marker: {
@@ -154,6 +154,15 @@ class Map extends Component {
     });
   };
 
+  // togglePopUp = name => {
+  //   console.log("passed Name", name);
+  //   if (this.state.showPopup === true) {
+  //     return this.setState({ showPopup: false });
+  //   } else {
+  //     return this.setState({ showPopup: true });
+  //   }
+  // };
+
   render() {
     const dragHandlers = {
       onStart: this.onStart,
@@ -215,69 +224,39 @@ class Map extends Component {
           {/* Peter Zumthor */}
 
           <DestinationMarker
-            toggle={() => {
-              return this.setState(
-                showPopup === false
-                  ? {
-                      showPopup: true
-                    }
-                  : {
-                      showPopup: true
-                    }
-              );
-            }}
+            longitude={-73.97752525741629}
+            latitude={40.7523}
+            toggle={() => this.togglePopUp()}
+            name={"Peter Zhumthor"}
           />
-
-          {/* <Marker
+          <DestinationMarker
             longitude={6.4636}
             latitude={59.6528}
-            offsetLeft={-20}
-            offsetTop={-10}
-            draggable={false}
-            onDragStart={this._onMarkerDragStart}
-            onDrag={this._onMarkerDrag}
-            onDragEnd={this._onMarkerDragEnd}
-          >
-            <Pin
-              onClick={() => {
-                return this.setState(
-                  showPopup === false
-                    ? {
-                        showPopup: true
-                      }
-                    : {
-                        showPopup: true
-                      }
-                );
-              }}
-            />
-          </Marker> */}
+            toggle={() => this.togglePopUp()}
+            name={"New York"}
+            popUpState={this.state.showPopup}
+            popUpClose={() =>
+              this.setState({
+                showPopup: false
+              })
+            }
+          />
+
+          <DestinationMarker
+            longitude={-73.97752525741629}
+            latitude={40.75234736086995}
+            toggle={() => this.togglePopUp()}
+            name={"Grand Central"}
+            popUpState={this.state.showPopup}
+            popUpClose={() =>
+              this.setState({
+                showPopup: false
+              })
+            }
+          />
 
           {/* Grand Central */}
-          <Marker
-            latitude={40.75234736086995}
-            longitude={-73.97752525741629}
-            offsetLeft={-20}
-            offsetTop={-10}
-            draggable={true}
-            onDragStart={this._onMarkerDragStart}
-            onDrag={this._onMarkerDrag}
-            onDragEnd={this._onMarkerDragEnd}
-          >
-            <Pin
-              onClick={e => {
-                return this.setState(
-                  showPopup === false
-                    ? {
-                        showPopup: true
-                      }
-                    : {
-                        showPopup: true
-                      }
-                );
-              }}
-            />
-          </Marker>
+
           {showPopup && (
             <Popup
               latitude={marker.latitude}
@@ -304,11 +283,13 @@ class Map extends Component {
                   />
                 </Rectangle>
               </Draggable>
+
               <Draggable {...dragHandlers}>
                 <Rectangle bottom={"150px"} left={"-510px"}>
                   information - wikipedia
                 </Rectangle>
               </Draggable>
+
               <Draggable {...dragHandlers}>
                 <Rectangle bottom={"-240px"} left={"-200px"}>
                   <Image
@@ -328,6 +309,7 @@ class Map extends Component {
                   </Circle>
                 </Rectangle>
               </Draggable>
+
               <Draggable {...dragHandlers}>
                 <Rectangle bottom={"-240px"} left={"-200px"}>
                   <Image
