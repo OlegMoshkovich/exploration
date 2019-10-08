@@ -138,33 +138,30 @@ class Map extends Component {
         const dragHandlers = { onStart: this.onStart, onStop: this.onStop };
         const { deltaPosition, controlledPosition, display, showPopup, marker } = this.state;
 
-
         return (
             <div>
                 <Nav />
+                {/* Destinations */}
                 <FlyContainer>
-
-
                     {/* <AnimatedCircle width={'20px'}
                         repeat={2}
                         animation={[
                             // { scale: .6 },
                             { scale: 1.2 },
                         ]} /> */}
-
-
-                    < FlyCircle onClick={() => this._goToViewport(40.74623043587812, -73.93683978026445, 7000)} > SSY</FlyCircle>
+                    <FlyCircle onClick={() => this._goToViewport(40.74623043587812, -73.93683978026445, 7000)} > SSY</FlyCircle>
                     <FlyCircle onClick={() => this._goToViewport(40.75234736086995, - 73.97752525741629, 20000, 5)} >NY</FlyCircle>
                     <FlyCircle onClick={() => this._goToViewport(40.75234736086995, - 73.97752525741629, 20000)} >GC</FlyCircle>
                     <FlyCircle onClick={() => this._goToViewport(59.6528, 6.4636, 20000)} >PZ</FlyCircle>
-
-
                 </FlyContainer>
 
-
+                {/* title */}
                 < Draggable {...dragHandlers} style={{ cursor: 'all-scroll' }}>
                     <Rectangle display={this.state.display}  >
-                        <div style={{ padding: '0px 10px 1px 0px', cursor: ' all-scroll' }}>Points of View</div>
+                        <div style={{
+                            padding: '0px 0px 3px 0px',
+                            cursor: ' all-scroll'
+                        }}>Memories</div>
                     </Rectangle >
                 </Draggable >
 

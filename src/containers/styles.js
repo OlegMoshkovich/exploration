@@ -7,6 +7,7 @@ const red = '#D44346'
 const teal = '#B7F1FD'
 const yellow = '#F3C242'
 
+
 export const Rectangle = styled.div`
 position:absolute;
 display:${props => props.display || 'block'};
@@ -59,10 +60,10 @@ export const FlyCircle = styled.div`
  display:${props => props.display || 'block'};
  width: 20px;
  height: 20px;
-//  border-radius:50%;
+ border-radius:50%;
  padding: 2px 0px 0px 2px;
  background-color: ${green};
- border:1px solid ${yellow};
+ border:1px solid ${red};
  color: black;
  z-index:105;
  font-size:6px;
