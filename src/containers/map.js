@@ -156,13 +156,9 @@ class Map extends Component {
                     < FlyCircle onClick={() => this._goToViewport(40.74623043587812, -73.93683978026445, 7000)} > SSY</FlyCircle>
                     <FlyCircle onClick={() => this._goToViewport(40.75234736086995, - 73.97752525741629, 20000, 5)} >NY</FlyCircle>
                     <FlyCircle onClick={() => this._goToViewport(40.75234736086995, - 73.97752525741629, 20000)} >GC</FlyCircle>
-                    < FlyCircle onClick={() => this._goToViewport(40.74623043587812, -73.93683978026445, 7000)} > </FlyCircle>
-                    <FlyCircle onClick={() => this._goToViewport(40.75234736086995, - 73.97752525741629, 20000, 5)} ></FlyCircle>
-                    <FlyCircle onClick={() => this._goToViewport(40.75234736086995, - 73.97752525741629, 20000)} ></FlyCircle>
-                    {/* <FlyCircle />
-                    <FlyCircle />
-                    <FlyCircle />
-                    <FlyCircle /> */}
+                    <FlyCircle onClick={() => this._goToViewport(59.6528, 6.4636, 20000)} >PZ</FlyCircle>
+
+
                 </FlyContainer>
 
 
@@ -229,6 +225,13 @@ class Map extends Component {
                                         style={{ 'width': '100px', 'padding': '10px' }} />
                                 </Rectangle>
                             </Draggable>
+                            < Draggable {...dragHandlers}>
+                                <Rectangle bottom={'150px'} left={'-510px'}>
+                                    information - wikipedia
+                                </Rectangle>
+                            </Draggable>
+
+
                             < Draggable {...dragHandlers}>
                                 <Rectangle bottom={'-240px'} left={'-200px'}>
                                     <Image src={'https://nordnorge.com/sites/n/nordnorge.com/files/570f0fc155e7b311737aa885d54880c8.jpg'}

@@ -57,15 +57,15 @@ cursor: 'all-scroll' ;
 
 export const FlyCircle = styled.div`
  display:${props => props.display || 'block'};
- width: 12px;
- height: 12px;
- border-radius:50%;
- margin: 10px;
+ width: 20px;
+ height: 20px;
+//  border-radius:50%;
+ padding: 2px 0px 0px 2px;
  background-color: ${green};
  border:1px solid ${yellow};
  color: black;
  z-index:105;
- font-size:10px;
+ font-size:6px;
  cursor: 'pointer';
  `
 
@@ -73,13 +73,14 @@ export const FlyContainer = styled.div`
 position:absolute;
 display: flex;
 flex-direction: column;
+// justify-content:space between;
 top:${props => props.bottom || '60px'};
 left:${props => props.left || '100px'};
-width: auto;
-height: auto;
+width: 40px;
+height: 200px;
 padding:3px;
-// border:1px solid ${yellow};
-// z-index:105;
-font-size:10px;
+border:1px solid red;
+z-index:105;
+font-size: 10px;
 cursor: 'all-scroll';
  `
