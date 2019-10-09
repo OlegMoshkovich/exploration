@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Marker, Popup } from "react-map-gl";
 import Pin from "./pin";
 import { PopUpWindow } from "./popUpWindow";
+import { connect } from "react-redux";
 
 export class DestinationMarker extends Component {
   constructor(props) {
@@ -40,9 +41,7 @@ export class DestinationMarker extends Component {
     } = this.props;
 
     const { showPopUp } = this.state;
-    // if (globalPopUpState === true) {
-    //   console.log("TRUE TRUE from component");
-    // }
+
     return (
       <div>
         <Marker
@@ -92,3 +91,8 @@ export class DestinationMarker extends Component {
     );
   }
 }
+
+export default connect(
+  null,
+  null
+)(DestinationMarker);

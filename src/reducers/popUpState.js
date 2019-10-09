@@ -1,11 +1,14 @@
 import { globalPopUp } from "../actions/popUpState";
 
-const popUpState = (state = {}, action) => {
+const initialState = {
+  globalPopUp: false
+};
+const popUpState = (state = initialState, action) => {
   switch (action.type) {
     case "GLOBAL_POPUP":
-      return action.payload;
+      return { ...initialState, globalPopUp: action.payload };
     default:
-      return state;
+      return initialState;
   }
 };
 

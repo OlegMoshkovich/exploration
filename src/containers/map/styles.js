@@ -55,6 +55,23 @@ font-size:5px;
 z-index:106;
 cursor: 'all-scroll' ;
  `;
+export const ExitCircle = styled.div`
+  position: absolute;
+  display: ${props => props.display || "block"};
+  bottom: ${props => props.bottom || "150px"};
+  left: ${props => props.left || "50px"};
+  width: 10px;
+  border-radius: 50%;
+  height: 10px;
+  padding: 5px 5px 5px 5px;
+  background-color: #c0f75e;
+  border: 1px solid ${teal};
+  // color: #F3C242;
+  color: black;
+  z-index: 105;
+  font-size: 10px;
+  cursor: "pointer";
+`;
 
 export const FlyCircle = styled.div`
   display: ${props => props.display || "block"};

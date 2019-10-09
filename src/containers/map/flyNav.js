@@ -11,13 +11,13 @@ export const Destination = props => {
 
 export const FlyDestinations = props => {
   const { flyTo, closeAllWindows } = props;
+
   return (
     <FlyContainer>
       <Destination
         name={"Allmannajuvet"}
         navigate={() => {
           flyTo(59.6528, 6.4636, 20000);
-          // closeAllWindows();
         }}
       />
       <Destination

@@ -19,9 +19,12 @@ import {
   FlyContainer,
   FlyText
 } from "./styles";
+import { Exit } from "./exit";
 import { Title } from "./title";
 import { Destination, FlyDestinations } from "./flyNav";
-import { DestinationMarker } from "./marker";
+import DestinationMarker from "./marker";
+import { connect } from "react-redux";
+import { globalPopUp } from "../../actions/popUpState";
 
 class Map extends Component {
   constructor(props) {
@@ -54,6 +57,7 @@ class Map extends Component {
   componentDidMount() {
     window.addEventListener("resize", this._resize);
     this._resize();
+    console.log("gloabal pop state from the map", this.props.globalPopUpState);
   }
 
   componentWillUnmount() {
@@ -143,6 +147,8 @@ class Map extends Component {
       <div>
         {/* title */}
         <Title title={"Experiment"} />
+        <Exit />
+
         <Nav />
         <FlyDestinations flyTo={this._goToViewport} />
 
@@ -207,4 +213,15 @@ class Map extends Component {
     );
   }
 }
-export default Map;
+
+const mapStateToProps = state => ({ globalPopUpState: state.popUpState });
+
+// const mapStateToProps = state => ({
+//   openDrawer: state.drawerStatus.drawerOpen,
+//   patientRecord: state.activePatient.patientRecord
+// });
+
+export default connect(
+  mapStateToProps,
+  { globalPopUp }
+)(Map);
