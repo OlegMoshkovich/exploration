@@ -34,7 +34,7 @@ export class PopUpWindow extends React.Component {
     const { src } = this.props;
     return (
       <Draggable {...dragHandlers}>
-        <Rectangle bottom={"-240px"} left={"-200px"}>
+        <Rectangle bottom={"-240px"} left={"200px"}>
           <Image
             src={
               src ||

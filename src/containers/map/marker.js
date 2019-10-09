@@ -32,7 +32,8 @@ export class DestinationMarker extends Component {
       name,
       toggle,
       popUpClose,
-      popUpState
+      popUpState,
+      images
     } = this.props;
 
     const { showPopUp } = this.state;
@@ -68,9 +69,10 @@ export class DestinationMarker extends Component {
             >
               {name}
             </div>
-
-            <PopUpWindow src={this.props.image} />
-            <PopUpWindow />
+            {images.map(image => (
+              <PopUpWindow src={image} />
+            ))}
+            {/* <PopUpWindow /> */}
           </Popup>
         )}
       </div>
