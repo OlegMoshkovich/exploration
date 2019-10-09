@@ -154,15 +154,6 @@ class Map extends Component {
     });
   };
 
-  // togglePopUp = name => {
-  //   console.log("passed Name", name);
-  //   if (this.state.showPopup === true) {
-  //     return this.setState({ showPopup: false });
-  //   } else {
-  //     return this.setState({ showPopup: true });
-  //   }
-  // };
-
   render() {
     const dragHandlers = {
       onStart: this.onStart,
@@ -179,7 +170,7 @@ class Map extends Component {
     return (
       <div>
         {/* title */}
-        <Title />
+        <Title title={"exploration"} />
         <Nav />
         <FlyDestinations flyTo={this._goToViewport} />
 
@@ -198,7 +189,6 @@ class Map extends Component {
           <DestinationMarker
             longitude={6.4636}
             latitude={59.6528}
-            toggle={() => this.togglePopUp()}
             name={"Allmannajuvet Museum"}
             images={[
               "https://images.adsttc.com/media/images/57ed/0c31/e58e/ce02/a000/011f/large_jpg/010620_Photo_Per_Berntsen.jpg?1475152917",
@@ -207,7 +197,6 @@ class Map extends Component {
               "https://static.dezeen.com/uploads/2016/12/allmannajuvet-tourist-route-peter-zumthor-norway-arne-espeland-dezeen-sq.jpg",
               "https://i.pinimg.com/originals/63/94/d1/6394d12d7791bb1c0a64d3845c60d5c6.jpg"
             ]}
-            popUpState={this.state.showPopup}
             popUpClose={() =>
               this.setState({
                 showPopup: false
@@ -218,7 +207,6 @@ class Map extends Component {
           <DestinationMarker
             longitude={-73.97752525741629}
             latitude={40.7523}
-            toggle={() => this.togglePopUp()}
             name={"Grand Central"}
             images={[
               "http://trn.trains.com/~/media/images/railroad-news/news-wire/2016-and-prior/2015/10/grandcentral.jpg",
@@ -227,52 +215,6 @@ class Map extends Component {
           />
 
           {/* Grand Central */}
-
-          {showPopup && (
-            <Popup
-              latitude={marker.latitude}
-              longitude={marker.longitude}
-              closeButton={true}
-              closeOnClick={false}
-              onClose={() =>
-                this.setState({
-                  showPopup: false
-                })
-              }
-              anchor="left"
-            >
-              <Draggable {...dragHandlers}>
-                <Rectangle bottom={"150px"} left={"-510px"}>
-                  information - wikipedia
-                </Rectangle>
-              </Draggable>
-
-              <Draggable {...dragHandlers}>
-                <Rectangle bottom={"-140px"} left={"300px"}>
-                  <iframe
-                    src="https://player.vimeo.com/video/239261005#t=29s"
-                    frameborder="0"
-                    allow="autoplay; fullscreen"
-                    allowfullscreen
-                    style={{
-                      padding: "15px 0px 5px 0px"
-                    }}
-                  ></iframe>
-                  <Circle>
-                    <div
-                      style={{
-                        cursor: "all-scroll"
-                      }}
-                    >
-                      move me
-                    </div>
-                  </Circle>
-                </Rectangle>
-              </Draggable>
-
-              <Text> -Peter Zhumthor </Text>
-            </Popup>
-          )}
         </InteractiveMap>
       </div>
     );

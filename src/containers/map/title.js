@@ -38,7 +38,7 @@ export class Title extends React.Component {
               cursor: " all-scroll"
             }}
           >
-            Memories
+            {this.props.title}
           </div>
         </Rectangle>
       </Draggable>
