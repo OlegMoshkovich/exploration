@@ -31,11 +31,13 @@ export class PopUpWindow extends React.Component {
       onStart: this.onStart,
       onStop: this.onStop
     };
+    const { src } = this.props;
     return (
       <Draggable {...dragHandlers}>
         <Rectangle bottom={"-240px"} left={"-200px"}>
           <Image
             src={
+              src ||
               "https://nordnorge.com/sites/n/nordnorge.com/files/570f0fc155e7b311737aa885d54880c8.jpg"
             }
             // style={{ 'width': '100px', 'padding': '10px' }}

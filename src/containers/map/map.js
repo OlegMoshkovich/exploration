@@ -183,7 +183,7 @@ class Map extends Component {
         {/* Destinations */}
         <FlyContainer>
           <Destination
-            name={"PZ"}
+            name={"AM"}
             navigate={() => this._goToViewport(59.6528, 6.4636, 20000)}
           />
 
@@ -222,24 +222,26 @@ class Map extends Component {
           }}
         >
           {/* Peter Zumthor */}
-
-          <DestinationMarker
-            longitude={-73.97752525741629}
-            latitude={40.7523}
-            toggle={() => this.togglePopUp()}
-            name={"Peter Zhumthor"}
-          />
           <DestinationMarker
             longitude={6.4636}
             latitude={59.6528}
             toggle={() => this.togglePopUp()}
-            name={"New York"}
+            name={"Allmannajuvet Museum"}
+            image={[
+              "https://images.adsttc.com/media/images/57ed/0c31/e58e/ce02/a000/011f/large_jpg/010620_Photo_Per_Berntsen.jpg?1475152917"
+            ]}
             popUpState={this.state.showPopup}
             popUpClose={() =>
               this.setState({
                 showPopup: false
               })
             }
+          />
+          <DestinationMarker
+            longitude={-73.97752525741629}
+            latitude={40.7523}
+            toggle={() => this.togglePopUp()}
+            name={"New York"}
           />
 
           <DestinationMarker

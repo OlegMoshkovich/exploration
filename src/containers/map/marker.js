@@ -55,12 +55,21 @@ export class DestinationMarker extends Component {
           <Popup
             latitude={latitude}
             longitude={longitude}
-            closeButton={true}
-            closeOnClick={true}
-            onClose={this.setState({ showPopUp: false })}
+            closeButton={false}
+            closeOnClick={false}
+            onClose={this.togglePopUp}
             anchor="left"
           >
-            {name}
+            <div
+              style={{
+                margin: "5px 0px 3px 0px",
+                fontSize: "10px"
+              }}
+            >
+              {name}
+            </div>
+
+            <PopUpWindow src={this.props.image} />
             <PopUpWindow />
           </Popup>
         )}
