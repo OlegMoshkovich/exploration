@@ -20,7 +20,7 @@ import {
   FlyText
 } from "./styles";
 import { Title } from "./title";
-import { Destination } from "./flyNav";
+import { Destination, FlyDestinations } from "./flyNav";
 import { DestinationMarker } from "./marker";
 
 class Map extends Component {
@@ -178,37 +178,10 @@ class Map extends Component {
 
     return (
       <div>
-        <Nav />
-
-        {/* Destinations */}
-        <FlyContainer>
-          <Destination
-            name={"AM"}
-            navigate={() => this._goToViewport(59.6528, 6.4636, 20000)}
-          />
-
-          <Destination
-            name={"NY"}
-            navigate={() =>
-              this._goToViewport(40.75234736086995, -73.97752525741629, 20000)
-            }
-          />
-          <Destination
-            name={"GC"}
-            navigate={() =>
-              this._goToViewport(40.75234736086995, -73.97752525741629, 20000)
-            }
-          />
-          <Destination
-            name={"HI"}
-            navigate={() =>
-              this._goToViewport(40.74623043587812, -73.93683978026445, 7000)
-            }
-          />
-        </FlyContainer>
-
         {/* title */}
         <Title />
+        <Nav />
+        <FlyDestinations flyTo={this._goToViewport} />
 
         <InteractiveMap
           {...this.state.viewport}
@@ -241,6 +214,7 @@ class Map extends Component {
               })
             }
           />
+
           <DestinationMarker
             longitude={-73.97752525741629}
             latitude={40.7523}
@@ -251,19 +225,6 @@ class Map extends Component {
               "https://ichef.bbci.co.uk/news/660/media/images/65736000/jpg/_65736479_grand-central-cropped-624x4.jpg"
             ]}
           />
-
-          {/* <DestinationMarker
-            longitude={-73.97752525741629}
-            latitude={40.75234736086995}
-            toggle={() => this.togglePopUp()}
-            name={"Grand Central"}
-            popUpState={this.state.showPopup}
-            popUpClose={() =>
-              this.setState({
-                showPopup: false
-              })
-            }
-          /> */}
 
           {/* Grand Central */}
 
