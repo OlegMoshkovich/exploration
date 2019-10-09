@@ -11,12 +11,21 @@ export class DestinationMarker extends Component {
       showPopUp: false
     };
   }
+  // componentWillReceiveProps() {
+  //   if (this.props.globalPopUp === false) {
+  //     return this.setState({ showPopUp: false });
+  //   }
+  // }
 
   togglePopUp = () => {
-    console.log("show pop up ", this.state.showPopUp);
-    if (this.state.showPopUp === false) {
-      return this.setState({ showPopUp: true });
-    } else {
+    if (this.props.globalPopUp === true) {
+      if (this.state.showPopUp === false) {
+        return this.setState({ showPopUp: true });
+      } else {
+        return this.setState({ showPopUp: false });
+      }
+    }
+    if (this.props.globalPopUp === true) {
       return this.setState({ showPopUp: false });
     }
   };
@@ -91,8 +100,9 @@ export class DestinationMarker extends Component {
     );
   }
 }
+const mapSateToProps = state => ({ globalPopUp: state.popUpState.globalPopUp });
 
 export default connect(
-  null,
+  mapSateToProps,
   null
 )(DestinationMarker);

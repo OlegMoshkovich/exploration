@@ -64,7 +64,7 @@ export const ExitCircle = styled.div`
   border-radius: 50%;
   height: 10px;
   padding: 5px 5px 5px 5px;
-  background-color: #c0f75e;
+  background-color: ${props => (props.toggle ? red : teal)};
   border: 1px solid ${teal};
   // color: #F3C242;
   color: black;

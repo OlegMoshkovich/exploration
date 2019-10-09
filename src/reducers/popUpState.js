@@ -1,7 +1,7 @@
 import { globalPopUp } from "../actions/popUpState";
 
 const initialState = {
-  globalPopUp: false
+  globalPopUp: true
 };
 const popUpState = (state = initialState, action) => {
   switch (action.type) {

@@ -8,7 +8,14 @@ import { globalPopUp } from "../../actions/popUpState";
 export const Exit = () => {
   const dispatch = useDispatch();
   const popUpState = useSelector(state => state.popUpState.globalPopUp);
+  let stateToggle;
 
+  if (popUpState) {
+    stateToggle = false;
+  } else {
+    stateToggle = true;
+  }
+  console.log("state toggle from the exit", stateToggle);
   return (
     <Draggable
       style={{
@@ -16,9 +23,10 @@ export const Exit = () => {
       }}
     >
       <ExitCircle
+        toggle={stateToggle}
         onClick={() => {
-          dispatch(globalPopUp(true));
-          console.log("hello");
+          dispatch(globalPopUp(stateToggle));
+          console.log("pop up state from the", popUpState);
         }}
       />
     </Draggable>
