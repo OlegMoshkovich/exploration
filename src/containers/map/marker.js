@@ -33,10 +33,16 @@ export class DestinationMarker extends Component {
       toggle,
       popUpClose,
       popUpState,
-      images
+      images,
+      bottom,
+      left,
+      globalPopUpState
     } = this.props;
 
     const { showPopUp } = this.state;
+    // if (globalPopUpState === true) {
+    //   console.log("TRUE TRUE from component");
+    // }
     return (
       <div>
         <Marker
@@ -69,10 +75,17 @@ export class DestinationMarker extends Component {
             >
               {name}
             </div>
+            <div
+              style={{
+                margin: "5px 0px 3px 0px",
+                fontSize: "10px"
+              }}
+            >
+              {this.props.globalPopUpState}
+            </div>
             {images.map(image => (
-              <PopUpWindow src={image} />
+              <PopUpWindow src={image} bottom={bottom} left={left} />
             ))}
-            {/* <PopUpWindow /> */}
           </Popup>
         )}
       </div>

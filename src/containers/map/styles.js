@@ -6,6 +6,7 @@ const red = "#D44346";
 // const purple = '#A56DF2'
 const teal = "#B7F1FD";
 const yellow = "#F3C242";
+const pink = "#FF00D6";
 
 export const Rectangle = styled.div`
   position: absolute;
@@ -17,7 +18,7 @@ export const Rectangle = styled.div`
   height: auto;
   padding: 5px 5px 5px 5px;
   background-color: #c0f75e;
-  border: 1px solid #f3c242;
+  border: 1px solid ${teal};
   // color: #F3C242;
   color: black;
   z-index: 105;
@@ -57,20 +58,20 @@ cursor: 'all-scroll' ;
 
 export const FlyCircle = styled.div`
   display: ${props => props.display || "block"};
-  width: 20px;
+  width: auto || 20px;
   height: 20px;
-  border-radius: 50%;
+  // border-radius: 50%;
   padding: 2px 0px 0px 2px;
   background-color: ${green};
-  border: 1px solid ${red};
+  border: 1px solid ${pink};
   color: black;
   z-index: 105;
   font-size: 6px;
   cursor: "pointer";
 `;
 export const FlyText = styled.div`
-  margin: 3px 0px 0px 2px;
-  font-size: 8px;
+  margin: 4px 4px 0px 2px;
+  font-size: 7px;
   cursor: pointer;
 `;
 
@@ -79,8 +80,8 @@ export const FlyContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  top: ${props => props.bottom || "60px"};
-  left: ${props => props.left || "100px"};
+  top: ${props => props.bottom || "40px"};
+  left: ${props => props.left || "80px"};
   width: auto;
   height: 120px;
   padding: 5px;

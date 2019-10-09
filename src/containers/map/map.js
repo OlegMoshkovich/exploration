@@ -47,7 +47,7 @@ class Map extends Component {
         x: 0,
         y: 0
       },
-      popupInfo: null
+      popUpState: true
     };
   }
 
@@ -61,13 +61,13 @@ class Map extends Component {
   }
 
   _onViewportChange(viewport) {
-    console.log("vieport on the change", viewport);
     this.setState({
       viewport: {
         ...this.state.viewport,
         ...viewport
       }
     });
+    console.log("here", viewport);
   }
 
   _resize = () => {
@@ -110,38 +110,6 @@ class Map extends Component {
     });
   };
 
-  onStart = () => {
-    this.setState({
-      activeDrags: ++this.state.activeDrags
-    });
-  };
-
-  onStop = () => {
-    this.setState({
-      activeDrags: --this.state.activeDrags
-    });
-  };
-
-  _renderPopup() {
-    const { popupInfo } = this.state;
-    return (
-      popupInfo && (
-        <Popup
-          tipSize={5}
-          anchor="top"
-          longitude={popupInfo.longitude}
-          latitude={popupInfo.latitude}
-          closeOnClick={false}
-          onClose={() =>
-            this.setState({
-              popupInfo: null
-            })
-          }
-        ></Popup>
-      )
-    );
-  }
-
   _goToViewport = (latitude, longitude, speed = 5000, zoom = 17) => {
     this._onViewportChange({
       latitude: latitude,
@@ -152,6 +120,10 @@ class Map extends Component {
       transitionInterpolator: new FlyToInterpolator(),
       transitionDuration: speed
     });
+    if (this.state.popUpState === true) {
+      console.log("global state", this.state.popUpState);
+      return this.setState({ popUpState: false });
+    }
   };
 
   render() {
@@ -170,7 +142,7 @@ class Map extends Component {
     return (
       <div>
         {/* title */}
-        <Title title={"exploration"} />
+        <Title title={"Experiment"} />
         <Nav />
         <FlyDestinations flyTo={this._goToViewport} />
 
@@ -187,8 +159,10 @@ class Map extends Component {
         >
           {/* Peter Zumthor */}
           <DestinationMarker
+            globalPopUpState={this.state.popUpState}
             longitude={6.4636}
             latitude={59.6528}
+            bottom={"-20px"}
             name={"Allmannajuvet Museum"}
             images={[
               "https://images.adsttc.com/media/images/57ed/0c31/e58e/ce02/a000/011f/large_jpg/010620_Photo_Per_Berntsen.jpg?1475152917",
@@ -210,7 +184,20 @@ class Map extends Component {
             name={"Grand Central"}
             images={[
               "http://trn.trains.com/~/media/images/railroad-news/news-wire/2016-and-prior/2015/10/grandcentral.jpg",
-              "https://ichef.bbci.co.uk/news/660/media/images/65736000/jpg/_65736479_grand-central-cropped-624x4.jpg"
+              "https://ichef.bbci.co.uk/news/660/media/images/65736000/jpg/_65736479_grand-central-cropped-624x4.jpg",
+              "https://www.nycgo.com/images/venues/1071/grandcentral_midtown_manhattan_nyc_brittanypetronella0057__x_large.jpg",
+              "https://thenypost.files.wordpress.com/2018/03/sg_pic067__dsc2655.jpg?quality=90&strip=all&w=618&h=410&crop=1"
+            ]}
+          />
+
+          <DestinationMarker
+            longitude={113.5767}
+            latitude={22.271}
+            left={"40px"}
+            name={"Zhuhai Cultural Center"}
+            // popUpState={this.state.popUpState}
+            images={[
+              "http://www.olegmoshkovich.com/img/imgPortfolio/ribbon_realized.png"
             ]}
           />
 

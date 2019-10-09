@@ -1,5 +1,5 @@
 import React from "react";
-import { Rectangle, FlyContainer, FlyCircle, FlyText } from "./styles";
+import { Rectangle } from "./styles";
 import Draggable from "react-draggable";
 
 export class Title extends React.Component {
