@@ -245,10 +245,14 @@ class Map extends Component {
             longitude={-73.97752525741629}
             latitude={40.7523}
             toggle={() => this.togglePopUp()}
-            name={"New York"}
+            name={"Grand Central"}
+            images={[
+              "http://trn.trains.com/~/media/images/railroad-news/news-wire/2016-and-prior/2015/10/grandcentral.jpg",
+              "https://ichef.bbci.co.uk/news/660/media/images/65736000/jpg/_65736479_grand-central-cropped-624x4.jpg"
+            ]}
           />
 
-          <DestinationMarker
+          {/* <DestinationMarker
             longitude={-73.97752525741629}
             latitude={40.75234736086995}
             toggle={() => this.togglePopUp()}
@@ -259,7 +263,7 @@ class Map extends Component {
                 showPopup: false
               })
             }
-          />
+          /> */}
 
           {/* Grand Central */}
 
