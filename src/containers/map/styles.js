@@ -96,10 +96,10 @@ export const FlyContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  top: ${props => props.bottom || "40px"};
+  top: ${props => props.bottom || "100px"};
   left: ${props => props.left || "80px"};
   width: auto;
-  height: 120px;
+  height: 160px;
   padding: 5px;
   // border: 1px solid ${teal};
   z-index: 105;

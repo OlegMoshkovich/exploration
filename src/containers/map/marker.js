@@ -41,7 +41,8 @@ export class DestinationMarker extends Component {
       images,
       bottom,
       left,
-      globalPopUpState
+      globalPopUpState,
+      videos
     } = this.props;
 
     const { showPopUp } = this.state;
@@ -86,14 +87,17 @@ export class DestinationMarker extends Component {
             >
               {this.props.globalPopUpState}
             </div>
-            <PopUpWindowVideo
-              video={"https://player.vimeo.com/video/123730837#t=29s"}
-              bottom={bottom}
-              left={left}
-            />
+
+
+
+            {videos.map(video => (
+              <PopUpWindowVideo video={video} bottom={bottom} left={left} />
+            ))}
+
             {images.map(image => (
               <PopUpWindowImage src={image} bottom={bottom} left={left} />
             ))}
+
           </Popup>
         )}
       </div>

@@ -32,7 +32,7 @@ export const Container = styled.div`
   position: absolute;
   top: ${props => props.top || "30px"};
   ${props => props.offset || "left"}: ${props =>
-  props.offSetDistance || "300px"};
+    props.offSetDistance || "300px"};
   display: flex;
   flex-direction: ${props => props.direction || "column"};
   align-direction: center;

@@ -36,7 +36,7 @@ export const PopUpWindowVideo = props => {
           </Circle>
         </Rectangle>
       </Draggable>
-    </div>
+    </div >
   );
 };
 

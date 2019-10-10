@@ -117,17 +117,11 @@ class Map extends Component {
   _goToViewport = (latitude, longitude, speed = 5000, zoom = 17) => {
     this._onViewportChange({
       latitude: latitude,
-      // : 40.75234736086995,
       longitude: longitude,
-      // : -73.97752525741629,
       zoom: zoom,
       transitionInterpolator: new FlyToInterpolator(),
       transitionDuration: speed
     });
-    if (this.state.popUpState === true) {
-      console.log("global state", this.state.popUpState);
-      return this.setState({ popUpState: false });
-    }
   };
 
   render() {
@@ -170,13 +164,13 @@ class Map extends Component {
             latitude={59.6528}
             bottom={"-20px"}
             name={"Allmannajuvet Museum"}
+            videos={["https://player.vimeo.com/video/239261005#t=29s"]}
             images={[
               "https://nordnorge.com/sites/n/nordnorge.com/files/570f0fc155e7b311737aa885d54880c8.jpg",
-              "https://cornerbycorner.files.wordpress.com/2012/09/grand-central.jpg",
               "https://www.iconeye.com/images/2017/06/Zumthor_norway_Mine_1.jpg",
               "https://static.dezeen.com/uploads/2016/12/allmannajuvet-tourist-route-peter-zumthor-norway-arne-espeland-dezeen-sq.jpg",
-              // "https://i.pinimg.com/originals/63/94/d1/6394d12d7791bb1c0a64d3845c60d5c6.jpg",
-              "https://images.adsttc.com/media/images/57ed/0c31/e58e/ce02/a000/011f/large_jpg/010620_Photo_Per_Berntsen.jpg?1475152917"
+              "https://images.adsttc.com/media/images/57ed/0c31/e58e/ce02/a000/011f/large_jpg/010620_Photo_Per_Berntsen.jpg?1475152917",
+              'https://static.dezeen.com/uploads/2016/06/allmannajuvet-tourist-route-peter-zumthor-norway-per-berntsen-dezeen-936.jpg',
             ]}
             popUpClose={() =>
               this.setState({
@@ -184,14 +178,15 @@ class Map extends Component {
               })
             }
           />
-
           <DestinationMarker
             longitude={-73.97181704026718}
             latitude={40.760357318442715}
             name={"Facility"}
             images={[
-              "https://previews.dropbox.com/p/thumb/AAkUYCceR1BjSOterre-nhWYUqeFe0Gp4z4MNaIw8cO7XVCWqmKTDShhoE3TQZjyoJZ3m-za2irhXI8EOF5CAB7iaUHriAxUR0hKTvPNJTzNg28zUfhWl1DsdrlWXexyFe9Ab69nwmbrWzANzBycIavwBMhY-hoiVTghgND9YGy4k5azindY_1rMzgfJKEJ3R5-f2AHzpMWC2vGO6eZi2B5EeI74IaxVkc0WJPPI78aDQYUh-7VBDhhUri1j8T10777MJoFkJ5a9OQJO7m4RdmfQTI6iz3ZIFGG11J56O9QYhUP4M8nrPhIvWHrZOCVmlwLJE95sdWcV2lc4qj4JwE9u/p.png?fv_content=true&size_mode=5"
+              'https://previews.dropbox.com/p/thumb/AAlepqJjZWSS1vgOz-k5udRf09TOBtUVk1OLZ7lfvauPb1IEtKYYAtJpunFRfnGAz5EAh0MLTNV8vMk8e5XBc-0tv1oK_yjY9UvLZJclSsghp0rHr9pkE_ppYxhyoaQcXYhgdmr1IP7Anit-PpohaXSICi8ljRjMJ5OZDrd0Y3GiIlrCJy4YmUEKQ3UxcNbBTZkB84nGOMCBAuwcaNIzF6DqqDY92VYOYslm4eFkc9teqGICJFSL5Qh4W281GuvfqwN8eDPbeiD1JZS3vGcv_-qRyzDxKC80bC25RJsWMtZmSVPhuyk7SQHPAA3CXwev_BIoLlIjpkHZEjAqsXxcpqzqjXa5mlAEj4Edi5Kfa2GjDg/p.png?fv_content=true&size_mode=5',
+              'https://previews.dropbox.com/p/thumb/AAn8L4Or-UeiemP5oeKhZTjKln8HuSsYRngQLATougn56ZH0GqUWqbmvF60ic3mVRbcnqSCenhKdCtVBE8fjpqGaIW4YcUYJ5Hajoqd4VBTyw4xnm_Tl1-idzFhjz1KCboBClQ5R2F44VfpHPyBVfXacNCmzSdgp5ugIShvERDCyudNMhAPtXHk0YTS84QmSXLtKZWo6L8_sjt_1Z3JNZx-yqBVQ6m-4LGO74LC46Mianojc4P4AQxNVde3XFeIknaAcnvsfKgs0hyuVrVGc1u1HpZ53pYfuNoQk2-bRme6D7dgGGtipc6seIPHmyqUN66ewUfpT5wseRrOZikCQRJuG/p.png?fv_content=true'
             ]}
+            videos={["https://player.vimeo.com/video/123730837#t=29s"]}
           />
           <DestinationMarker
             longitude={-73.97752525741629}
@@ -199,16 +194,12 @@ class Map extends Component {
             name={"Grand Central"}
             images={[
               "https://cornerbycorner.files.wordpress.com/2012/09/grand-central.jpg",
-
               "https://ichef.bbci.co.uk/news/660/media/images/65736000/jpg/_65736479_grand-central-cropped-624x4.jpg",
               "https://media.timeout.com/images/100476721/630/472/image.jpg",
               "https://www.nycgo.com/images/venues/1071/grandcentral_midtown_manhattan_nyc_brittanypetronella0057__x_large.jpg",
-              // "https://www.grandcentralterminal.com/wp-content/uploads/2017/12/NOW-3-option3.jpg",
-              // "https://thenypost.files.wordpress.com/2018/03/sg_pic067__dsc2655.jpg?quality=90&strip=all&w=618&h=410&crop=1",
-
               "http://trn.trains.com/~/media/images/railroad-news/news-wire/2016-and-prior/2015/10/grandcentral.jpg"
             ]}
-            videos={["https://vimeo.com/123730837"]}
+            videos={["https://player.vimeo.com/video/123730837#t=29s", "https://player.vimeo.com/video/123730837#t=29s", "https://player.vimeo.com/video/123730837#t=49s", "https://player.vimeo.com/video/123730837#t=19s"]}
           />
           <DestinationMarker
             longitude={113.5767}
@@ -219,6 +210,7 @@ class Map extends Component {
             images={[
               "http://www.olegmoshkovich.com/img/imgPortfolio/ribbon_realized.png"
             ]}
+            videos={["https://player.vimeo.com/video/123730837#t=29s"]}
           />
           {/* Grand Central */}
         </InteractiveMap>
