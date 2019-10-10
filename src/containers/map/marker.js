@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Marker, Popup } from "react-map-gl";
 import Pin from "./pin";
-import { PopUpWindow } from "./popUpWindow";
+import { PopUpWindowImage, PopUpWindowVideo } from "./popUpWindow";
 import { connect } from "react-redux";
 
 export class DestinationMarker extends Component {
@@ -86,8 +86,13 @@ export class DestinationMarker extends Component {
             >
               {this.props.globalPopUpState}
             </div>
+            <PopUpWindowVideo
+              video={"https://player.vimeo.com/video/123730837#t=29s"}
+              bottom={bottom}
+              left={left}
+            />
             {images.map(image => (
-              <PopUpWindow src={image} bottom={bottom} left={left} />
+              <PopUpWindowImage src={image} bottom={bottom} left={left} />
             ))}
           </Popup>
         )}
