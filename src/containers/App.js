@@ -26,12 +26,7 @@ function App() {
   const [coordY, setCoordY] = useState("100px");
 
   const text = <span>Title</span>;
-  const content = (
-    <div>
-      <p>Content</p>
-      <p>Content</p>
-    </div>
-  );
+
 
   const buttonWidth = 70;
   const [show, setShow] = useState(false)

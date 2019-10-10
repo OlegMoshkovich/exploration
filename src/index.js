@@ -16,8 +16,8 @@ const routing = (
   <Provider store={store}>
     <Router>
       <div>
-        <Route path="/home" component={App} />
-        <Route exact path="/" component={Map} />
+        <Route exact path="/" component={App} />
+        <Route exact path="/map" component={Map} />
         <Route exact path="/tiny" component={Tiny} />
       </div>
     </Router>
