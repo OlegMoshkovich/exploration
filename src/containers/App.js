@@ -5,56 +5,43 @@ import {
   AppContainer,
   Container,
   Box,
-  TextContainer,
-  Iterations
+  TextContainer
 } from "../components/styles";
 import { Nav } from "../components/NavMenu";
 
 function App() {
   const [pause, setPause] = useState(true);
-  const [repeat, setRepeat] = useState(2);
+  const [repeat, setRepeat] = useState(1);
   const height = "1000px";
   const [coordY, setCoordY] = useState("100px");
 
   return (
-    <AppContainer
-      height={height}
-      onContextMenu={e => {
-        setCoordY(e.pageY + "px");
-        console.log("clicked", e.pageX, e.pageY);
-        console.log("coordY", coordY);
-      }}
-    >
+    <AppContainer height={height}>
       <Nav />
-      <Box
+      {/* <Box
         onClick={() => {
           return pause ? setPause(false) : setPause(true);
         }}
       >
         <div style={{ margin: "10px 0px 0px 20px" }}>Play</div>
-      </Box>
-      <Iterations
-        onChange={e => {
-          setRepeat(e.target.value);
-          console.log("inputing", repeat);
-        }}
-      />
-      <Container borderColor="#A56DF2" top={coordY}>
+      </Box> */}
+
+      <Container top={coordY} direction="row">
         {components.map((component, index) => {
           return (
             <Circle
               repeat={repeat}
               width={component.width}
               animation={component.animation}
-              pause={pause}
+              // pause={pause}
               index={index}
               key={index}
             />
           );
         })}
       </Container>
-      <Container
-        direction="rox"
+      {/* <Container
+        direction="row"
         top="100px"
         offset="right"
         offSetDistance="250px"
@@ -70,16 +57,11 @@ function App() {
             />
           );
         })}
-      </Container>
+      </Container> */}
 
       <TextContainer>
-        <div>
-          press the circles to activate the animation -- then press play
-        </div>
-        <div>
-          ... and while we are at shall we contemplate how we can turn thinking
-          into doing
-        </div>
+        <div>press the circles to activate the animation</div>
+        <div>... how can one turn thinking into doing</div>
         <div>
           ... and another one regarding the pace of improvement - does not
           matter how slow - as long as you are moving

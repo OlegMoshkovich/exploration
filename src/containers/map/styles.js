@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 const green = "#C0F75E";
 const red = "#D44346";
-// const purple = '#A56DF2'
 const teal = "#B7F1FD";
 const yellow = "#F3C242";
 const pink = "#FF00D6";
@@ -14,9 +13,9 @@ export const Rectangle = styled.div`
   bottom: ${props => props.bottom || "100px"};
   left: ${props => props.left || "100px"};
   width: auto;
-  border-radius: 5%;
+  border-radius: 2%;
   height: auto;
-  padding: 5px 5px 5px 5px;
+  padding: 4px;
   background-color: #c0f75e;
   border: 1px solid ${teal};
   // color: #F3C242;
@@ -43,18 +42,18 @@ z-index:105;
 font-size:10px;
 `;
 export const Circle = styled.div`
-position = absolute;
-top:100px;
-left:20px;
-width: 20px;
-height: 20px;
+// position = absolute;
+width: 10px;
+height: 10px;
+padding:{ 0px 0px 0px 20px}
 border-radius:50%;
-background-color: #F3C242;
-border:1px solid #F3C242;
+background-color: ${teal};;
+border:1px solid ${teal};
 font-size:5px;
 z-index:106;
-cursor: 'all-scroll' ;
+cursor: 'pointer' ;
  `;
+
 export const ExitCircle = styled.div`
   position: absolute;
   display: ${props => props.display || "block"};
@@ -64,7 +63,7 @@ export const ExitCircle = styled.div`
   border-radius: 50%;
   height: 10px;
   padding: 5px 5px 5px 5px;
-  background-color: ${props => (props.toggle ? red : teal)};
+  background-color: ${props => (props.toggle ? green : teal)};
   border: 1px solid ${teal};
   // color: #F3C242;
   color: black;
@@ -102,7 +101,7 @@ export const FlyContainer = styled.div`
   width: auto;
   height: 120px;
   padding: 5px;
-  border: 1px solid ${teal};
+  // border: 1px solid ${teal};
   z-index: 105;
   font-size: 10px;
   cursor: "pointer";

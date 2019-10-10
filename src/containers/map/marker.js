@@ -11,11 +11,6 @@ export class DestinationMarker extends Component {
       showPopUp: false
     };
   }
-  // componentWillReceiveProps() {
-  //   if (this.props.globalPopUp === false) {
-  //     return this.setState({ showPopUp: false });
-  //   }
-  // }
 
   togglePopUp = () => {
     if (this.props.globalPopUp === true) {

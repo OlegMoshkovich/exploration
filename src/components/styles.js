@@ -23,7 +23,7 @@ export const AppContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   background-color: black;
-  //  border: 1px solid red;
+  //  border: 1px solid ${red};
   height: ${props => props.height};
   // width:200px;
 `;
@@ -32,14 +32,14 @@ export const Container = styled.div`
   position: absolute;
   top: ${props => props.top || "30px"};
   ${props => props.offset || "left"}: ${props =>
-    props.offSetDistance || "300px"};
+  props.offSetDistance || "300px"};
   display: flex;
   flex-direction: ${props => props.direction || "column"};
   align-direction: center;
   justify-content: space-around;
-  border: 4px solid ${props => props.borderColor || red};
+  // border: 1px solid ${props => props.borderColor || red};
   height: 600px;
-  width: 300px;
+  width: 360px;
   // margin: 50px 400px 0px 0px;
 `;
 
@@ -87,7 +87,7 @@ top:100px;
 right:100px;
 width:60px;
 height:150px;
-border:1px solid ${teal};
+// border:1px solid ${teal};
 // background-color:${pink};
 z-index:300;
 `;
@@ -115,9 +115,10 @@ export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  border: 1px solid white;
+  // border: 1px solid white;
   // width:400px;
   color: white;
+  padding: 15px;
   top: 430px;
   left: 500px;
   z-index: 200;
