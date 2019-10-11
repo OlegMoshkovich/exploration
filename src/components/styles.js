@@ -119,8 +119,8 @@ export const TextContainer = styled.div`
   // width:400px;
   color: white;
   padding: 15px;
-  top: 430px;
-  left: 500px;
+  top: ${props => props.top};
+  left: ${props => props.left};
   z-index: 200;
   font-family: "Nunito", sans-serif;
 `;

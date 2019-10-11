@@ -33,12 +33,12 @@ export const Circle = props => {
         yoyo // demo 演示需要，时间轴循环
       >
         <Element
-          key={props.index + "element"}
+
           onClick={() => {
             pause ? setPause(false) : setPause(true);
           }}
           width={props.width}
-          color={teal}
+          color={props.color || teal}
         />
       </TweenOne>
     </Container>
