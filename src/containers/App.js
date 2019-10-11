@@ -23,6 +23,7 @@ function App() {
   const [pause, setPause] = useState(true);
   const [repeat, setRepeat] = useState(1);
   const height = "1000px";
+  const width = 'auto'
   const [coordY, setCoordY] = useState("100px");
 
   const text = <span>Title</span>;
@@ -32,7 +33,7 @@ function App() {
   const [show, setShow] = useState(false)
 
   return (
-    <AppContainer height={height}>
+    <AppContainer height={height} width={width}>
       <Nav />
 
 
@@ -62,8 +63,8 @@ function App() {
         <div>Hi, I am Oleg. </div>
         <div>I use this page to experiment.</div>
         <div>At the moment I am attending <a href="https://www.recurse.com/">Recusrse Center</a> in New York.</div>
-        <div>I like working with maps -- pink dot will take you to the current experiment.</div>
-        <div>Some of my previous work is display <a href="http://www.olegmoshkovich.com">here</a></div>
+        <div>Pink dot will take you to the current experiment.</div>
+        <div>Some of my previous work is displayed <a href="http://www.olegmoshkovich.com">here</a></div>
       </TextContainer>
 
     </AppContainer >

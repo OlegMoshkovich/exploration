@@ -12,9 +12,9 @@ export const Nav = () => {
 
   return (
     <LinkContainer>
-      <Link style={{ textDecoration: "none" }} to={"/tiny"}>
+      <Link style={{ textDecoration: "none" }} to={"/"}>
         <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]}>
-          <LinkText>tiny</LinkText>
+          <LinkText>home</LinkText>
         </Circle>
       </Link>
       <Link style={{ textDecoration: "none" }} to={"/map"}>
@@ -22,9 +22,15 @@ export const Nav = () => {
           <LinkText>map</LinkText>
         </Circle>
       </Link>
-      <Link style={{ textDecoration: "none" }} to={"/"}>
+
+      <Link style={{ textDecoration: "none" }} to={"/tiny"}>
         <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]}>
-          <LinkText>home</LinkText>
+          <LinkText>tiny</LinkText>
+        </Circle>
+      </Link>
+      <Link style={{ textDecoration: "none" }} to={"/material"}>
+        <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]}>
+          <LinkText>material</LinkText>
         </Circle>
       </Link>
       {/* <Link style={{ textDecoration: "none" }} to={"/home"}>

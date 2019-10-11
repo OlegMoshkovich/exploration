@@ -25,7 +25,7 @@ export const AppContainer = styled.div`
   background-color: black;
   //  border: 1px solid ${red};
   height: ${props => props.height};
-  // width:200px;
+  width:${props => props.width};
 `;
 
 export const Container = styled.div`
@@ -86,7 +86,7 @@ align-items: center;
 top:100px;
 right:100px;
 width:60px;
-height:150px;
+height:200px;
 // border:1px solid ${teal};
 // background-color:${pink};
 z-index:300;
