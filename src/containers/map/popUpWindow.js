@@ -16,7 +16,7 @@ export const PopUpWindowVideo = props => {
       <Draggable>
         <Rectangle bottom={bottom || "-240px"} left={left || "200px"}>
           <iframe
-            src={video || "https://player.vimeo.com/video/123730837#t=29s"}
+            src={video || ""}
             frameborder="0"
             allow="autoplay; fullscreen"
             allowfullscreen

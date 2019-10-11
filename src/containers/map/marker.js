@@ -87,7 +87,7 @@ export class DestinationMarker extends Component {
             >
               {this.props.globalPopUpState}
             </div>
-            {videos.map(video => (
+            {videos && videos.map(video => (
               <PopUpWindowVideo video={video} bottom={bottom} left={left} />
             ))}
 

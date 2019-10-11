@@ -183,10 +183,10 @@ class Map extends Component {
             latitude={40.760357318442715}
             name={"Facility"}
             images={[
-              'https://previews.dropbox.com/p/thumb/AAlepqJjZWSS1vgOz-k5udRf09TOBtUVk1OLZ7lfvauPb1IEtKYYAtJpunFRfnGAz5EAh0MLTNV8vMk8e5XBc-0tv1oK_yjY9UvLZJclSsghp0rHr9pkE_ppYxhyoaQcXYhgdmr1IP7Anit-PpohaXSICi8ljRjMJ5OZDrd0Y3GiIlrCJy4YmUEKQ3UxcNbBTZkB84nGOMCBAuwcaNIzF6DqqDY92VYOYslm4eFkc9teqGICJFSL5Qh4W281GuvfqwN8eDPbeiD1JZS3vGcv_-qRyzDxKC80bC25RJsWMtZmSVPhuyk7SQHPAA3CXwev_BIoLlIjpkHZEjAqsXxcpqzqjXa5mlAEj4Edi5Kfa2GjDg/p.png?fv_content=true&size_mode=5',
-              'https://previews.dropbox.com/p/thumb/AAn8L4Or-UeiemP5oeKhZTjKln8HuSsYRngQLATougn56ZH0GqUWqbmvF60ic3mVRbcnqSCenhKdCtVBE8fjpqGaIW4YcUYJ5Hajoqd4VBTyw4xnm_Tl1-idzFhjz1KCboBClQ5R2F44VfpHPyBVfXacNCmzSdgp5ugIShvERDCyudNMhAPtXHk0YTS84QmSXLtKZWo6L8_sjt_1Z3JNZx-yqBVQ6m-4LGO74LC46Mianojc4P4AQxNVde3XFeIknaAcnvsfKgs0hyuVrVGc1u1HpZ53pYfuNoQk2-bRme6D7dgGGtipc6seIPHmyqUN66ewUfpT5wseRrOZikCQRJuG/p.png?fv_content=true'
+              'https://previews.dropbox.com/p/thumb/AAlhtzdSN47BwXTXDXi_OKJrPXSqjkaic1HjvuTxjfUpkBhZcnUuzlznHepnQtTp5MjagBgHQ4hE9iV_10B2-ewXeLQXgGEicGvxOOD_g219Tj1VvcjqcaNZBacAWj1WvK38Wmy_Gt4S03ZqT4BTR13_grlld30u9AX0Kn8Pnz2tkdbzBwRpNS6cPcWzb30k7SSp73twrhzuteivwgTxy5r0pmoDC6EWxO-g8fht3piRePQBQ-Icf4Chwqua1hqVq733WYnHsBXgYXbDyn7J3WkYMQbpTbhGMZceqCAySw02fuTUFgOOKOkgt79JBoZlmYoN1WEXoOwLA1DIBQ-Jb-YYLQtMjrcRSijIMPdXKBESyodaxiwqxZA8C3Njd6oj1T8Zn-bQ9RENLsGolydlBe8NE78PIrWpTqjJqR6KpIIf-g/p.png?fv_content=true&size_mode=5',
+              'https://static.dezeen.com/uploads/2016/06/allmannajuvet-tourist-route-peter-zumthor-norway-per-berntsen-dezeen-936.jpg'
             ]}
-            videos={["https://player.vimeo.com/video/123730837#t=29s"]}
+            videos={[]}
           />
           <DestinationMarker
             longitude={-73.97752525741629}

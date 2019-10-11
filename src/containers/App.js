@@ -53,14 +53,14 @@ function App() {
       </Container>
 
 
-      <TextContainer top={'430px'} left={'500px'}>
+      <TextContainer top={'490px'} left={'500px'}>
         <div>simple experiment - unconstrained </div>
         <div> reminder -- does not matter how slow - as long as you are moving
         </div>
       </TextContainer>
       <TextContainer top={'100px'} left={'100px'}>
         <div>Hi, I am Oleg. </div>
-        <div>I use this website to experiment.</div>
+        <div>I use this page to experiment.</div>
         <div>At the moment I am attending <a href="https://www.recurse.com/">Recusrse Center</a> in New York.</div>
         <div>I like working with maps -- pink dot will take you to the current experiment.</div>
         <div>Some of my previous work is display <a href="http://www.olegmoshkovich.com">here</a></div>
