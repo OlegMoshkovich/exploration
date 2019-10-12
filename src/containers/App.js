@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { components } from "../data";
 import { Circle } from "../components/circle";
 import {
-  AppContainer,
   Container,
   Box,
   TextContainer
 } from "../components/styles";
 import { Nav } from "../components/NavMenu";
 import { Popover, Button } from 'antd';
+import styled from 'styled-components';
 const content = (
   <div>
     <p>Content</p>
@@ -16,7 +16,34 @@ const content = (
   </div>
 );
 
+const AppContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: black;
+  height: ${props => props.height};
+  width:${props => props.width};
+`;
 
+const TinyConainer = styled.div`
+font-family: 'Nunito', sans-serif;
+font-size:40px;
+margin: 20px 0px 0px 20px;
+color: white;
+`
+
+const LinkA = styled.a`
+display: block;
+  margin: 20px 0px 40px  0px ;
+  padding: 0px 0px 0px  20px ;
+  border: 1px outset yellow;
+  &:hover {
+   background-color: yellow;
+ };
+ &:visited {
+    color: blue;
+  }
+`;
 
 
 function App() {
@@ -33,7 +60,7 @@ function App() {
   const [show, setShow] = useState(false)
 
   return (
-    <AppContainer height={height} width={width}>
+    <AppContainer height={height} width={'auto'}>
       <Nav />
 
 
