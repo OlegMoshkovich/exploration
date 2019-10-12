@@ -4,12 +4,14 @@ import "./index.css";
 import App from "./containers/App";
 import Map from "./containers/map/map";
 import { Tiny } from "./containers/tiny";
+import { graphViz } from "./containers/graphViz"
 import Material from "./containers/material";
 import * as serviceWorker from "./serviceWorker";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import { experimentApp } from "./reducers";
 import { createStore } from "redux";
+
 
 
 const store = createStore(experimentApp);
@@ -22,6 +24,7 @@ const routing = (
         <Route exact path="/map" component={Map} />
         <Route exact path="/tiny" component={Tiny} />
         <Route exact path="/material" component={Material} />
+        <Route exact path="/graph" component={graphViz} />
       </div>
     </Router>
   </Provider>

@@ -159,6 +159,24 @@ const Material = (props) => {
                     <div>Material seems to dominate</div>
 
                     <div className={classes.container}>
+                        <Container direction={'column'} >
+
+                            {circles.map((component, index) => {
+                                return (
+                                    <div >
+                                        <Circle
+                                            repeat={1}
+                                            width={component.width}
+                                            animation={component.animation}
+                                            index={index}
+                                            key={index}
+                                        />
+                                    </div>
+                                );
+                            })}
+
+                        </Container>
+
                         <StyledButton variant="contained" color="secondary" size='small' onClick={() => Add()}>
                             {/* <Icon color='primary'>alarm</Icon> */}
                             <AddIcon color="primary" />
@@ -186,21 +204,7 @@ const Material = (props) => {
                     {/* <Container> {message}</Container> */}
                 </MaterialContainer>
 
-                <Container direction={'column'} >
-                    {circles.map((component, index) => {
-                        return (
-                            <div >
-                                <Circle
-                                    repeat={1}
-                                    width={component.width}
-                                    animation={component.animation}
-                                    index={index}
-                                    key={index}
-                                />
-                            </div>
-                        );
-                    })}
-                </Container>
+
             </MuiThemeProvider>
             <Nav />
         </div >
