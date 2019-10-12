@@ -21,8 +21,10 @@ export const Tiny = () => {
                 <div>Light weight runtime for unity</div>
 
                 {/* <iframe src="https://en.wikipedia.org"></iframe> */}
-
+                <a href='https://unity.com/solutions/instant-games'>info about the runtime</a>
+                <a style={{ display: 'block' }} href='https://www.youtube.com/watch?v=-yubuk7jAb4%26list=PLX2vGYjWbI0TPRStIWx3UyNB8QqjNUj98%26index=2%26t=0s'>tutorial video</a>
             </TinyConainer>
+
 
 
             <Nav />

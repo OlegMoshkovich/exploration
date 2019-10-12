@@ -63,7 +63,7 @@ function App() {
         <div>Hi, I am Oleg. </div>
         <div>I use this page to experiment.</div>
         <div>At the moment I am attending <a href="https://www.recurse.com/">Recusrse Center</a> in New York.</div>
-        <div>Pink dot will take you to the current experiment.</div>
+        <div>Yellow dot will take you to the current experiment.</div>
         <div>Some of my previous work is displayed <a href="http://www.olegmoshkovich.com">here</a></div>
       </TextContainer>
 

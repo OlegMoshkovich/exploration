@@ -21,7 +21,7 @@ import Input from '@material-ui/core/Input'
 import FormControl from '@material-ui/core/FormControl';
 import OutlinedInput from '@material-ui/core/OutlinedInput'
 import { red } from '@material-ui/core/colors';
-import Container from '@material-ui/core/Container';
+import { Container } from '../components/styles'
 
 
 const MaterialContainer = styled.div`
@@ -132,7 +132,7 @@ const Material = (props) => {
 
 
     const Add = () => {
-        if (circles.length < 5) {
+        if (circles.length < 10) {
             setCircles([...circles, {
                 width: "30px",
                 animation: [
@@ -182,7 +182,7 @@ const Material = (props) => {
                     <Container> {message}</Container>
                 </MaterialContainer>
 
-                <div className={classes.container}>
+                <Container direction={'column'} >
                     {circles.map((component, index) => {
                         return (
                             <div >
@@ -196,7 +196,7 @@ const Material = (props) => {
                             </div>
                         );
                     })}
-                </div>
+                </Container>
             </MuiThemeProvider>
             <Nav />
         </div >

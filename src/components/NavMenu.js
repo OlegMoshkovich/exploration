@@ -18,7 +18,7 @@ export const Nav = () => {
         </Circle>
       </Link>
       <Link style={{ textDecoration: "none" }} to={"/map"}>
-        <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} color={pink}>
+        <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} color={'yellow'}>
           <LinkText>map</LinkText>
         </Circle>
       </Link>
