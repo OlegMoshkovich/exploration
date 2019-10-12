@@ -142,6 +142,10 @@ const Material = (props) => {
             }])
         }
     }
+    if (message.length === 0) {
+        setMessage('...')
+
+    }
     const Subtract = () => {
         if (circles.length > 1) {
             circles.pop()
@@ -179,7 +183,7 @@ const Material = (props) => {
                         }}
                     />
                     <div className={classes.container} >{message}</div>
-                    <Container> {message}</Container>
+                    {/* <Container> {message}</Container> */}
                 </MaterialContainer>
 
                 <Container direction={'column'} >

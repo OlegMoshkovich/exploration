@@ -14,8 +14,7 @@ export const Exit = () => {
     stateToggle = false;
   } else {
     stateToggle = true;
-  }
-  console.log("state toggle from the exit", stateToggle);
+  };
   return (
     <Draggable
       style={{
