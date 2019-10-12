@@ -25,20 +25,14 @@ const AppContainer = styled.div`
   width:${props => props.width};
 `;
 
-const TinyConainer = styled.div`
-font-family: 'Nunito', sans-serif;
-font-size:40px;
-margin: 20px 0px 0px 20px;
-color: white;
-`
+
 
 const LinkA = styled.a`
-display: block;
-  margin: 20px 0px 40px  0px ;
-  padding: 0px 0px 0px  20px ;
-  border: 1px outset yellow;
+color:blue;
+text-decoration: none;
+  font-family: "Nunito", sans-serif;
   &:hover {
-   background-color: yellow;
+    color: pink;
  };
  &:visited {
     color: blue;
@@ -89,9 +83,9 @@ function App() {
       <TextContainer top={'100px'} left={'100px'}>
         <div>Hi, I am Oleg. </div>
         <div>I use this page to experiment.</div>
-        <div>At the moment I am attending <a href="https://www.recurse.com/">Recusrse Center</a> in New York.</div>
+        <div>At the moment I am attending <LinkA href="https://www.recurse.com/">Recusrse Center</LinkA> in New York.</div>
         <div>Yellow dot will take you to the current experiment.</div>
-        <div>Some of my previous work is displayed <a href="http://www.olegmoshkovich.com">here</a></div>
+        <div>Some of my previous work is displayed <LinkA href="http://www.olegmoshkovich.com">here</LinkA></div>
       </TextContainer>
 
     </AppContainer >
