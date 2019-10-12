@@ -15,12 +15,8 @@ export const FlyDestinations = props => {
   return (
     <FlyContainer>
       <Destination
-        name={"New York"}
+        name={"Grand Central"}
         navigate={() => flyTo(40.75234736086995, -73.97752525741629, 10000)}
-      />
-      <Destination
-        name={"Zhuhai"}
-        navigate={() => flyTo(22.271, 113.5767, 20000)}
       />
       <Destination
         name={"Allmannajuvet"}
@@ -28,11 +24,16 @@ export const FlyDestinations = props => {
           flyTo(59.6528, 6.4636, 20000);
         }}
       />
-
       <Destination
+        name={"Zhuhai"}
+        navigate={() => flyTo(22.271, 113.5767, 20000)}
+      />
+
+
+      {/* <Destination
         name={"Harold Inerlock"}
         navigate={() => flyTo(40.74623043587812, -73.93683978026445, 20000)}
-      />
+      /> */}
       <Destination
         name={"Overview"}
         navigate={() => flyTo(40.6528, 6.4636, 1000, 2)}

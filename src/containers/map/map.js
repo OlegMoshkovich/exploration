@@ -178,7 +178,7 @@ class Map extends Component {
               })
             }
           />
-          <DestinationMarker
+          {/* <DestinationMarker
             longitude={-73.97181704026718}
             latitude={40.760357318442715}
             name={"Facility"}
@@ -187,7 +187,7 @@ class Map extends Component {
               'https://static.dezeen.com/uploads/2016/06/allmannajuvet-tourist-route-peter-zumthor-norway-per-berntsen-dezeen-936.jpg'
             ]}
             videos={[]}
-          />
+          /> */}
           <DestinationMarker
             longitude={-73.97752525741629}
             latitude={40.7523}
@@ -210,8 +210,9 @@ class Map extends Component {
             images={[
               "http://www.olegmoshkovich.com/img/imgPortfolio/ribbon_realized.png"
             ]}
-            videos={["https://player.vimeo.com/video/123730837#t=29s"]}
+            videos={["https://player.vimeo.com/video/32440857#t=2s"]}
           />
+   
           {/* Grand Central */}
         </InteractiveMap>
       </div>
