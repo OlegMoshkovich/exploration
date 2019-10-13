@@ -60,11 +60,11 @@ export const ExitCircle = styled.div`
   display: ${props => props.display || "block"};
   bottom: ${props => props.bottom || "150px"};
   left: ${props => props.left || "50px"};
-  width: 10px;
+  width: 15px;
   border-radius: 50%;
-  height: 10px;
+  height: 15px;
   padding: 5px 5px 5px 5px;
-  background-color: ${props => (props.toggle ? green : teal)};
+  background-color: ${props => (props.toggle ? pink : teal)};
   border: 1px solid ${teal};
   // color: #F3C242;
   color: black;

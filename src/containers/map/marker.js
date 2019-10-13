@@ -4,6 +4,7 @@ import Pin from "./pin";
 import { PopUpWindowImage, PopUpWindowVideo } from "./popUpWindow";
 import { connect } from "react-redux";
 
+
 export class DestinationMarker extends Component {
   constructor(props) {
     super(props);
@@ -13,16 +14,17 @@ export class DestinationMarker extends Component {
   }
 
   togglePopUp = () => {
-    if (this.props.globalPopUp === true) {
-      if (this.state.showPopUp === false) {
-        return this.setState({ showPopUp: true });
-      } else {
-        return this.setState({ showPopUp: false });
-      }
-    }
-    if (this.props.globalPopUp === true) {
+    const { globalPopUp } = this.props
+    const { showPopUp } = this.state
+
+
+
+    if (showPopUp === false) {
+      return this.setState({ showPopUp: true });
+    } else {
       return this.setState({ showPopUp: false });
     }
+
   };
 
   render() {
@@ -42,10 +44,14 @@ export class DestinationMarker extends Component {
       bottom,
       left,
       globalPopUpState,
-      videos
+      videos,
     } = this.props;
 
     const { showPopUp } = this.state;
+
+    if (globalPopUpState && showPopUp) {
+      this.setState({ showPopUp: false })
+    }
 
     return (
       <div>
@@ -79,14 +85,14 @@ export class DestinationMarker extends Component {
             >
               {name}
             </div>
-            <div
+            {/* <div
               style={{
                 margin: "5px 0px 3px 0px",
                 fontSize: "10px"
               }}
             >
               {this.props.globalPopUpState}
-            </div>
+            </div> */}
             {videos && videos.map(video => (
               <PopUpWindowVideo video={video} bottom={bottom} left={left} />
             ))}
@@ -101,9 +107,9 @@ export class DestinationMarker extends Component {
     );
   }
 }
-const mapSateToProps = state => ({ globalPopUp: state.popUpState.globalPopUp });
+const mapSateToProps = state => ({ globalPopUpState: state.popUpState.globalPopUp });
 
 export default connect(
   mapSateToProps,
-  null
+
 )(DestinationMarker);

@@ -25,7 +25,6 @@ export const Exit = () => {
         toggle={stateToggle}
         onClick={() => {
           dispatch(globalPopUp(stateToggle));
-          //   console.log("pop up state from the", popUpState);
         }}
       />
     </Draggable>

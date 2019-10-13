@@ -194,9 +194,9 @@ class Map extends Component {
     ];
 
     const { globalPopUp } = this.props.globalPopUpState
+
     if (globalPopUp) {
       layers = []
-      console.log('global up state print from the loop', globalPopUp)
     }
 
 
