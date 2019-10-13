@@ -80,7 +80,7 @@ export const FlyCircle = styled.div`
   // border-radius: 50%;
   padding: 2px 0px 0px 2px;
   background-color: ${green};
-  border: 1px solid ${pink};
+  border: 1px solid ${teal};
   color: black;
   z-index: 105;
   font-size: 6px;
@@ -102,7 +102,7 @@ export const FlyContainer = styled.div`
   width: auto;
   height: 160px;
   padding: 5px;
-  // border: 1px solid ${teal};
+  border: 3px solid ${teal};
   z-index: 105;
   font-size: 10px;
   cursor: "pointer";

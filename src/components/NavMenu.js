@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { LinkCircle, LinkContainer, LinkText } from "./styles";
 import { Link } from "react-router-dom";
 import { Circle } from "./circle";
+import Draggable from "react-draggable";
 
 export const Nav = () => {
   const [pause, setPause] = useState(true);
@@ -11,29 +12,34 @@ export const Nav = () => {
   const pink = "#FF00D6";
 
   return (
-    <LinkContainer>
-      <Link style={{ textDecoration: "none" }} to={"/"}>
-        <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]}>
-          <LinkText>home</LinkText>
-        </Circle>
-      </Link>
-      <Link style={{ textDecoration: "none" }} to={"/map"}>
-        <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} color={'yellow'}>
-          <LinkText>map</LinkText>
-        </Circle>
-      </Link>
+    <Draggable
+      style={{
+        cursor: "all-scroll"
+      }}
+    >
+      <LinkContainer>
+        <Link style={{ textDecoration: "none" }} to={"/"}>
+          <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]}>
+            <LinkText>home</LinkText>
+          </Circle>
+        </Link>
+        <Link style={{ textDecoration: "none" }} to={"/map"}>
+          <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} color={'yellow'}>
+            <LinkText>map</LinkText>
+          </Circle>
+        </Link>
 
-      <Link style={{ textDecoration: "none" }} to={"/tiny"}>
-        <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]}>
-          <LinkText>tiny</LinkText>
-        </Circle>
-      </Link>
-      <Link style={{ textDecoration: "none" }} to={"/material"}>
-        <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]}>
-          <LinkText>material</LinkText>
-        </Circle>
-      </Link>
-      {/* <Link style={{ textDecoration: "none" }} to={"/home"}>
+        <Link style={{ textDecoration: "none" }} to={"/tiny"}>
+          <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]}>
+            <LinkText>tiny</LinkText>
+          </Circle>
+        </Link>
+        <Link style={{ textDecoration: "none" }} to={"/material"}>
+          <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]}>
+            <LinkText>material</LinkText>
+          </Circle>
+        </Link>
+        {/* <Link style={{ textDecoration: "none" }} to={"/home"}>
         <LinkCircle size={"35px"}>
           <LinkText>circles</LinkText>
         </LinkCircle>
@@ -43,6 +49,7 @@ export const Nav = () => {
           <LinkText>tiny</LinkText>
         </LinkCircle>
       </Link> */}
-    </LinkContainer>
+      </LinkContainer>
+    </Draggable>
   );
 };

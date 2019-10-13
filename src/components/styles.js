@@ -87,7 +87,7 @@ top:100px;
 right:100px;
 width:60px;
 height:200px;
-// border:1px solid ${teal};
+border:1px dotted ${teal};
 // background-color:${pink};
 z-index:300;
 `;
