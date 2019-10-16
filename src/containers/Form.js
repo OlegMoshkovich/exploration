@@ -6,8 +6,10 @@ const Basic = () => (
     <div>
         <h1>Anywhere in your app!</h1>
         <Nav />
+
         <Formik
             initialValues={{ email: '', password: '' }}
+
             validate={values => {
                 let errors = {};
                 if (!values.email) {
@@ -19,6 +21,7 @@ const Basic = () => (
                 }
                 return errors;
             }}
+
             onSubmit={(values, { setSubmitting }) => {
                 setTimeout(() => {
                     alert(JSON.stringify(values, null, 2));
