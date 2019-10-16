@@ -11,6 +11,7 @@ import { Route, BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import { experimentApp } from "./reducers";
 import { createStore } from "redux";
+import Basic from "./containers/Form"
 
 
 
@@ -25,6 +26,7 @@ const routing = (
         <Route exact path="/tiny" component={Tiny} />
         <Route exact path="/material" component={Material} />
         <Route exact path="/graph" component={graphViz} />
+        <Route exact path="/form" component={Basic} />
       </div>
     </Router>
   </Provider>

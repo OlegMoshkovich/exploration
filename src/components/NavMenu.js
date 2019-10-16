@@ -39,6 +39,11 @@ export const Nav = () => {
             <LinkText>material</LinkText>
           </Circle>
         </Link>
+        <Link style={{ textDecoration: "none" }} to={"/form"}>
+          <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]}>
+            <LinkText>form</LinkText>
+          </Circle>
+        </Link>
         {/* <Link style={{ textDecoration: "none" }} to={"/home"}>
         <LinkCircle size={"35px"}>
           <LinkText>circles</LinkText>
