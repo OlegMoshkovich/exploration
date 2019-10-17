@@ -85,14 +85,6 @@ export class DestinationMarker extends Component {
             >
               {name}
             </div>
-            {/* <div
-              style={{
-                margin: "5px 0px 3px 0px",
-                fontSize: "10px"
-              }}
-            >
-              {this.props.globalPopUpState}
-            </div> */}
             {videos && videos.map(video => (
               <PopUpWindowVideo video={video} bottom={bottom} left={left} />
             ))}
@@ -100,6 +92,7 @@ export class DestinationMarker extends Component {
             {images.map(image => (
               <PopUpWindowImage src={image} bottom={bottom} left={left} />
             ))}
+
 
           </Popup>
         )}

@@ -74,13 +74,7 @@ export const PopUpWindowForm = props => {
   return (
     <Draggable>
       <Rectangle bottom={bottom || "-240px"} left={left || "200px"}>
-        <Image
-          src={
-            src ||
-            "https://nordnorge.com/sites/n/nordnorge.com/files/570f0fc155e7b311737aa885d54880c8.jpg"
-          }
-          style={{ height: "200px", width: "auto", padding: "10px" }}
-        />
+
 
         <Circle>
           <div
