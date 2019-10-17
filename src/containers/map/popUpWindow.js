@@ -74,20 +74,9 @@ export const PopUpWindowForm = props => {
   const { src, bottom, left } = props;
   return (
     <Draggable>
-      <Rectangle bottom={bottom || "-240px"} left={left || "200px"}>
+      <Rectangle bottom={bottom || "-40px"} left={left || "100px"}>
         <BasicForm />
-        <Circle>
-          <div
-            style={{
-              cursor: "all-scroll",
-              fontSize: "9px",
-              color: "#FF00D6"
-            }}
-          >
-            e
-          </div>
-        </Circle>
       </Rectangle>
-    </Draggable>
+    </Draggable >
   );
 };

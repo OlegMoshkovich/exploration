@@ -56,7 +56,6 @@ export const Basic = props => {
 
             < Formik
                 initialValues={{ name: '', comment: '' }}
-
                 validate={values => {
                     let errors = {};
                     if (!values.name) {
@@ -66,10 +65,9 @@ export const Basic = props => {
                     }
                     return errors;
                 }}
-
                 onSubmit={(values, { setSubmitting }) => {
                     setFormValues(values);
-
+                    setSubmitting(false)
                 }}
             >
                 {({
@@ -86,15 +84,7 @@ export const Basic = props => {
                             <Container height={'200px'} top={'70px'}>
                                 <OutlinedInput
                                     placeholder="name"
-
                                     color='primary'
-                                    // style={{ border: '1px, solid, green' }}
-                                    // className={classes.input}
-                                    // label="Simple message" onChange={(e) => setMessage(e.target.value)}
-
-                                    // InputProps={{
-                                    //     endAdornment: <InputAdornment position="end" variant="outlined"><Icon color='primary'>alarm</Icon></InputAdornment>,
-                                    // }}
                                     type="name"
                                     name="name"
                                     onChange={handleChange}
@@ -117,9 +107,10 @@ export const Basic = props => {
                                 <StyledButton type="submit" disabled={isSubmitting}>
                                     Submit
                         </StyledButton>
-                                <div>{values.name}</div>
-                                <div>{values.comment}</div>
+
                             </Container>
+                            <div>{values.name}</div>
+                            <div>{values.comment}</div>
                         </form>
                     )}
             </Formik >
