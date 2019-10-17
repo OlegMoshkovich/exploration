@@ -24,7 +24,7 @@ export const Nav = () => {
           </Circle>
         </Link>
         <Link style={{ textDecoration: "none" }} to={"/map"}>
-          <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} >
+          <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} color={'yellow'} >
             <LinkText>map</LinkText>
           </Circle>
         </Link>
@@ -40,7 +40,7 @@ export const Nav = () => {
           </Circle>
         </Link>
         <Link style={{ textDecoration: "none" }} to={"/form"}>
-          <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} color={'yellow'}>
+          <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} >
             <LinkText>form</LinkText>
           </Circle>
         </Link>

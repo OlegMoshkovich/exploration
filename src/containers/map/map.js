@@ -31,6 +31,7 @@ import { Title } from "./title";
 import { Destination, FlyDestinations } from "./flyNav";
 import DestinationMarker from "./marker";
 import DestinationMarkerForm from "./markerForm"
+import DestinationMarkerDrag from './markerDrag'
 import { connect } from "react-redux";
 import { globalPopUp } from "../../actions/popUpState";
 
@@ -252,6 +253,11 @@ class Map extends Component {
             longitude={-73.97181704026718}
             latitude={40.760357318442715}
             name={"Integrated form"}
+          />
+          <DestinationMarkerDrag
+            longitude={-73.97181704026718}
+            latitude={40.80}
+            name={"drag marker"}
           />
           <DestinationMarker
             longitude={-73.97752525741629}
