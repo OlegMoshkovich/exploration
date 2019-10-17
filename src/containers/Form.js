@@ -9,7 +9,7 @@ import theme from './material';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import { fade, withStyles } from '@material-ui/core/styles';
 import OutlinedInput from '@material-ui/core/OutlinedInput'
-
+import { BasicForm } from '../components/form'
 
 const StyledButton = withStyles({
     root: {
@@ -115,6 +115,7 @@ export const Basic = props => {
                     )}
             </Formik >
 
+            <BasicForm />
         </div >
     )
 

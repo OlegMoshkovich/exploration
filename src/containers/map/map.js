@@ -55,9 +55,9 @@ class Map extends Component {
       viewport: {
         width: window.innerWidth,
         height: window.innerHeight,
-        longitude: 6.4636,
-        latitude: 40.6528,
-        zoom: 1.5,
+        longitude: - 73.97181704026718,
+        latitude: 40.76,
+        zoom: 12,
         maxZoom: 16
       },
       marker: {
@@ -157,13 +157,15 @@ class Map extends Component {
       marker
     } = this.state;
 
-    const INITIAL_VIEW_STATE = {
-      latitude: 51.47,
-      longitude: 0.45,
-      zoom: 4,
-      bearing: 0,
-      pitch: 30
-    };
+    // const INITIAL_VIEW_STATE = {
+
+
+    //   latitude: - 73.97181704026718,
+    //   longitude: 40.760357318442715,
+    //   zoom: 4,
+    //   bearing: 0,
+    //   pitch: 30
+    // };
     let layers = [
       new GeoJsonLayer({
         id: 'airports',
@@ -246,16 +248,11 @@ class Map extends Component {
               })
             }
           />
-          {/* <DestinationMarker
+          <DestinationMarkerForm
             longitude={-73.97181704026718}
             latitude={40.760357318442715}
-            name={"Facility"}
-            images={[
-              'https://previews.dropbox.com/p/thumb/AAlhtzdSN47BwXTXDXi_OKJrPXSqjkaic1HjvuTxjfUpkBhZcnUuzlznHepnQtTp5MjagBgHQ4hE9iV_10B2-ewXeLQXgGEicGvxOOD_g219Tj1VvcjqcaNZBacAWj1WvK38Wmy_Gt4S03ZqT4BTR13_grlld30u9AX0Kn8Pnz2tkdbzBwRpNS6cPcWzb30k7SSp73twrhzuteivwgTxy5r0pmoDC6EWxO-g8fht3piRePQBQ-Icf4Chwqua1hqVq733WYnHsBXgYXbDyn7J3WkYMQbpTbhGMZceqCAySw02fuTUFgOOKOkgt79JBoZlmYoN1WEXoOwLA1DIBQ-Jb-YYLQtMjrcRSijIMPdXKBESyodaxiwqxZA8C3Njd6oj1T8Zn-bQ9RENLsGolydlBe8NE78PIrWpTqjJqR6KpIIf-g/p.png?fv_content=true&size_mode=5',
-              'https://static.dezeen.com/uploads/2016/06/allmannajuvet-tourist-route-peter-zumthor-norway-per-berntsen-dezeen-936.jpg'
-            ]}
-            videos={[]}
-          /> */}
+            name={"Integrated form"}
+          />
           <DestinationMarker
             longitude={-73.97752525741629}
             latitude={40.7523}
@@ -269,18 +266,18 @@ class Map extends Component {
             ]}
             videos={["https://player.vimeo.com/video/123730837#t=29s", "https://player.vimeo.com/video/123730837#t=29s", "https://player.vimeo.com/video/123730837#t=49s", "https://player.vimeo.com/video/123730837#t=19s"]}
           />
-          <DestinationMarkerForm
+          <DestinationMarker
             longitude={-73.97752525741629}
             latitude={40.7523}
             name={"Grand Central"}
-          // images={[
-          //   "https://cornerbycorner.files.wordpress.com/2012/09/grand-central.jpg",
-          //   "https://ichef.bbci.co.uk/news/660/media/images/65736000/jpg/_65736479_grand-central-cropped-624x4.jpg",
-          //   "https://media.timeout.com/images/100476721/630/472/image.jpg",
-          //   "https://www.nycgo.com/images/venues/1071/grandcentral_midtown_manhattan_nyc_brittanypetronella0057__x_large.jpg",
-          //   "http://trn.trains.com/~/media/images/railroad-news/news-wire/2016-and-prior/2015/10/grandcentral.jpg"
-          // ]}
-          // videos={["https://player.vimeo.com/video/123730837#t=29s", "https://player.vimeo.com/video/123730837#t=29s", "https://player.vimeo.com/video/123730837#t=49s", "https://player.vimeo.com/video/123730837#t=19s"]}
+            images={[
+              "https://cornerbycorner.files.wordpress.com/2012/09/grand-central.jpg",
+              "https://ichef.bbci.co.uk/news/660/media/images/65736000/jpg/_65736479_grand-central-cropped-624x4.jpg",
+              "https://media.timeout.com/images/100476721/630/472/image.jpg",
+              "https://www.nycgo.com/images/venues/1071/grandcentral_midtown_manhattan_nyc_brittanypetronella0057__x_large.jpg",
+              "http://trn.trains.com/~/media/images/railroad-news/news-wire/2016-and-prior/2015/10/grandcentral.jpg"
+            ]}
+            videos={["https://player.vimeo.com/video/123730837#t=29s", "https://player.vimeo.com/video/123730837#t=29s", "https://player.vimeo.com/video/123730837#t=49s", "https://player.vimeo.com/video/123730837#t=19s"]}
           />
 
           <DestinationMarker
@@ -304,11 +301,6 @@ class Map extends Component {
 }
 
 const mapStateToProps = state => ({ globalPopUpState: state.popUpState });
-
-// const mapStateToProps = state => ({
-//   openDrawer: state.drawerStatus.drawerOpen,
-//   patientRecord: state.activePatient.patientRecord
-// });
 
 export default connect(
   mapStateToProps,

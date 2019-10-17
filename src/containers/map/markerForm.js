@@ -17,13 +17,11 @@ export class DestinationMarkerForm extends Component {
   togglePopUp = () => {
     const { globalPopUp } = this.props
     const { showPopUp } = this.state
-
     if (showPopUp === false) {
       return this.setState({ showPopUp: true });
     } else {
       return this.setState({ showPopUp: false });
     }
-
   };
 
   render() {
@@ -85,10 +83,6 @@ export class DestinationMarkerForm extends Component {
               {name}
             </div>
             <PopUpWindowForm />
-
-
-
-
           </Popup>
         )}
       </div>

@@ -6,6 +6,8 @@ import { Button } from '@material-ui/core';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import OutlinedInput from '@material-ui/core/OutlinedInput'
 import styled from 'styled-components'
+import Draggable from "react-draggable";
+import { AST_ClassExpression } from 'terser';
 
 export const Container = styled.div`
   position: absolute;
@@ -20,27 +22,14 @@ export const Container = styled.div`
 `;
 
 
-const StyledButton = withStyles({
-    root: {
-        background: "black",
-        color: "white",
-        height: 48,
-        "&:hover": {
-            color: "black",
-            background: "yellow"
-        }
-    }
-})(Button);
-
-
 const useStyles = makeStyles({
     root: {
         background: 'white',
-        border: '2px solid yellow',
+        // border: '2px solid yellow',
         borderRadius: 3,
         color: 'black',
-        height: 30,
-        // padding: '0 30px',
+        // height: 30,
+
         "&:: placeholder": {
             color: 'blue',
             fontSize: '10px'
@@ -56,66 +45,104 @@ const useStyles = makeStyles({
 
 
 export const BasicForm = props => {
-    const [formValues, setFormValues] = useState({ name: '', comment: '' })
+
+    const [name, setName] = useState('hello')
+    const [comment, setComment] = useState('new comment')
+    const [formValues, setFormValues] = useState({})
+
+
     const classes = useStyles();
+    const update = () => {
+        console.log('changing')
+    }
+    // const color = 'black'
+    const [color, setColor] = useState('black')
+
+    const StyledButton = withStyles({
+        root: {
+            background: color,
+            color: "white",
+            height: 48,
+            "&:hover": {
+                color: "black",
+                background: "yellow "
+            }
+        }
+    })(Button);
+
     return (
+        <div>
 
-        < Formik
-            initialValues={{ name: '', comment: '' }}
-            onSubmit={(values, { setSubmitting }) => {
-                setFormValues(values);
-                setSubmitting(false)
-            }}
-        >
-            {({
-                values,
-                errors,
-                touched,
-                handleChange,
-                handleBlur,
-                handleSubmit,
-                isSubmitting,
-            }) => (
 
-                    < form onSubmit={handleSubmit}>
-                        <Container >
-                            <OutlinedInput
-                                placeholder="name"
-                                color='primary'
-                                // className={classes.root}
-                                color='primary'
-                                type="name"
-                                name="name"
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                                value={formValues.name}
-                            />
+            < Formik
+                initialValues={{ name: '', comment: '' }}
+                validate={values => {
+                    let errors = {};
+                    if (!values.name) {
+                        errors.name = 'Name is Required';
+                    } else if (!values.comment) {
+                        errors.comment = 'Comment is required';
+                    }
+                    return errors;
+                }}
+                onSubmit={(values, { setSubmitting }) => {
+                    setFormValues(values);
+                    setSubmitting(false)
+                }}
+            >
+                {({
+                    values,
+                    errors,
+                    touched,
+                    handleChange,
+                    handleBlur,
+                    handleSubmit,
+                    isSubmitting,
+                    /* and other goodies */
+                }) => (
+                        <form onSubmit={handleSubmit}>
+                            <Container height={'200px'} top={'70px'}>
+                                <OutlinedInput
+                                    multiline
+                                    style={{ backgroundColor: 'yellow' }}
+                                    placeholder="name"
+                                    color='yellow'
+                                    type="name"
+                                    name="name"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.email}
+                                />
 
-                            {errors.name && touched.name && errors.name}
-                            <OutlinedInput
-                                placeholder="comment"
-                                multiline
-                                color='primary'
-                                type="comment"
-                                name="comment"
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                                value={values.comment}
-                            // className={classes.root}
-                            />
-                            {errors.comment && touched.comment && errors.comment}
-                            <StyledButton type="submit" disabled={isSubmitting}>
-                                Submit
-                        </StyledButton>
+                                {errors.name && touched.name && errors.name}
+                                <OutlinedInput
+                                    style={{ backgroundColor: 'yellow' }}
+                                    placeholder="comment"
+                                    multiline
+                                    color='primary'
+                                    type="comment"
+                                    name="comment"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.comment}
+                                />
+                                {errors.comment && touched.comment && errors.comment}
+                                <StyledButton type="submit" disabled={isSubmitting}
+                                //  onClick={setColor('yellow')}
+                                >
+                                    Submit
+                </StyledButton>
+
+                            </Container>
                             <div>{values.name}</div>
                             <div>{values.comment}</div>
-                        </Container>
-                    </form>
-                )
-            }
-        </Formik >
-    )
+                        </form>
+                    )}
+            </Formik >
 
+
+        </div>
+    )
 }
 
 
