@@ -62,7 +62,7 @@ const styles = theme => ({
     }
 });
 
-const theme = createMuiTheme({
+export const theme = createMuiTheme({
     palette: {
         primary: {
             main: "#FF00D6",

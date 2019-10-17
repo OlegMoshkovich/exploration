@@ -11,6 +11,7 @@ import { ScatterplotLayer } from '@deck.gl/layers';
 import { scatterData } from './scatterData'
 
 
+
 import { Nav } from "../../components/NavMenu";
 import Pin from "./pin";
 import styled from "styled-components";
@@ -29,6 +30,7 @@ import { Exit } from "./exit";
 import { Title } from "./title";
 import { Destination, FlyDestinations } from "./flyNav";
 import DestinationMarker from "./marker";
+import DestinationMarkerForm from "./markerForm"
 import { connect } from "react-redux";
 import { globalPopUp } from "../../actions/popUpState";
 
@@ -267,6 +269,20 @@ class Map extends Component {
             ]}
             videos={["https://player.vimeo.com/video/123730837#t=29s", "https://player.vimeo.com/video/123730837#t=29s", "https://player.vimeo.com/video/123730837#t=49s", "https://player.vimeo.com/video/123730837#t=19s"]}
           />
+          <DestinationMarkerForm
+            longitude={-73.97752525741629}
+            latitude={40.7523}
+            name={"Grand Central"}
+          // images={[
+          //   "https://cornerbycorner.files.wordpress.com/2012/09/grand-central.jpg",
+          //   "https://ichef.bbci.co.uk/news/660/media/images/65736000/jpg/_65736479_grand-central-cropped-624x4.jpg",
+          //   "https://media.timeout.com/images/100476721/630/472/image.jpg",
+          //   "https://www.nycgo.com/images/venues/1071/grandcentral_midtown_manhattan_nyc_brittanypetronella0057__x_large.jpg",
+          //   "http://trn.trains.com/~/media/images/railroad-news/news-wire/2016-and-prior/2015/10/grandcentral.jpg"
+          // ]}
+          // videos={["https://player.vimeo.com/video/123730837#t=29s", "https://player.vimeo.com/video/123730837#t=29s", "https://player.vimeo.com/video/123730837#t=49s", "https://player.vimeo.com/video/123730837#t=19s"]}
+          />
+
           <DestinationMarker
             longitude={113.5767}
             latitude={22.271}

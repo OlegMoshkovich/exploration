@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
 import { Formik } from 'formik';
-import { Nav } from '../components/NavMenu';
-import { Container } from '../components/styles';
+import { Container } from './styles';
 import { Button } from '@material-ui/core';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import Icon from '@material-ui/core/Icon';
-import theme from './material';
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
-import { fade, withStyles } from '@material-ui/core/styles';
+
+import { withStyles, makeStyles } from '@material-ui/core/styles';
 import OutlinedInput from '@material-ui/core/OutlinedInput'
 
 
@@ -23,40 +19,38 @@ const StyledButton = withStyles({
     }
 })(Button);
 
-const styles = theme => ({
+
+
+
+const useStyles = makeStyles({
     root: {
-        "& $notchedOutline": {
-            border: '3px solid green'
+        background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+        border: 0,
+        borderRadius: 3,
+        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+        color: 'white',
+        height: 48,
+        padding: '0 30px',
+        "&:focused": {
+            border: '3px solid red'
         },
-        "&:hover $notchedOutline": {
-            border: '3px solid green'
-        },
-        "&$focused $notchedOutline": {
-            border: '3px solid green'
+        "&:after": {
+            border: '3px solid red'
         }
     },
-    focused: {},
-    input: {
-        border: 'red'
-    }
 });
 
 
-export const Basic = props => {
+export const BasicForm = props => {
 
     const [formValues, setFormValues] = useState({ name: '', comment: '' })
-    const classes = props.classes;
+    const classes = useStyles();
     return (
 
         < div >
-
-            <Nav />
-
             {/* wrapper component */}
-
             < Formik
                 initialValues={{ name: '', comment: '' }}
-
                 validate={values => {
                     let errors = {};
                     if (!values.name) {
@@ -66,10 +60,8 @@ export const Basic = props => {
                     }
                     return errors;
                 }}
-
                 onSubmit={(values, { setSubmitting }) => {
                     setFormValues(values);
-
                 }}
             >
                 {({
@@ -85,13 +77,12 @@ export const Basic = props => {
                         <form onSubmit={handleSubmit}>
                             <Container height={'200px'} top={'70px'}>
                                 <OutlinedInput
-                                    placeholder="name"
 
+                                    placeholder="name"
                                     color='primary'
                                     // style={{ border: '1px, solid, green' }}
-                                    // className={classes.input}
+                                    className={classes.root}
                                     // label="Simple message" onChange={(e) => setMessage(e.target.value)}
-
                                     // InputProps={{
                                     //     endAdornment: <InputAdornment position="end" variant="outlined"><Icon color='primary'>alarm</Icon></InputAdornment>,
                                     // }}

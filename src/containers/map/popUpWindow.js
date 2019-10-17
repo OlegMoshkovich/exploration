@@ -8,6 +8,7 @@ import {
   Circle,
   Image
 } from "./styles";
+import { BasicForm } from "../../components/form"
 
 export const PopUpWindowVideo = props => {
   const { src, bottom, left, video } = props;
@@ -74,8 +75,7 @@ export const PopUpWindowForm = props => {
   return (
     <Draggable>
       <Rectangle bottom={bottom || "-240px"} left={left || "200px"}>
-
-
+        <BasicForm />
         <Circle>
           <div
             style={{

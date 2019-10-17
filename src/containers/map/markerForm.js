@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { Marker, Popup } from "react-map-gl";
 import Pin from "./pin";
-import { PopUpWindowImage, PopUpWindowVideo } from "./popUpWindow";
+import { BasicForm } from '../../components/form'
+import { PopUpWindowForm } from './popUpWindow'
 import { connect } from "react-redux";
 
 
-export class DestinationMarker extends Component {
+export class DestinationMarkerForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,6 +17,7 @@ export class DestinationMarker extends Component {
   togglePopUp = () => {
     const { globalPopUp } = this.props
     const { showPopUp } = this.state
+
     if (showPopUp === false) {
       return this.setState({ showPopUp: true });
     } else {
@@ -82,13 +84,9 @@ export class DestinationMarker extends Component {
             >
               {name}
             </div>
-            {videos && videos.map(video => (
-              <PopUpWindowVideo video={video} bottom={bottom} left={left} />
-            ))}
+            <PopUpWindowForm />
 
-            {images.map(image => (
-              <PopUpWindowImage src={image} bottom={bottom} left={left} />
-            ))}
+
 
 
           </Popup>
@@ -102,4 +100,4 @@ const mapSateToProps = state => ({ globalPopUpState: state.popUpState.globalPopU
 export default connect(
   mapSateToProps,
 
-)(DestinationMarker);
+)(DestinationMarkerForm);
