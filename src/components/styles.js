@@ -37,9 +37,9 @@ export const Container = styled.div`
   flex-direction: ${props => props.direction || "column"};
   align-direction: center;
   justify-content: space-around;
-  // border: 1px solid ${props => props.borderColor || red};
-  height: 600px;
-  width: 360px;
+  //  border: 1px solid ${props => props.borderColor || red};
+  height: ${props => props.height || '600px'};
+  width: ${props => props.width || '360px'};
   // margin: 50px 400px 0px 0px;
 `;
 

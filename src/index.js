@@ -11,7 +11,7 @@ import { Route, BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import { experimentApp } from "./reducers";
 import { createStore } from "redux";
-import Basic from "./containers/Form"
+import { Basic } from "./containers/Form"
 
 
 

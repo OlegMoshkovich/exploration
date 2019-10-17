@@ -1,68 +1,82 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik } from 'formik';
 import { Nav } from '../components/NavMenu'
+import { Container } from '../components/styles'
 
-const Basic = () => (
-    <div>
-        <h1>Anywhere in your app!</h1>
-        <Nav />
 
-        <Formik
-            initialValues={{ email: '', password: '' }}
 
-            validate={values => {
-                let errors = {};
-                if (!values.email) {
-                    errors.email = 'Required';
-                } else if (
-                    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-                ) {
-                    errors.email = 'Invalid email address';
-                }
-                return errors;
-            }}
+export const Basic = () => {
+    const [formValues, setFormValues] = useState({ name: '', comment: '' })
+    return (
+        < div >
+            < h1 > Anywhere in your app!</h1 >
+            <Nav />
 
-            onSubmit={(values, { setSubmitting }) => {
-                setTimeout(() => {
-                    alert(JSON.stringify(values, null, 2));
-                    setSubmitting(false);
-                }, 400);
-            }}
-        >
-            {({
-                values,
-                errors,
-                touched,
-                handleChange,
-                handleBlur,
-                handleSubmit,
-                isSubmitting,
-                /* and other goodies */
-            }) => (
-                    <form onSubmit={handleSubmit}>
-                        <input
-                            type="email"
-                            name="email"
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            value={values.email}
-                        />
-                        {errors.email && touched.email && errors.email}
-                        <input
-                            type="password"
-                            name="password"
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            value={values.password}
-                        />
-                        {errors.password && touched.password && errors.password}
-                        <button type="submit" disabled={isSubmitting}>
-                            Submit
-          </button>
-                    </form>
-                )}
-        </Formik>
-    </div>
-);
+            {/* wrapper component */}
+            < Formik
+                initialValues={{ name: '', comment: '' }}
 
-export default Basic;
+                validate={values => {
+                    let errors = {};
+                    if (!values.name) {
+                        errors.name = 'Name is Required';
+                    } else if (!values.comment) {
+                        errors.comment = 'Comment is required';
+                    }
+                    return errors;
+                }}
+
+                onSubmit={(values, { setSubmitting }) => {
+                    setFormValues(values);
+                    // setTimeout(() => {
+                    //     alert(JSON.stringify(values, null, 2));
+                    //     setSubmitting(false);
+                    // }, 400);
+                }}
+            >
+                {({
+                    values,
+                    errors,
+                    touched,
+                    handleChange,
+                    handleBlur,
+                    handleSubmit,
+                    isSubmitting,
+                    /* and other goodies */
+                }) => (
+                        <form onSubmit={handleSubmit}>
+                            <Container height={'200px'} top={'70px'}>
+                                <input
+                                    type="name"
+                                    name="name"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.email}
+                                />
+                                {errors.name && touched.name && errors.name}
+                                <input
+                                    type="comment"
+                                    name="comment"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.comment}
+                                />
+                                {errors.comment && touched.comment && errors.comment}
+                                <button type="submit" disabled={isSubmitting}>
+                                    Submit
+                        </button>
+                                <div>{values.name}</div>
+                                <div>{values.comment}</div>
+                            </Container>
+                        </form>
+                    )}
+            </Formik >
+
+        </div >
+    )
+
+}
+
+
+
+
