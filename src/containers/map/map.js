@@ -37,6 +37,8 @@ import { CubeGeometry } from '@luma.gl/core'
 // Add the loaders that handle your mesh format here
 registerLoaders([OBJLoader]);
 
+const AIR_PORTS =
+  'https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_10m_airports.geojson';
 const MESH_URL =
   'https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/mesh/minicooper.obj';
 
@@ -77,8 +79,7 @@ const scatterplotLayer = new ScatterplotLayer({
   getFillColor: [255, 228, 0],
 });
 
-const AIR_PORTS =
-  'https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_10m_airports.geojson';
+
 
 class Map extends Component {
   constructor(props) {
@@ -91,7 +92,7 @@ class Map extends Component {
         width: window.innerWidth,
         height: window.innerHeight,
         longitude: - 73.97181704026718,
-        latitude: 40.76,
+        latitude: 40.774,
         zoom: 12,
         maxZoom: 16
       },
@@ -275,92 +276,92 @@ class Map extends Component {
         <FlyDestinations flyTo={this._goToViewport} />
 
 
-        <DeckGL initialViewState={INITIAL_VIEW_STATE} controller={true} layers={layers3D}>
+        {/* <DeckGL initialViewState={INITIAL_VIEW_STATE} controller={true} layers={layers3D}> */}
 
-          <InteractiveMap
-            {...this.state.viewport}
-            mapboxApiAccessToken={
-              "pk.eyJ1Ijoib2xlZ21vc2hrb3ZpY2giLCJhIjoiY2pmeTFidnQzMGUwaDMycTd6aGlseXF6ayJ9._4zzVy5_Q5lPjIiN56SMyQ"
-            }
-            onViewportChange={viewport => {
+        <InteractiveMap
+          {...this.state.viewport}
+          mapboxApiAccessToken={
+            "pk.eyJ1Ijoib2xlZ21vc2hrb3ZpY2giLCJhIjoiY2pmeTFidnQzMGUwaDMycTd6aGlseXF6ayJ9._4zzVy5_Q5lPjIiN56SMyQ"
+          }
+          onViewportChange={viewport => {
+            this.setState({
+              viewport
+            });
+          }}
+        >
+          {/* Peter Zumthor */}
+          <DestinationMarker
+            globalPopUpState={this.state.popUpState}
+            longitude={6.4636}
+            latitude={59.6528}
+            bottom={"-20px"}
+            name={"Allmannajuvet Museum"}
+            videos={["https://player.vimeo.com/video/239261005#t=29s"]}
+            images={[
+              "https://nordnorge.com/sites/n/nordnorge.com/files/570f0fc155e7b311737aa885d54880c8.jpg",
+              "https://www.iconeye.com/images/2017/06/Zumthor_norway_Mine_1.jpg",
+              "https://static.dezeen.com/uploads/2016/12/allmannajuvet-tourist-route-peter-zumthor-norway-arne-espeland-dezeen-sq.jpg",
+              "https://images.adsttc.com/media/images/57ed/0c31/e58e/ce02/a000/011f/large_jpg/010620_Photo_Per_Berntsen.jpg?1475152917",
+              'https://static.dezeen.com/uploads/2016/06/allmannajuvet-tourist-route-peter-zumthor-norway-per-berntsen-dezeen-936.jpg',
+            ]}
+            popUpClose={() =>
               this.setState({
-                viewport
-              });
-            }}
-          >
-            {/* Peter Zumthor */}
-            <DestinationMarker
-              globalPopUpState={this.state.popUpState}
-              longitude={6.4636}
-              latitude={59.6528}
-              bottom={"-20px"}
-              name={"Allmannajuvet Museum"}
-              videos={["https://player.vimeo.com/video/239261005#t=29s"]}
-              images={[
-                "https://nordnorge.com/sites/n/nordnorge.com/files/570f0fc155e7b311737aa885d54880c8.jpg",
-                "https://www.iconeye.com/images/2017/06/Zumthor_norway_Mine_1.jpg",
-                "https://static.dezeen.com/uploads/2016/12/allmannajuvet-tourist-route-peter-zumthor-norway-arne-espeland-dezeen-sq.jpg",
-                "https://images.adsttc.com/media/images/57ed/0c31/e58e/ce02/a000/011f/large_jpg/010620_Photo_Per_Berntsen.jpg?1475152917",
-                'https://static.dezeen.com/uploads/2016/06/allmannajuvet-tourist-route-peter-zumthor-norway-per-berntsen-dezeen-936.jpg',
-              ]}
-              popUpClose={() =>
-                this.setState({
-                  showPopup: false
-                })
-              }
-            />
-            <DestinationMarkerForm
-              longitude={-73.97181704026718}
-              latitude={40.760357318442715}
-              name={"Integrated form"}
-            />
-            <DestinationMarkerDrag
-              longitude={-73.97181704026718}
-              latitude={40.80}
-              name={"drag marker"}
-            />
-            <DestinationMarker
-              longitude={-73.97752525741629}
-              latitude={40.7523}
-              name={"Grand Central"}
-              images={[
-                "https://cornerbycorner.files.wordpress.com/2012/09/grand-central.jpg",
-                "https://ichef.bbci.co.uk/news/660/media/images/65736000/jpg/_65736479_grand-central-cropped-624x4.jpg",
-                "https://media.timeout.com/images/100476721/630/472/image.jpg",
-                "https://www.nycgo.com/images/venues/1071/grandcentral_midtown_manhattan_nyc_brittanypetronella0057__x_large.jpg",
-                "http://trn.trains.com/~/media/images/railroad-news/news-wire/2016-and-prior/2015/10/grandcentral.jpg"
-              ]}
-              videos={["https://player.vimeo.com/video/123730837#t=29s", "https://player.vimeo.com/video/123730837#t=29s", "https://player.vimeo.com/video/123730837#t=49s", "https://player.vimeo.com/video/123730837#t=19s"]}
-            />
-            <DestinationMarker
-              longitude={-73.97752525741629}
-              latitude={40.7523}
-              name={"Grand Central"}
-              images={[
-                "https://cornerbycorner.files.wordpress.com/2012/09/grand-central.jpg",
-                "https://ichef.bbci.co.uk/news/660/media/images/65736000/jpg/_65736479_grand-central-cropped-624x4.jpg",
-                "https://media.timeout.com/images/100476721/630/472/image.jpg",
-                "https://www.nycgo.com/images/venues/1071/grandcentral_midtown_manhattan_nyc_brittanypetronella0057__x_large.jpg",
-                "http://trn.trains.com/~/media/images/railroad-news/news-wire/2016-and-prior/2015/10/grandcentral.jpg"
-              ]}
-              videos={["https://player.vimeo.com/video/123730837#t=29s", "https://player.vimeo.com/video/123730837#t=29s", "https://player.vimeo.com/video/123730837#t=49s", "https://player.vimeo.com/video/123730837#t=19s"]}
-            />
+                showPopup: false
+              })
+            }
+          />
+          <DestinationMarkerForm
+            longitude={-73.97181704026718}
+            latitude={40.760357318442715}
+            name={"This marker is static"}
+          />
+          <DestinationMarkerDrag
+            longitude={-73.97181704026718}
+            latitude={40.80}
+            name={"you can drag this marker"}
+          />
+          <DestinationMarker
+            longitude={-73.97752525741629}
+            latitude={40.7523}
+            name={"Grand Central"}
+            images={[
+              "https://cornerbycorner.files.wordpress.com/2012/09/grand-central.jpg",
+              "https://ichef.bbci.co.uk/news/660/media/images/65736000/jpg/_65736479_grand-central-cropped-624x4.jpg",
+              "https://media.timeout.com/images/100476721/630/472/image.jpg",
+              "https://www.nycgo.com/images/venues/1071/grandcentral_midtown_manhattan_nyc_brittanypetronella0057__x_large.jpg",
+              "http://trn.trains.com/~/media/images/railroad-news/news-wire/2016-and-prior/2015/10/grandcentral.jpg"
+            ]}
+            videos={["https://player.vimeo.com/video/123730837#t=29s", "https://player.vimeo.com/video/123730837#t=29s", "https://player.vimeo.com/video/123730837#t=49s", "https://player.vimeo.com/video/123730837#t=19s"]}
+          />
+          <DestinationMarker
+            longitude={-73.97752525741629}
+            latitude={40.7523}
+            name={"Grand Central"}
+            images={[
+              "https://cornerbycorner.files.wordpress.com/2012/09/grand-central.jpg",
+              "https://ichef.bbci.co.uk/news/660/media/images/65736000/jpg/_65736479_grand-central-cropped-624x4.jpg",
+              "https://media.timeout.com/images/100476721/630/472/image.jpg",
+              "https://www.nycgo.com/images/venues/1071/grandcentral_midtown_manhattan_nyc_brittanypetronella0057__x_large.jpg",
+              "http://trn.trains.com/~/media/images/railroad-news/news-wire/2016-and-prior/2015/10/grandcentral.jpg"
+            ]}
+            videos={["https://player.vimeo.com/video/123730837#t=29s", "https://player.vimeo.com/video/123730837#t=29s", "https://player.vimeo.com/video/123730837#t=49s", "https://player.vimeo.com/video/123730837#t=19s"]}
+          />
 
-            <DestinationMarker
-              longitude={113.5767}
-              latitude={22.271}
-              left={"40px"}
-              name={"Zhuhai Cultural Center"}
-              // popUpState={this.state.popUpState}
-              images={[
-                "http://www.olegmoshkovich.com/img/imgPortfolio/ribbon_realized.png"
-              ]}
-              videos={["https://player.vimeo.com/video/32440857#t=2s"]}
-            />
+          <DestinationMarker
+            longitude={113.5767}
+            latitude={22.271}
+            left={"40px"}
+            name={"Zhuhai Cultural Center"}
+            // popUpState={this.state.popUpState}
+            images={[
+              "http://www.olegmoshkovich.com/img/imgPortfolio/ribbon_realized.png"
+            ]}
+            videos={["https://player.vimeo.com/video/32440857#t=2s"]}
+          />
 
-            {/* Grand Central */}
-          </InteractiveMap>
-        </DeckGL>
+          {/* Grand Central */}
+        </InteractiveMap>
+        {/* </DeckGL> */}
       </div>
     );
   }
