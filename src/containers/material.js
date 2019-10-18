@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Nav } from '../components/NavMenu'
 import Button from '@material-ui/core/Button';
@@ -22,7 +22,6 @@ import FormControl from '@material-ui/core/FormControl';
 import OutlinedInput from '@material-ui/core/OutlinedInput'
 import { red } from '@material-ui/core/colors';
 import { Container } from '../components/styles'
-
 
 const MaterialContainer = styled.div`
 margin: 40px 0px 30px 20px;
@@ -114,9 +113,6 @@ const StyledButton = withStyles({
     }
 })(Button);
 
-
-
-
 const singleCircle = {
     width: "30px",
     animation: [
@@ -125,12 +121,12 @@ const singleCircle = {
     ]
 }
 
+
 const Material = (props) => {
     const [message, setMessage] = useState('...')
     const [circles, setCircles] = useState([singleCircle])
     const classes = props.classes;
-
-
+    const [start, setStart] = useState(false)
     const Add = () => {
         if (circles.length < 10) {
             setCircles([...circles, {
@@ -142,22 +138,36 @@ const Material = (props) => {
             }])
         }
     }
-    if (message.length === 0) {
-        setMessage('...')
 
-    }
     const Subtract = () => {
         if (circles.length > 1) {
             circles.pop()
             setCircles([...circles])
         }
     }
+
+    const updateInput = (letter) => {
+        const newInput = message + letter
+        setMessage(newInput)
+    }
+
+    useEffect(() => {
+        console.log('printing start', start)
+        setInterval
+        updateInput('a')
+        while (start === true) {
+            setInterval(updateInput('a'), 3000);
+        }
+    }, [start]);
+
+
+
+
     return (
         <div>
             <MuiThemeProvider theme={theme}>
                 <MaterialContainer>
                     <div>Material seems to dominate</div>
-
                     <div className={classes.container}>
                         <Container direction={'column'} >
 
@@ -180,7 +190,6 @@ const Material = (props) => {
                         <StyledButton variant="contained" color="secondary" size='small' onClick={() => Add()}>
                             {/* <Icon color='primary'>alarm</Icon> */}
                             <AddIcon color="primary" />
-
                         </StyledButton>
 
                         <StyledButton variant="contained" color="secondary" size='small' onClick={() => { Subtract() }}>
@@ -188,23 +197,24 @@ const Material = (props) => {
                         </StyledButton>
                     </div>
 
+
                     {/* <TextField label="Basic TextField" /> */}
 
                     <OutlinedInput
                         color='secondary'
-                        // style={{ border: '1px, solid, green' }}
-                        // className={classes.input}
                         label="Simple message" onChange={(e) => setMessage(e.target.value)}
-
+                        value={message}
                         InputProps={{
                             endAdornment: <InputAdornment position="end" variant="outlined"><Icon color='primary'>alarm</Icon></InputAdornment>,
                         }}
                     />
                     <div className={classes.container} >{message}</div>
-                    {/* <Container> {message}</Container> */}
+                    <StyledButton variant="contained" color="secondary" size='small' onClick={() => (setStart(!start))}>
+                        {/* <Icon color='primary'>alarm</Icon> */}
+                        start
+                            {/* <AddIcon color="primary" /> */}
+                    </StyledButton>
                 </MaterialContainer>
-
-
             </MuiThemeProvider>
             <Nav />
         </div >
