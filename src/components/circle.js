@@ -14,7 +14,7 @@ const Container = styled.div`
 `;
 
 export const Circle = props => {
-  const [pause, setPause] = useState(true);
+  const [pause, setPause] = useState(false);
   const animation = props.animation;
   return (
     <Container key={props.index + "container"}>
@@ -22,7 +22,7 @@ export const Circle = props => {
         key={props.index + "tween"}
         animation={animation}
         reverse={props.pause || pause}
-        repeat={props.repeat || 1} // demo 演示需要，时间轴循环
+        repeat={props.repeat || 2} // demo 演示需要，时间轴循环
         yoyo // demo 演示需要，时间轴循环
       >
         <Element
@@ -31,6 +31,7 @@ export const Circle = props => {
           }}
           width={props.width}
           color={props.color || teal}
+          key={props.index + "element"}
         />
       </TweenOne>
     </Container>

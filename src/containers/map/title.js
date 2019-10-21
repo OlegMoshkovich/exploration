@@ -17,9 +17,6 @@ export class Title extends React.Component {
     return (
       <Draggable
         {...dragHandlers}
-        style={{
-          cursor: "all-scroll"
-        }}
       >
         <Rectangle display={this.state.display}>
           <div

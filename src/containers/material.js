@@ -11,7 +11,6 @@ import { Circle } from '../components/circle'
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import OutlinedInput from '@material-ui/core/OutlinedInput'
 import { Container } from '../components/styles'
-
 const MaterialContainer = styled.div`
 margin: 40px 0px 30px 20px;
 width:300px;

@@ -17,9 +17,6 @@ export const Exit = () => {
   };
   return (
     <Draggable
-      style={{
-        cursor: "all-scroll"
-      }}
     >
       <ExitCircle
         toggle={stateToggle}

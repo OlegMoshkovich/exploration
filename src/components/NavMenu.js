@@ -11,9 +11,6 @@ export const Nav = () => {
 
   return (
     <Draggable
-      style={{
-        cursor: "all-scroll"
-      }}
     >
       <LinkContainer>
         <Link style={{ textDecoration: "none" }} to={"/"}>

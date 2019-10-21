@@ -15,9 +15,6 @@ export const FlyDestinations = props => {
 
   return (
     <Draggable
-      style={{
-        cursor: "all-scroll"
-      }}
     >
       <FlyContainer>
         <Destination

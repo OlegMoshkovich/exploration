@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { components } from "../data";
 import { Circle } from "../components/circle";
 import {
@@ -34,23 +34,26 @@ text-decoration: none;
 
 
 function App() {
-  const [repeat] = useState(1);
+  const [repeat, setRepeat] = useState(3);
   const height = "1000px";
+  useEffect(() => {
+    setRepeat(1)
+  }, []);
   return (
     <AppContainer height={height} width={'auto'}>
       <Nav />
       <Container top={'100px'} direction="row">
         {components.map((component, index) => {
           return (
-            <div >
-              <Circle
-                repeat={repeat}
-                width={component.width}
-                animation={component.animation}
-                index={index}
-                key={index}
-              />
-            </div>
+            // <div key={index + 'app circle contained'} >
+            <Circle
+              key={index + 'app circle'}
+              repeat={repeat}
+              width={component.width}
+              animation={component.animation}
+              index={index + 'app circle'}
+            />
+            // </div>
           );
         })}
       </Container>

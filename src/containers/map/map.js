@@ -47,11 +47,9 @@ class Map extends Component {
     window.addEventListener("resize", this._resize);
     this._resize();
   }
-
   componentWillUnmount() {
     window.removeEventListener("resize", this._resize);
   }
-
   _onViewportChange(viewport) {
     this.setState({
       viewport: {
@@ -61,7 +59,6 @@ class Map extends Component {
     });
 
   }
-
   _resize = () => {
     this._onViewportChange({
       width: window.innerWidth,
@@ -99,11 +96,12 @@ class Map extends Component {
             });
           }}
         >
-          {markersData.map(marker => {
+          {markersData.map((marker, i) => {
             const Types = { form: DestinationMarkerForm, media: DestinationMarker, drag: DestinationMarkerDrag }
             const Component = Types[marker.type]
             return (
               <Component
+                key={i}
                 longitude={marker.longitude}
                 latitude={marker.latitude}
                 name={marker.name}

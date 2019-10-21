@@ -1,5 +1,4 @@
 export const components = [
-
   {
     width: "30px",
     animation: [
@@ -51,6 +50,19 @@ export const components = [
       // { left: '0%' },
     ]
   },
+  // {
+  //   width: "30px",
+  //   animation: [
+  //     { marginBottom: '550px' },
+  //     // { left: '40%' },
+  //     // { top: '60px' },
+  //     { scale: .3 },
+
+  //     //   { scale: 1 }
+  //     // { top: 0 },
+  //     // { left: '0%' },
+  //   ]
+  // },
 
 
 ];
