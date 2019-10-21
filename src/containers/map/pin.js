@@ -8,10 +8,10 @@ const ICON = `M20.2,15.7L20.2,15.7c1.1-1.6,1.8-3.6,1.8-5.7c0-5.6-4.5-10-10-10S2,
 
 const Pin = (props) => {
 
-  const { size = 20, onClick, color } = props;
+  const { size = 20, onClick, color, outline } = props;
   const pinStyle = {
     fill: color || "#FF00D6",
-    stroke: "pink",
+    stroke: outline || "#B7F1FD",
     cursor: "pointer",
     strokeWidth: "1"
   }

@@ -50,7 +50,6 @@ export const BasicForm = props => {
     const [comment, setComment] = useState('new comment')
     const [formValues, setFormValues] = useState({})
 
-
     const classes = useStyles();
     const update = () => {
         console.log('changing')
@@ -69,6 +68,7 @@ export const BasicForm = props => {
             }
         }
     })(Button);
+    console.log('form values', formValues)
 
     return (
         <div>
@@ -88,7 +88,9 @@ export const BasicForm = props => {
                 onSubmit={(values, { setSubmitting }) => {
                     setFormValues(values);
                     setSubmitting(false)
+                    Object.keys(formValues).length === 0 ? setColor('black') : setColor('yellow')
                 }}
+
             >
                 {({
                     values,
@@ -104,7 +106,7 @@ export const BasicForm = props => {
                             <Container height={'200px'} top={'70px'}>
                                 <OutlinedInput
                                     multiline
-                                    style={{ backgroundColor: 'yellow' }}
+                                    style={{ backgroundColor: '#B7F1FD' }}
                                     placeholder="name"
                                     color='yellow'
                                     type="name"
@@ -116,7 +118,7 @@ export const BasicForm = props => {
 
                                 {errors.name && touched.name && errors.name}
                                 <OutlinedInput
-                                    style={{ backgroundColor: 'yellow' }}
+                                    style={{ backgroundColor: '#B7F1FD' }}
                                     placeholder="comment"
                                     multiline
                                     color='primary'
@@ -128,10 +130,10 @@ export const BasicForm = props => {
                                 />
                                 {errors.comment && touched.comment && errors.comment}
                                 <StyledButton type="submit" disabled={isSubmitting}
-                                //  onClick={setColor('yellow')}
+                                // onClick={alert('here you go')}
                                 >
                                     Submit
-                </StyledButton>
+                                 </StyledButton>
 
                             </Container>
                             <div>{values.name}</div>

@@ -10,17 +10,19 @@ export class DestinationMarkerForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showPopUp: false
+      showPopUp: false,
+      color: 'green'
     };
   }
 
   togglePopUp = () => {
     const { globalPopUp } = this.props
     const { showPopUp } = this.state
+
     if (showPopUp === false) {
-      return this.setState({ showPopUp: true });
+      return this.setState({ showPopUp: true, color: 'yellow' });
     } else {
-      return this.setState({ showPopUp: false });
+      return this.setState({ showPopUp: false, color: 'green' });
     }
   };
 
@@ -62,7 +64,7 @@ export class DestinationMarkerForm extends Component {
           onDrag={onDrag}
           onDragEnd={onDragEnd}
         >
-          <Pin onClick={this.togglePopUp} color='yellow' />
+          <Pin onClick={this.togglePopUp} color={this.state.color} />
         </Marker>
 
         {showPopUp && (

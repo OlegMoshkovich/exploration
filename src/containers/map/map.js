@@ -33,6 +33,7 @@ import DestinationMarkerDrag from './markerDrag'
 import { connect } from "react-redux";
 import { globalPopUp } from "../../actions/popUpState";
 import { CubeGeometry } from '@luma.gl/core'
+import { markersData } from './markers'
 
 // Add the loaders that handle your mesh format here
 registerLoaders([OBJLoader]);
@@ -126,7 +127,7 @@ class Map extends Component {
         ...viewport
       }
     });
-    console.log("here", viewport);
+    console.log("view port is changing", viewport);
   }
 
   _resize = () => {
@@ -179,7 +180,9 @@ class Map extends Component {
     });
   };
 
+
   render() {
+    // console.log('current view port info', this.state.viewport)
 
     const dragHandlers = {
       onStart: this.onStart,
@@ -202,13 +205,6 @@ class Map extends Component {
     };
 
 
-    // const INITIAL_VIEW_STATE = {
-    //   latitude: this.state.
-    //   longitude: 40.760357318442715,
-    //   zoom: 4,
-    //   bearing: 0,
-    //   pitch: 30
-    // };
     const lumaLayer = new SimpleMeshLayer({
       id: 'mesh-layer',
       data: cubeData,
@@ -261,10 +257,6 @@ class Map extends Component {
 
     const { globalPopUp } = this.props.globalPopUpState
 
-    if (globalPopUp) {
-      // layers = []
-    }
-
 
     return (
       <div style={{ backgroundColor: 'black' }}>
@@ -289,77 +281,24 @@ class Map extends Component {
             });
           }}
         >
-          {/* Peter Zumthor */}
-          <DestinationMarker
-            globalPopUpState={this.state.popUpState}
-            longitude={6.4636}
-            latitude={59.6528}
-            bottom={"-20px"}
-            name={"Allmannajuvet Museum"}
-            videos={["https://player.vimeo.com/video/239261005#t=29s"]}
-            images={[
-              "https://nordnorge.com/sites/n/nordnorge.com/files/570f0fc155e7b311737aa885d54880c8.jpg",
-              "https://www.iconeye.com/images/2017/06/Zumthor_norway_Mine_1.jpg",
-              "https://static.dezeen.com/uploads/2016/12/allmannajuvet-tourist-route-peter-zumthor-norway-arne-espeland-dezeen-sq.jpg",
-              "https://images.adsttc.com/media/images/57ed/0c31/e58e/ce02/a000/011f/large_jpg/010620_Photo_Per_Berntsen.jpg?1475152917",
-              'https://static.dezeen.com/uploads/2016/06/allmannajuvet-tourist-route-peter-zumthor-norway-per-berntsen-dezeen-936.jpg',
-            ]}
-            popUpClose={() =>
-              this.setState({
-                showPopup: false
-              })
-            }
-          />
-          <DestinationMarkerForm
-            longitude={-73.97181704026718}
-            latitude={40.760357318442715}
-            name={"This marker is static"}
-          />
-          <DestinationMarkerDrag
-            longitude={-73.97181704026718}
-            latitude={40.80}
-            name={"you can drag this marker"}
-          />
-          <DestinationMarker
-            longitude={-73.97752525741629}
-            latitude={40.7523}
-            name={"Grand Central"}
-            images={[
-              "https://cornerbycorner.files.wordpress.com/2012/09/grand-central.jpg",
-              "https://ichef.bbci.co.uk/news/660/media/images/65736000/jpg/_65736479_grand-central-cropped-624x4.jpg",
-              "https://media.timeout.com/images/100476721/630/472/image.jpg",
-              "https://www.nycgo.com/images/venues/1071/grandcentral_midtown_manhattan_nyc_brittanypetronella0057__x_large.jpg",
-              "http://trn.trains.com/~/media/images/railroad-news/news-wire/2016-and-prior/2015/10/grandcentral.jpg"
-            ]}
-            videos={["https://player.vimeo.com/video/123730837#t=29s", "https://player.vimeo.com/video/123730837#t=29s", "https://player.vimeo.com/video/123730837#t=49s", "https://player.vimeo.com/video/123730837#t=19s"]}
-          />
-          <DestinationMarker
-            longitude={-73.97752525741629}
-            latitude={40.7523}
-            name={"Grand Central"}
-            images={[
-              "https://cornerbycorner.files.wordpress.com/2012/09/grand-central.jpg",
-              "https://ichef.bbci.co.uk/news/660/media/images/65736000/jpg/_65736479_grand-central-cropped-624x4.jpg",
-              "https://media.timeout.com/images/100476721/630/472/image.jpg",
-              "https://www.nycgo.com/images/venues/1071/grandcentral_midtown_manhattan_nyc_brittanypetronella0057__x_large.jpg",
-              "http://trn.trains.com/~/media/images/railroad-news/news-wire/2016-and-prior/2015/10/grandcentral.jpg"
-            ]}
-            videos={["https://player.vimeo.com/video/123730837#t=29s", "https://player.vimeo.com/video/123730837#t=29s", "https://player.vimeo.com/video/123730837#t=49s", "https://player.vimeo.com/video/123730837#t=19s"]}
-          />
+          {markersData.map(marker => {
+            const Component = 
 
-          <DestinationMarker
-            longitude={113.5767}
-            latitude={22.271}
-            left={"40px"}
-            name={"Zhuhai Cultural Center"}
-            // popUpState={this.state.popUpState}
-            images={[
-              "http://www.olegmoshkovich.com/img/imgPortfolio/ribbon_realized.png"
-            ]}
-            videos={["https://player.vimeo.com/video/32440857#t=2s"]}
-          />
+            return (
+              <DestinationMarkerDrag
+                longitude={marker.longitude}
+                latitude={marker.latitude}
+                name={marker.name}
 
-          {/* Grand Central */}
+              />)
+          }
+
+          )
+
+          })}
+
+
+
         </InteractiveMap>
         {/* </DeckGL> */}
       </div>

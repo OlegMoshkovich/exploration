@@ -1051,6 +1051,22 @@
     seer "^0.2.4"
     viewport-mercator-project "^6.1.0"
 
+"@deck.gl/core@^7.3.3":
+  version "7.3.3"
+  resolved "https://registry.yarnpkg.com/@deck.gl/core/-/core-7.3.3.tgz#336922fca102209ef0e52fc44bd07450e61bf3e5"
+  integrity sha512-4JmRzyMIHj7tdVzFCujkor5Sj0RIw5Wa7qmad0j/qU2QVM/ZcP3aA5/E/LICDmFn/vWuxRQV462TrHVWg4pyxQ==
+  dependencies:
+    "@loaders.gl/core" "^1.3.3"
+    "@loaders.gl/images" "^1.3.3"
+    "@luma.gl/addons" "^7.3.2"
+    "@luma.gl/core" "^7.3.2"
+    gl-matrix "^3.0.0"
+    math.gl "^3.0.0"
+    mjolnir.js "^2.1.2"
+    probe.gl "^3.1.1"
+    seer "^0.2.4"
+    viewport-mercator-project "^6.1.0"
+
 "@deck.gl/extensions@7.3.1":
   version "7.3.1"
   resolved "https://registry.yarnpkg.com/@deck.gl/extensions/-/extensions-7.3.1.tgz#22ed9410a90e678d0f3056f70b0db4a68d7d8def"
@@ -1103,6 +1119,13 @@
   integrity sha512-KJGhmyEBUq0px8arCMC49FlrlZsSwwFnAvrwcW/PiySU75eZ8sax2tjX0mFKOqZa4657wz0GG92uN1s55sIdsA==
   dependencies:
     "@luma.gl/addons" "^7.3.0"
+
+"@deck.gl/mesh-layers@^7.3.3":
+  version "7.3.3"
+  resolved "https://registry.yarnpkg.com/@deck.gl/mesh-layers/-/mesh-layers-7.3.3.tgz#a5d364df51ddc63bbc9930e72423025d411ab948"
+  integrity sha512-k4R4IZE18rJIzm21IG3PPSXM8g/3eu2Ees6/hiwnNfdaFXddgSqa5fQbDXIBoYRk+LDaJ0fv/s5QcjTDbnSyQg==
+  dependencies:
+    "@luma.gl/addons" "^7.3.2"
 
 "@deck.gl/react@7.3.1":
   version "7.3.1"
@@ -1376,7 +1399,7 @@
     "@babel/runtime" "^7.3.1"
     "@loaders.gl/loader-utils" "1.3.3"
 
-"@luma.gl/addons@7.3.2":
+"@luma.gl/addons@7.3.2", "@luma.gl/addons@^7.3.2":
   version "7.3.2"
   resolved "https://registry.yarnpkg.com/@luma.gl/addons/-/addons-7.3.2.tgz#ace9d6a81121d7edd5776b2c9cb846b6defbf477"
   integrity sha512-ul/iQnrqnhnmVuYo20zrW1FWokKkcnNlqxpRwPolkxFtMsyg5Z+hpxB0dM8buYpCSE0c5ypIsH2AatwXjIMTJA==
@@ -1406,7 +1429,7 @@
   resolved "https://registry.yarnpkg.com/@luma.gl/constants/-/constants-7.3.2.tgz#99c5d665f9e6d21192525038e47ec4acfbbbe0a6"
   integrity sha512-hr6JOOwsGPjjoHnil4sQ6AWsc8P6XXYtRL10TwNYfFTcNxrhSrjQvutYoCzXHH5U0vfHBfPMMUyLASK9FqiHOA==
 
-"@luma.gl/core@7.3.2":
+"@luma.gl/core@7.3.2", "@luma.gl/core@^7.3.2":
   version "7.3.2"
   resolved "https://registry.yarnpkg.com/@luma.gl/core/-/core-7.3.2.tgz#1d006da99ead3f1a7d6323e5c39e1dd6086f1ecf"
   integrity sha512-XyQPSUJRkZcc//gVX0AgjLLNTkCOO68NRnm7RkIhikRBEUdovb4IOcpmWMCB1/Gyj4hzg/Z1FOAVT4pG1E+agw==
