@@ -7,17 +7,7 @@ export class Title extends React.Component {
     super(props);
     this.state = { activeDrags: 0 };
   }
-  onStart = () => {
-    this.setState({
-      activeDrags: ++this.state.activeDrags
-    });
-  };
 
-  onStop = () => {
-    this.setState({
-      activeDrags: --this.state.activeDrags
-    });
-  };
 
   render() {
     const dragHandlers = {

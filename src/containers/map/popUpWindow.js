@@ -8,12 +8,13 @@ import {
 import { BasicForm } from "../../components/form"
 
 export const PopUpWindowVideo = props => {
-  const { src, bottom, left, video } = props;
+  const { bottom, left, video } = props;
   return (
     <div>
       <Draggable>
         <Rectangle bottom={bottom || "-240px"} left={left || "200px"}>
           <iframe
+            title={'video'}
             src={video || ""}
             frameborder="0"
             allow="autoplay; fullscreen"
@@ -68,7 +69,6 @@ export const PopUpWindowImage = props => {
 };
 
 export const PopUpWindowForm = props => {
-  const { src, bottom, left } = props;
   return (
     <BasicForm />
   );

@@ -14,14 +14,12 @@ export class DestinationMarker extends Component {
   }
 
   togglePopUp = () => {
-    const { globalPopUp } = this.props
     const { showPopUp } = this.state
     if (showPopUp === false) {
       return this.setState({ showPopUp: true });
     } else {
       return this.setState({ showPopUp: false });
     }
-
   };
 
   render() {
@@ -40,9 +38,6 @@ export class DestinationMarker extends Component {
       globalPopUpState,
       videos,
     } = this.props;
-
-    console.log('color', this.props.color)
-
     const { showPopUp } = this.state;
 
     if (globalPopUpState && showPopUp) {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Nav } from '../components/NavMenu'
 import Button from '@material-ui/core/Button';
@@ -6,10 +6,9 @@ import Icon from '@material-ui/core/Icon';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import { fade, withStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import { Circle } from '../components/circle'
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
-import InputBase from '@material-ui/core/InputBase';
 import OutlinedInput from '@material-ui/core/OutlinedInput'
 import { Container } from '../components/styles'
 
@@ -69,7 +68,6 @@ export const theme = createMuiTheme({
 
 })
 
-
 const StyledButton = withStyles({
     root: {
         // background: "black",
@@ -89,7 +87,6 @@ const singleCircle = {
         { scale: .3 },
     ]
 }
-
 
 const Material = (props) => {
     const [message, setMessage] = useState('...')
@@ -114,34 +111,6 @@ const Material = (props) => {
             setCircles([...circles])
         }
     }
-
-    let times = 3
-    const updateInput = (letter) => {
-        if (times < 3) {
-            updateInput('a')
-
-            times++
-        } else {
-
-        }
-
-
-    }
-
-    useEffect(() => {
-        if (start === true) {
-            const num = 'nnnn'
-            num.split('').forEach(() => updateInput)
-
-            console.log("TRUE")
-        }
-        updateInput('someting')
-    }, [start]);
-
-
-
-
-
     return (
         <div>
             <MuiThemeProvider theme={theme}>
@@ -175,10 +144,6 @@ const Material = (props) => {
                             <RemoveIcon color="primary" />
                         </StyledButton>
                     </div>
-
-
-                    {/* <TextField label="Basic TextField" /> */}
-
                     <OutlinedInput
                         color='secondary'
                         label="Simple message" onChange={(e) => setMessage(e.target.value)}
@@ -189,9 +154,7 @@ const Material = (props) => {
                     />
                     <div className={classes.container} >{message}</div>
                     <StyledButton variant="contained" color="secondary" size='small' onClick={() => (setStart(!start))}>
-                        {/* <Icon color='primary'>alarm</Icon> */}
                         start
-                            {/* <AddIcon color="primary" /> */}
                     </StyledButton>
                 </MaterialContainer>
             </MuiThemeProvider>

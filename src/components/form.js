@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
 import { Formik } from 'formik';
-
 import { Button } from '@material-ui/core';
-
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import OutlinedInput from '@material-ui/core/OutlinedInput'
 import styled from 'styled-components'
-import Draggable from "react-draggable";
-import { AST_ClassExpression } from 'terser';
 
 export const Container = styled.div`
   position: absolute;
@@ -22,39 +18,9 @@ export const Container = styled.div`
 `;
 
 
-const useStyles = makeStyles({
-    root: {
-        background: 'white',
-        // border: '2px solid yellow',
-        borderRadius: 3,
-        color: 'black',
-        // height: 30,
-
-        "&:: placeholder": {
-            color: 'blue',
-            fontSize: '10px'
-        },
-        "&:focused": {
-            border: '3px solid red'
-        },
-        "&:after": {
-            border: '3px solid red'
-        }
-    },
-});
-
-
 export const BasicForm = props => {
-
-    const [name, setName] = useState('hello')
-    const [comment, setComment] = useState('new comment')
     const [formValues, setFormValues] = useState({})
-
-    const classes = useStyles();
-
-    // const color = 'black'
     const [color, setColor] = useState('black')
-
     const StyledButton = withStyles({
         root: {
             background: color,
@@ -70,8 +36,6 @@ export const BasicForm = props => {
 
     return (
         <div>
-
-
             < Formik
                 initialValues={{ name: '', comment: '' }}
                 validate={values => {
@@ -88,7 +52,6 @@ export const BasicForm = props => {
                     setSubmitting(false)
                     Object.keys(formValues).length === 0 ? setColor('black') : setColor('yellow')
                 }}
-
             >
                 {({
                     values,
@@ -98,7 +61,6 @@ export const BasicForm = props => {
                     handleBlur,
                     handleSubmit,
                     isSubmitting,
-                    /* and other goodies */
                 }) => (
                         <form onSubmit={handleSubmit}>
                             <Container height={'200px'} top={'70px'}>

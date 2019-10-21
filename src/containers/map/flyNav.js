@@ -11,7 +11,7 @@ export const Destination = props => {
 };
 
 export const FlyDestinations = props => {
-  const { flyTo, closeAllWindows } = props;
+  const { flyTo } = props;
 
   return (
     <Draggable
@@ -34,12 +34,6 @@ export const FlyDestinations = props => {
           name={"Zhuhai"}
           navigate={() => flyTo(22.271, 113.5767, 20000)}
         />
-
-
-        {/* <Destination
-        name={"Harold Inerlock"}
-        navigate={() => flyTo(40.74623043587812, -73.93683978026445, 20000)}
-      /> */}
         <Destination
           name={"Overview"}
           navigate={() => flyTo(40.6528, 6.4636, 1000, 2)}
