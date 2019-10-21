@@ -16,7 +16,7 @@ export const PopUpWindowVideo = props => {
           <iframe
             title={'video'}
             src={video || ""}
-            frameborder="0"
+            frameBorder="0"
             allow="autoplay; fullscreen"
             allowfullscreen
             style={{ padding: "15px 0px 5px 0px" }}
