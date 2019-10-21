@@ -51,9 +51,7 @@ export const BasicForm = props => {
     const [formValues, setFormValues] = useState({})
 
     const classes = useStyles();
-    const update = () => {
-        console.log('changing')
-    }
+
     // const color = 'black'
     const [color, setColor] = useState('black')
 
@@ -68,7 +66,7 @@ export const BasicForm = props => {
             }
         }
     })(Button);
-    console.log('form values', formValues)
+
 
     return (
         <div>

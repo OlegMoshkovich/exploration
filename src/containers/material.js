@@ -150,10 +150,10 @@ const Material = (props) => {
     const updateInput = (letter) => {
         if (times < 3) {
             updateInput('a')
-            console.log('11')
+
             times++
         } else {
-            console.log('times is larger')
+
         }
 
 

@@ -1,3 +1,4 @@
+import { pink, teal } from '../../components/colors'
 export const markersData = [{
     type: 'form',
     longitude: -73.97181704026718,
@@ -6,18 +7,18 @@ export const markersData = [{
     color: 'green',
 },
 {
-    type: 'form',
+    type: 'drag',
     longitude: - 73.97181704026718,
     latitude: 40.80,
-    name: "you can draw this marker",
-    color: 'blue',
+    name: "you can drag this marker",
+    color: teal,
 },
 {
     type: 'media',
     longitude: -73.97752525741629,
     latitude: 40.7523,
     name: "grand central",
-    image: 'blue',
+    color: pink,
     images: [
         "https://cornerbycorner.files.wordpress.com/2012/09/grand-central.jpg",
         "https://ichef.bbci.co.uk/news/660/media/images/65736000/jpg/_65736479_grand-central-cropped-624x4.jpg",
@@ -35,7 +36,7 @@ export const markersData = [{
     longitude: 6.4636,
     latitude: 59.6528,
     name: "Allmannajuvet Museum",
-    image: 'blue',
+    color: pink,
     images: [
         "https://nordnorge.com/sites/n/nordnorge.com/files/570f0fc155e7b311737aa885d54880c8.jpg",
         "https://www.iconeye.com/images/2017/06/Zumthor_norway_Mine_1.jpg",
@@ -50,7 +51,7 @@ export const markersData = [{
     longitude: 113.5767,
     latitude: 22.271,
     name: "Zhuhai Cultural Center",
-    image: 'blue',
+    color: pink,
     images: [
         "http://www.olegmoshkovich.com/img/imgPortfolio/ribbon_realized.png"
     ],

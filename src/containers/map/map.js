@@ -55,7 +55,7 @@ const SAMPLE_DATA = (([xCount, yCount], spacing) => {
       });
     }
   }
-  console.log('data from from the map component', data)
+
   return data;
 })([10, 10], 120);
 
@@ -113,7 +113,7 @@ class Map extends Component {
   componentDidMount() {
     window.addEventListener("resize", this._resize);
     this._resize();
-    console.log("gloabal pop state from the map", this.props.globalPopUpState);
+
   }
 
   componentWillUnmount() {
@@ -127,7 +127,7 @@ class Map extends Component {
         ...viewport
       }
     });
-    console.log("view port is changing", viewport);
+
   }
 
   _resize = () => {
@@ -182,7 +182,6 @@ class Map extends Component {
 
 
   render() {
-    // console.log('current view port info', this.state.viewport)
 
     const dragHandlers = {
       onStart: this.onStart,
@@ -282,23 +281,19 @@ class Map extends Component {
           }}
         >
           {markersData.map(marker => {
-            const Component = 
-
+            const Types = { form: DestinationMarkerForm, media: DestinationMarker, drag: DestinationMarkerDrag }
+            const Component = Types[marker.type]
             return (
-              <DestinationMarkerDrag
+              <Component
                 longitude={marker.longitude}
                 latitude={marker.latitude}
                 name={marker.name}
-
+                images={marker.images}
+                videos={marker.videos}
+                color={marker.color}
               />)
-          }
-
-          )
-
+          })
           })}
-
-
-
         </InteractiveMap>
         {/* </DeckGL> */}
       </div>

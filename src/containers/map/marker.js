@@ -34,15 +34,14 @@ export class DestinationMarker extends Component {
       offsetLeft,
       offsetTop,
       name,
-      toggle,
-      popUpClose,
-      popUpState,
       images,
       bottom,
       left,
       globalPopUpState,
       videos,
     } = this.props;
+
+    console.log('color', this.props.color)
 
     const { showPopUp } = this.state;
 
@@ -62,7 +61,7 @@ export class DestinationMarker extends Component {
           onDrag={onDrag}
           onDragEnd={onDragEnd}
         >
-          <Pin onClick={this.togglePopUp} />
+          <Pin onClick={this.togglePopUp} color={this.props.color} />
         </Marker>
 
         {showPopUp && (

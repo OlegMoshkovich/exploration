@@ -19,12 +19,12 @@ export class DestinationMarkerDrag extends Component {
   }
 
   _onMarkerDragStart = event => {
-    console.log('start of the event')
+
     // this._logDragEvent('onDragStart', event);
   };
 
   _onMarkerDrag = event => {
-    console.log('end of the event')
+
     // this._logDragEvent('onDrag', event);
   };
 
@@ -59,7 +59,7 @@ export class DestinationMarkerDrag extends Component {
     } = this.props;
 
     const { showPopUp, marker } = this.state;
-    console.log('this.state from the drag component', this.state)
+
 
     if (globalPopUpState && showPopUp) {
       this.setState({ showPopUp: false })
@@ -78,7 +78,7 @@ export class DestinationMarkerDrag extends Component {
           onDragEnd={this._onMarkerDragEnd}
 
         >
-          <Pin onClick={this.togglePopUp} />
+          <Pin onClick={this.togglePopUp} color={this.props.color} />
         </Marker>
 
         {showPopUp && (
