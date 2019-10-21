@@ -3,24 +3,14 @@ import styled from 'styled-components'
 import { Nav } from '../components/NavMenu'
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
-import TextField from '@material-ui/core/TextField';
-import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import { fade, withStyles } from '@material-ui/core/styles';
 import { Circle } from '../components/circle'
-import { cipher } from 'node-forge';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
-import { borderRadius } from '@material-ui/system';
-import DeleteRoundedIcon from '@material-ui/icons/DeleteRounded';
-import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
 import InputBase from '@material-ui/core/InputBase';
-import InputLabel from '@material-ui/core/InputLabel';
-import Input from '@material-ui/core/Input'
-import FormControl from '@material-ui/core/FormControl';
 import OutlinedInput from '@material-ui/core/OutlinedInput'
-import { red } from '@material-ui/core/colors';
 import { Container } from '../components/styles'
 
 const MaterialContainer = styled.div`
@@ -79,27 +69,6 @@ export const theme = createMuiTheme({
 
 })
 
-const BootstrapInput = withStyles(theme => ({
-    root: {
-        'label + &': {
-            marginTop: theme.spacing(3),
-        },
-    },
-    input: {
-        borderRadius: 4,
-        position: 'relative',
-        backgroundColor: theme.palette.common.white,
-        borderBottom: '1px solid pink',
-        fontSize: 16,
-        width: 'auto',
-        padding: '10px 12px',
-        transition: theme.transitions.create(['border-color', 'box-shadow']),
-        '&:focus': {
-            boxShadow: `${fade(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
-            borderColor: theme.palette.primary.main,
-        },
-    },
-}))(InputBase);
 
 const StyledButton = withStyles({
     root: {

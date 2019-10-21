@@ -1,15 +1,13 @@
 import React, { useState } from "react";
-import { LinkCircle, LinkContainer, LinkText } from "./styles";
+import { LinkContainer, LinkText } from "./styles";
 import { Link } from "react-router-dom";
 import { Circle } from "./circle";
 import Draggable from "react-draggable";
 
 export const Nav = () => {
-  const [pause, setPause] = useState(true);
-  const [repeat, setRepeat] = useState(1);
-  const height = "1000px";
-  const [coordY, setCoordY] = useState("100px");
-  const pink = "#FF00D6";
+
+  const [repeat] = useState(1);
+
 
   return (
     <Draggable

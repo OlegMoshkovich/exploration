@@ -1,5 +1,5 @@
 import React from "react";
-import { Rectangle } from "./styles";
+
 import Draggable from "react-draggable";
 import { ExitCircle } from "./styles";
 import { useDispatch, useSelector } from "react-redux";

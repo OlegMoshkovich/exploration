@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Marker, Popup } from "react-map-gl";
 import Pin from "./pin";
-import { BasicForm } from '../../components/form'
+
 import { PopUpWindowForm } from './popUpWindow'
 import { connect } from "react-redux";
 
@@ -16,9 +16,7 @@ export class DestinationMarkerForm extends Component {
   }
 
   togglePopUp = () => {
-    const { globalPopUp } = this.props
     const { showPopUp } = this.state
-
     if (showPopUp === false) {
       return this.setState({ showPopUp: true, color: 'yellow' });
     } else {
@@ -36,14 +34,7 @@ export class DestinationMarkerForm extends Component {
       offsetLeft,
       offsetTop,
       name,
-      toggle,
-      popUpClose,
-      popUpState,
-      images,
-      bottom,
-      left,
       globalPopUpState,
-      videos,
     } = this.props;
 
     const { showPopUp } = this.state;

@@ -3,7 +3,6 @@ import { Nav } from '../components/NavMenu'
 import DeckGL, {
     LineLayer,
     ScatterplotLayer,
-    OrthographicViewport,
     COORDINATE_SYSTEM
 } from 'deck.gl';
 
@@ -31,18 +30,8 @@ export class graphViz extends Component {
             projectionMode: COORDINATE_SYSTEM.IDENTITY
         });
     }
-    createViewport() {
-        const width = this.props.width;
-        const height = this.props.height;
-        // return new OrthographicViewport({
-        //     width,
-        //     height,
-        //     left: (-width / 2),
-        //     top: (-height / 2)
-        // });
-    }
+
     render() {
-        const layers = [];
         return (
             <div>
                 <Nav />

@@ -3,18 +3,11 @@ import { components } from "../data";
 import { Circle } from "../components/circle";
 import {
   Container,
-  Box,
   TextContainer
 } from "../components/styles";
 import { Nav } from "../components/NavMenu";
-import { Popover, Button } from 'antd';
 import styled from 'styled-components';
-const content = (
-  <div>
-    <p>Content</p>
-    <p>Content</p>
-  </div>
-);
+
 
 const AppContainer = styled.div`
   display: flex;
@@ -41,24 +34,12 @@ text-decoration: none;
 
 
 function App() {
-  const [pause, setPause] = useState(true);
-  const [repeat, setRepeat] = useState(1);
+  const [repeat] = useState(1);
   const height = "1000px";
-  const width = 'auto'
-  const [coordY, setCoordY] = useState("100px");
-
-  const text = <span>Title</span>;
-
-
-  const buttonWidth = 70;
-  const [show, setShow] = useState(false)
-
   return (
     <AppContainer height={height} width={'auto'}>
       <Nav />
-
-
-      <Container top={coordY} direction="row">
+      <Container top={'100px'} direction="row">
         {components.map((component, index) => {
           return (
             <div >

@@ -2,9 +2,6 @@ import React from "react";
 import Draggable from "react-draggable";
 import {
   Rectangle,
-  FlyContainer,
-  FlyCircle,
-  FlyText,
   Circle,
   Image
 } from "./styles";
@@ -73,10 +70,6 @@ export const PopUpWindowImage = props => {
 export const PopUpWindowForm = props => {
   const { src, bottom, left } = props;
   return (
-    // <Draggable>
-    // <Rectangle bottom={bottom || "-40px"} left={left || "100px"}>
     <BasicForm />
-    // </Rectangle>
-    // </Draggable >
   );
 };

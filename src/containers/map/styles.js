@@ -1,11 +1,9 @@
-import React from "react";
+
 import styled from "styled-components";
 
 
 const green = "#C0F75E";
-const red = "#D44346";
 const teal = "#B7F1FD";
-const yellow = "#F3C242";
 const pink = "#FF00D6";
 
 export const Rectangle = styled.div`

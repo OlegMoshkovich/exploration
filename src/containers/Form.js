@@ -3,11 +3,7 @@ import { Formik } from 'formik';
 import { Nav } from '../components/NavMenu';
 import { Container } from '../components/styles';
 import { Button } from '@material-ui/core';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import Icon from '@material-ui/core/Icon';
-import theme from './material';
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
-import { fade, withStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import OutlinedInput from '@material-ui/core/OutlinedInput'
 import { BasicForm } from '../components/form'
 
@@ -23,37 +19,16 @@ const StyledButton = withStyles({
     }
 })(Button);
 
-const styles = theme => ({
-    root: {
-        "& $notchedOutline": {
-            border: '3px solid green'
-        },
-        "&:hover $notchedOutline": {
-            border: '3px solid green'
-        },
-        "&$focused $notchedOutline": {
-            border: '3px solid green'
-        }
-    },
-    focused: {},
-    input: {
-        border: 'red'
-    }
-});
 
 
 export const Basic = props => {
 
-    const [formValues, setFormValues] = useState({ name: '', comment: '' })
-    const classes = props.classes;
+    const [setFormValues] = useState({ name: '', comment: '' })
+
     return (
-
         < div >
-
             <Nav />
-
             {/* wrapper component */}
-
             < Formik
                 initialValues={{ name: '', comment: '' }}
                 validate={values => {

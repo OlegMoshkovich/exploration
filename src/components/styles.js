@@ -1,10 +1,5 @@
 import styled from "styled-components";
-const green = "#C0F75E";
-const red = "#D44346";
-// const purple = '#A56DF2'
-const teal = "#B7F1FD";
-const yellow = "#F3C242";
-const pink = "#FF00D6";
+import { green, red, teal, pink } from './colors'
 
 export const Iterations = styled.input`
   position: absolute;

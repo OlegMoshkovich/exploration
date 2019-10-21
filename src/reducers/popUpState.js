@@ -1,5 +1,3 @@
-import { globalPopUp } from "../actions/popUpState";
-
 const initialState = {
   globalPopUp: false
 };

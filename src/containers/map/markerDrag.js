@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import { Marker, Popup } from "react-map-gl";
 import Pin from "./pin";
-import { PopUpWindowImage, PopUpWindowVideo } from "./popUpWindow";
 import { connect } from "react-redux";
 import { BasicForm } from '../../components/form'
-
 
 export class DestinationMarkerDrag extends Component {
   constructor(props) {
@@ -18,18 +16,7 @@ export class DestinationMarkerDrag extends Component {
     };
   }
 
-  _onMarkerDragStart = event => {
-
-    // this._logDragEvent('onDragStart', event);
-  };
-
-  _onMarkerDrag = event => {
-
-    // this._logDragEvent('onDrag', event);
-  };
-
   _onMarkerDragEnd = event => {
-    // this._logDragEvent('onDragEnd', event);
     this.setState({
       marker: {
         longitude: event.lngLat[0],
@@ -37,21 +24,18 @@ export class DestinationMarkerDrag extends Component {
       }
     });
   };
+
   togglePopUp = () => {
-    const { globalPopUp } = this.props
     const { showPopUp } = this.state
     if (showPopUp === false) {
       return this.setState({ showPopUp: true });
     } else {
       return this.setState({ showPopUp: false });
     }
-
   };
 
   render() {
     const {
-      longitude,
-      latitude,
       offsetLeft,
       offsetTop,
       name,
@@ -59,8 +43,6 @@ export class DestinationMarkerDrag extends Component {
     } = this.props;
 
     const { showPopUp, marker } = this.state;
-
-
     if (globalPopUpState && showPopUp) {
       this.setState({ showPopUp: false })
     }
