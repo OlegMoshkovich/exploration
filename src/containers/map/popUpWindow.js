@@ -45,7 +45,7 @@ export const PopUpWindowImage = props => {
   const { src, bottom, left } = props;
   return (
     <Draggable>
-      <Rectangle bottom={bottom || "-240px"} left={left || "200px"}>
+      <Rectangle style={{ backgroundColor: 'yellow' }} bottom={bottom || "-240px"} left={left || "200px"}>
         <Image
           src={
             src ||
@@ -62,7 +62,7 @@ export const PopUpWindowImage = props => {
               color: "#FF00D6"
             }}
           >
-            e
+            handle
           </div>
         </Circle>
       </Rectangle>

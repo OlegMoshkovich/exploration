@@ -62,7 +62,7 @@ export class DestinationMarkerForm extends Component {
           onDrag={onDrag}
           onDragEnd={onDragEnd}
         >
-          <Pin onClick={this.togglePopUp} />
+          <Pin onClick={this.togglePopUp} color='yellow' />
         </Marker>
 
         {showPopUp && (

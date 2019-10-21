@@ -146,19 +146,29 @@ const Material = (props) => {
         }
     }
 
+    let times = 3
     const updateInput = (letter) => {
-        const newInput = message + letter
-        setMessage(newInput)
+        if (times < 3) {
+            updateInput('a')
+            console.log('11')
+            times++
+        } else {
+            console.log('times is larger')
+        }
+
+
     }
 
     useEffect(() => {
-        console.log('printing start', start)
-        setInterval
-        updateInput('a')
-        while (start === true) {
-            setInterval(updateInput('a'), 3000);
+        if (start === true) {
+            const num = 'nnnn'
+            num.split('').forEach(() => updateInput)
+
+            console.log("TRUE")
         }
+        updateInput('someting')
     }, [start]);
+
 
 
 
