@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Nav } from '../components/NavMenu'
 import Button from '@material-ui/core/Button';
@@ -91,6 +91,8 @@ const Material = (props) => {
     const [message, setMessage] = useState('...')
     const [circles, setCircles] = useState([singleCircle])
     const classes = props.classes;
+
+    const string = "i like this very very much i like this very very much i like this very very much i like this very very much i like this very very much i like this very very much i like this very very much i like this very very much i like this very very much "
     const [start, setStart] = useState(false)
     const Add = () => {
         if (circles.length < 10) {
@@ -110,35 +112,34 @@ const Material = (props) => {
             setCircles([...circles])
         }
     }
+
+
+
     return (
         <div>
             <MuiThemeProvider theme={theme}>
                 <MaterialContainer>
                     <div>Material seems to dominate</div>
                     <div className={classes.container}>
+
                         <Container direction={'column'} >
                             {circles.map((component, index) => {
                                 return (
-
                                     <Circle
                                         key={index + "Material circles"}
                                         repeat={1}
                                         width={component.width}
                                         animation={component.animation}
                                         index={index + "Material"}
-
                                     />
-
                                 );
                             })}
-
                         </Container>
 
                         <StyledButton variant="contained" color="secondary" size='small' onClick={() => Add()}>
                             {/* <Icon color='primary'>alarm</Icon> */}
                             <AddIcon color="primary" />
                         </StyledButton>
-
                         <StyledButton variant="contained" color="secondary" size='small' onClick={() => { Subtract() }}>
                             <RemoveIcon color="primary" />
                         </StyledButton>
