@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { TypeWriter } from './typeWriter'
+import { Nav } from '../components/NavMenu'
 
 const Empty = () => {
     return (
         <div>
-            loading
+            <TypeWriter messages={['If you are seeing this message the articles from NYT have not been loaded yet', 'Please reload the page to get a dose of negativity from news about US president']} />
         </div>
     )
 }
@@ -32,8 +33,19 @@ export const Articles = () => {
 
 
     if (articles.length !== 0) {
+
         const msgs = articles.map(article => article.abstract)
-        return <TypeWriter messages={msgs} />;
+        return (
+            <div>
+                <Nav />
+                <TypeWriter messages={msgs} />
+                <TypeWriter messages={msgs} />
+                <TypeWriter messages={msgs} />
+                <TypeWriter messages={msgs} />
+                <TypeWriter messages={msgs} />
+            </div>
+        )
+
     }
     return < Empty />;
 
