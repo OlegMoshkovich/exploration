@@ -79,9 +79,7 @@ export const TypeWriter = ({ messages, heading }) => {
 
     return (
         <h1>
-            {heading}&nbsp;
-        <span>{state.text}</span>
-            <span id="cursor" />
+            <span style={{ fontSize: '100px' }}>{state.text}</span>
         </h1>
     );
 }
