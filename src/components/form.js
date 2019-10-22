@@ -21,6 +21,7 @@ export const Container = styled.div`
 export const BasicForm = props => {
     const [formValues, setFormValues] = useState({})
     const [color, setColor] = useState('black')
+
     const StyledButton = withStyles({
         root: {
             background: color,
@@ -38,6 +39,7 @@ export const BasicForm = props => {
         <div>
             < Formik
                 initialValues={{ name: '', comment: '' }}
+
                 validate={values => {
                     let errors = {};
                     if (!values.name) {
@@ -47,11 +49,13 @@ export const BasicForm = props => {
                     }
                     return errors;
                 }}
+
                 onSubmit={(values, { setSubmitting }) => {
                     setFormValues(values);
                     setSubmitting(false)
                     Object.keys(formValues).length === 0 ? setColor('black') : setColor('yellow')
                 }}
+
             >
                 {({
                     values,

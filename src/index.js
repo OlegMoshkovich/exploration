@@ -12,6 +12,8 @@ import { Provider } from "react-redux";
 import { experimentApp } from "./reducers";
 import { createStore } from "redux";
 import { Basic } from "./containers/Form"
+import { TypeMessage } from "./containers/typeWriter"
+import { Articles } from "./containers/Articles"
 
 
 
@@ -27,6 +29,9 @@ const routing = (
         <Route exact path="/material" component={Material} />
         <Route exact path="/graph" component={graphViz} />
         <Route exact path="/form" component={Basic} />
+        <Route exact path="/type" component={TypeMessage} />
+        <Route exact path="/articles" component={Articles} />
+
       </div>
     </Router>
   </Provider>

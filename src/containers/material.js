@@ -88,12 +88,14 @@ const singleCircle = {
 }
 
 const Material = (props) => {
+
+    const [state, setState] = useState({
+        text: 'hello how are you doing my dear sir?'
+    })
     const [message, setMessage] = useState('...')
     const [circles, setCircles] = useState([singleCircle])
     const classes = props.classes;
 
-    const string = "i like this very very much i like this very very much i like this very very much i like this very very much i like this very very much i like this very very much i like this very very much i like this very very much i like this very very much "
-    const [start, setStart] = useState(false)
     const Add = () => {
         if (circles.length < 10) {
             setCircles([...circles, {
@@ -112,6 +114,7 @@ const Material = (props) => {
             setCircles([...circles])
         }
     }
+
 
 
 
@@ -153,7 +156,7 @@ const Material = (props) => {
                         }}
                     />
                     <div className={classes.container} >{message}</div>
-                    <StyledButton variant="contained" color="secondary" size='small' onClick={() => (setStart(!start))}>
+                    <StyledButton variant="contained" color="secondary" size='small' >
                         start
                     </StyledButton>
                 </MaterialContainer>
