@@ -1051,22 +1051,6 @@
     seer "^0.2.4"
     viewport-mercator-project "^6.1.0"
 
-"@deck.gl/core@^7.3.3":
-  version "7.3.3"
-  resolved "https://registry.yarnpkg.com/@deck.gl/core/-/core-7.3.3.tgz#336922fca102209ef0e52fc44bd07450e61bf3e5"
-  integrity sha512-4JmRzyMIHj7tdVzFCujkor5Sj0RIw5Wa7qmad0j/qU2QVM/ZcP3aA5/E/LICDmFn/vWuxRQV462TrHVWg4pyxQ==
-  dependencies:
-    "@loaders.gl/core" "^1.3.3"
-    "@loaders.gl/images" "^1.3.3"
-    "@luma.gl/addons" "^7.3.2"
-    "@luma.gl/core" "^7.3.2"
-    gl-matrix "^3.0.0"
-    math.gl "^3.0.0"
-    mjolnir.js "^2.1.2"
-    probe.gl "^3.1.1"
-    seer "^0.2.4"
-    viewport-mercator-project "^6.1.0"
-
 "@deck.gl/extensions@7.3.1":
   version "7.3.1"
   resolved "https://registry.yarnpkg.com/@deck.gl/extensions/-/extensions-7.3.1.tgz#22ed9410a90e678d0f3056f70b0db4a68d7d8def"
@@ -1119,13 +1103,6 @@
   integrity sha512-KJGhmyEBUq0px8arCMC49FlrlZsSwwFnAvrwcW/PiySU75eZ8sax2tjX0mFKOqZa4657wz0GG92uN1s55sIdsA==
   dependencies:
     "@luma.gl/addons" "^7.3.0"
-
-"@deck.gl/mesh-layers@^7.3.3":
-  version "7.3.3"
-  resolved "https://registry.yarnpkg.com/@deck.gl/mesh-layers/-/mesh-layers-7.3.3.tgz#a5d364df51ddc63bbc9930e72423025d411ab948"
-  integrity sha512-k4R4IZE18rJIzm21IG3PPSXM8g/3eu2Ees6/hiwnNfdaFXddgSqa5fQbDXIBoYRk+LDaJ0fv/s5QcjTDbnSyQg==
-  dependencies:
-    "@luma.gl/addons" "^7.3.2"
 
 "@deck.gl/react@7.3.1":
   version "7.3.1"
@@ -1399,7 +1376,7 @@
     "@babel/runtime" "^7.3.1"
     "@loaders.gl/loader-utils" "1.3.3"
 
-"@luma.gl/addons@7.3.2", "@luma.gl/addons@^7.3.2":
+"@luma.gl/addons@7.3.2":
   version "7.3.2"
   resolved "https://registry.yarnpkg.com/@luma.gl/addons/-/addons-7.3.2.tgz#ace9d6a81121d7edd5776b2c9cb846b6defbf477"
   integrity sha512-ul/iQnrqnhnmVuYo20zrW1FWokKkcnNlqxpRwPolkxFtMsyg5Z+hpxB0dM8buYpCSE0c5ypIsH2AatwXjIMTJA==
@@ -1429,7 +1406,7 @@
   resolved "https://registry.yarnpkg.com/@luma.gl/constants/-/constants-7.3.2.tgz#99c5d665f9e6d21192525038e47ec4acfbbbe0a6"
   integrity sha512-hr6JOOwsGPjjoHnil4sQ6AWsc8P6XXYtRL10TwNYfFTcNxrhSrjQvutYoCzXHH5U0vfHBfPMMUyLASK9FqiHOA==
 
-"@luma.gl/core@7.3.2", "@luma.gl/core@^7.3.2":
+"@luma.gl/core@7.3.2":
   version "7.3.2"
   resolved "https://registry.yarnpkg.com/@luma.gl/core/-/core-7.3.2.tgz#1d006da99ead3f1a7d6323e5c39e1dd6086f1ecf"
   integrity sha512-XyQPSUJRkZcc//gVX0AgjLLNTkCOO68NRnm7RkIhikRBEUdovb4IOcpmWMCB1/Gyj4hzg/Z1FOAVT4pG1E+agw==
@@ -4156,6 +4133,16 @@ cyclist@~0.2.2:
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-0.2.2.tgz#1b33792e11e914a2fd6d6ed6447464444e5fa640"
   integrity sha1-GzN5LhHpFKL9bW7WRHRkRE5fpkA=
 
+"d3-array@1.2.0 - 2":
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/d3-array/-/d3-array-2.3.3.tgz#e90c39fbaedccedf59fc30473092f99a0e14efa2"
+  integrity sha512-syv3wp0U5aB6toP2zb2OdBkhTy1MWDsCAaYk6OXJZv+G4u7bSWEmYgxLoFyc88RQUhZYGCebW9a9UD1gFi5+MQ==
+
+d3-color@1:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/d3-color/-/d3-color-1.4.0.tgz#89c45a995ed773b13314f06460df26d60ba0ecaf"
+  integrity sha512-TzNPeJy2+iEepfiL92LAAB7fvnp/dV2YwANPVHdDWmYMm23qIJBYww3qT8I8C1wXrmrg4UWs7BKc2tKIgyjzHg==
+
 d3-dsv@^1.0.8:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/d3-dsv/-/d3-dsv-1.1.1.tgz#aaa830ecb76c4b5015572c647cc6441e3c7bb701"
@@ -4165,10 +4152,45 @@ d3-dsv@^1.0.8:
     iconv-lite "0.4"
     rw "1"
 
+d3-format@1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/d3-format/-/d3-format-1.4.1.tgz#c45f74b17c5a290c072a4ba7039dd19662cd5ce6"
+  integrity sha512-TUswGe6hfguUX1CtKxyG2nymO+1lyThbkS1ifLX0Sr+dOQtAD5gkrffpHnx+yHNKUZ0Bmg5T4AjUQwugPDrm0g==
+
 d3-hexbin@^0.2.1:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/d3-hexbin/-/d3-hexbin-0.2.2.tgz#9c5837dacfd471ab05337a9e91ef10bfc4f98831"
   integrity sha1-nFg32s/UcasFM3qeke8Qv8T5iDE=
+
+d3-interpolate@1:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/d3-interpolate/-/d3-interpolate-1.3.2.tgz#417d3ebdeb4bc4efcc8fd4361c55e4040211fd68"
+  integrity sha512-NlNKGopqaz9qM1PXh9gBF1KSCVh+jSFErrSlD/4hybwoNX/gt1d8CDbDW+3i+5UOHhjC6s6nMvRxcuoMVNgL2w==
+  dependencies:
+    d3-color "1"
+
+d3-scale@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/d3-scale/-/d3-scale-3.1.0.tgz#e8af005101502dbf26c505d9f40cf88bcb75b2e1"
+  integrity sha512-3edyEBwbwQG400VbgaepQC9ZYFX3h92flLHIUa1+nvZp/mqCYdxNM9zGTjKtPcSAuBCyPePdMQOapsD0qNALrg==
+  dependencies:
+    d3-array "1.2.0 - 2"
+    d3-format "1"
+    d3-interpolate "1"
+    d3-time "1"
+    d3-time-format "2"
+
+d3-time-format@2:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/d3-time-format/-/d3-time-format-2.2.1.tgz#971f66aae3b8fb268040494986f41512d4d4dca6"
+  integrity sha512-VA6WqORO1+H1SvSzgl2oT0z3niANh3opa8Cencpen1LFthw/bEX71R/DgjPlWw78J4UHmD0jCPP1W0HpwMkhjg==
+  dependencies:
+    d3-time "1"
+
+d3-time@1:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/d3-time/-/d3-time-1.1.0.tgz#b1e19d307dae9c900b7e5b25ffc5dcc249a8a0f1"
+  integrity sha512-Xh0isrZ5rPYYdqhAVk8VLnMEidhz5aP7htAADH6MfzgmmicPkTo8LhkLxci61/lCB7n7UmE3bN0leRt+qvkLxA==
 
 d@1, d@^1.0.1:
   version "1.0.1"

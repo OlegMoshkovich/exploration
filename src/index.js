@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./containers/App";
 import Map from "./containers/map/map";
-import MapExperiment from "./containers/map/map"
+import MapExperiment from "./containers/map/mapExperiment"
 import { Tiny } from "./containers/tiny";
 import { graphViz } from "./containers/graphViz"
 import Material from "./containers/material";
