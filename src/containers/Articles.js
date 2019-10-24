@@ -42,7 +42,8 @@ export const Articles = () => {
                 <TypeWriter messages={msgs} />
                 <TypeWriter messages={msgs} />
                 <TypeWriter messages={msgs} />
-                <TypeWriter messages={msgs} />
+
+
             </div>
         )
 

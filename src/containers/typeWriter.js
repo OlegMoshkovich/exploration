@@ -3,7 +3,7 @@ import { longMessage } from '../data'
 import { Nav } from '../components/NavMenu'
 
 const CONSTANTS = {
-    DELETING_SPEED: 3,
+    DELETING_SPEED: 10,
     TYPING_SPEED: 100,
 }
 

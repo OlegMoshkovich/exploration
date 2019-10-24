@@ -30,7 +30,7 @@ export const PopUpWindowVideo = props => {
                 color: "#FF00D6"
               }}
             >
-              handle
+
             </div>
           </Circle>
         </Rectangle>
@@ -60,7 +60,7 @@ export const PopUpWindowImage = props => {
               color: "#FF00D6"
             }}
           >
-            handle
+
           </div>
         </Circle>
       </Rectangle>
