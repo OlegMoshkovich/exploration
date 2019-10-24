@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./containers/App";
 import Map from "./containers/map/map";
 import MapExperiment from "./containers/map/mapExperiment"
+import MapTrip from "./containers/map/mapTrip"
 import { Tiny } from "./containers/tiny";
 import { graphViz } from "./containers/graphViz"
 import Material from "./containers/material";
@@ -15,7 +16,7 @@ import { createStore } from "redux";
 import { Basic } from "./containers/Form"
 import { TypeMessage } from "./containers/typeWriter"
 import { Articles } from "./containers/Articles"
-import mapExperiment from "./containers/map/mapExperiment";
+
 
 
 
@@ -29,12 +30,14 @@ const routing = (
         <Route exact path="/" component={App} />
         <Route exact path="/map" component={Map} />
         <Route exact path="/mapexperiment" component={MapExperiment} />
+        <Route exact path="/maptrips" component={MapTrip} />
         <Route exact path="/tiny" component={Tiny} />
         <Route exact path="/material" component={Material} />
         <Route exact path="/graph" component={graphViz} />
         <Route exact path="/form" component={Basic} />
         <Route exact path="/type" component={TypeMessage} />
         <Route exact path="/articles" component={Articles} />
+
 
       </div>
     </Router>

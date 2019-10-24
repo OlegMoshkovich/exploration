@@ -62,6 +62,7 @@ class MapExperiment extends Component {
     this.state = {
       hoveredObject: null
     };
+
     this._onHover = this._onHover.bind(this);
     this._renderTooltip = this._renderTooltip.bind(this);
 
@@ -71,6 +72,7 @@ class MapExperiment extends Component {
   }
 
   _onHover({ x, y, object }) {
+    console.log('hovered object', object)
     this.setState({ x, y, hoveredObject: object });
   }
 
@@ -79,13 +81,13 @@ class MapExperiment extends Component {
 
     return [
       // only needed when using shadows - a plane for shadows to drop on
-      new PolygonLayer({
-        id: 'ground',
-        data: landCover,
-        stroked: false,
-        getPolygon: f => f,
-        getFillColor: [0, 0, 0, 0]
-      }),
+      // new PolygonLayer({
+      //   id: 'ground',
+      //   data: landCover,
+      //   stroked: false,
+      //   getPolygon: f => f,
+      //   getFillColor: [0, 0, 0, 0]
+      // }),
       new GeoJsonLayer({
         id: 'geojson',
         data,

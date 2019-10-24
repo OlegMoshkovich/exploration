@@ -3,6 +3,7 @@ import { LinkContainer, LinkText } from "./styles";
 import { Link } from "react-router-dom";
 import { Circle } from "./circle";
 import Draggable from "react-draggable";
+import { green } from './colors'
 
 export const Nav = () => {
 
@@ -20,6 +21,11 @@ export const Nav = () => {
         </Link>
         <Link style={{ textDecoration: "none" }} to={"/map"}>
           <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} color={'yellow'} >
+            <LinkText>map</LinkText>
+          </Circle>
+        </Link>
+        <Link style={{ textDecoration: "none" }} to={"/maptrips"}>
+          <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} color={green} >
             <LinkText>map</LinkText>
           </Circle>
         </Link>
