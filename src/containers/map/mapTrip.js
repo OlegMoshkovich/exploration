@@ -9,6 +9,11 @@ import { PolygonLayer } from '@deck.gl/layers';
 import { TripsLayer } from '@deck.gl/geo-layers';
 import { Nav } from '../../components/NavMenu'
 import { trips } from '../../data'
+import { FlyDestinations } from "./flyNav";
+import {
+  InteractiveMap,
+  FlyToInterpolator
+} from "react-map-gl";
 
 // Set your mapbox token here
 const MAPBOX_TOKEN = 'pk.eyJ1Ijoib2xlZ21vc2hrb3ZpY2giLCJhIjoiY2pmeTFidnQzMGUwaDMycTd6aGlseXF6ayJ9._4zzVy5_Q5lPjIiN56SMyQ'; // eslint-disable-line
@@ -51,9 +56,9 @@ const DEFAULT_THEME = {
 
 const INITIAL_VIEW_STATE = {
   longitude: -74,
-  latitude: 40.72,
-  zoom: 13,
-  pitch: 45,
+  latitude: 40.76,
+  zoom: 11,
+  pitch: 0,
   bearing: 0
 };
 
@@ -63,7 +68,15 @@ export default class MapTrip extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      time: 0
+      time: 0,
+      viewport: {
+        width: window.innerWidth,
+        height: window.innerHeight,
+        longitude: -74,
+        latitude: 40.76,
+        zoom: 11,
+        maxZoom: 16
+      },
     };
   }
 
@@ -90,12 +103,32 @@ export default class MapTrip extends Component {
     });
     this._animationFrame = window.requestAnimationFrame(this._animate.bind(this));
   }
+  _onViewportChange(viewport) {
+    console.log('this viewport change is activated ')
+    this.setState({
+      viewport: {
+        ...this.state.viewport,
+        ...viewport
+      }
+    });
+  }
+  _goToViewport = (latitude, longitude, speed = 5000, zoom = 17) => {
+    console.log('go to port is pressed', latitude)
+
+    this._onViewportChange({
+      latitude: latitude,
+      longitude: longitude,
+      zoom: zoom,
+      transitionInterpolator: new FlyToInterpolator(),
+      transitionDuration: speed
+    });
+  };
 
   _renderLayers() {
     const {
       buildings = DATA_URL.BUILDINGS,
       trips = DATA_URL.TRIPS,
-      trailLength = 180,
+      trailLength = 400,
       theme = DEFAULT_THEME
     } = this.props;
 
@@ -114,7 +147,7 @@ export default class MapTrip extends Component {
         getPath: d => d.path,
         getTimestamps: d => d.timestamps,
         getColor: d => (d.vendor === 0 ? theme.trailColor0 : theme.trailColor1),
-        opacity: 0.3,
+        opacity: 1,
         widthMinPixels: 2,
         rounded: true,
         trailLength,
@@ -146,11 +179,11 @@ export default class MapTrip extends Component {
       <div>
 
         <Nav />
-
+        <FlyDestinations flyTo={this._goToViewport} />
         <DeckGL
           layers={this._renderLayers()}
           effects={theme.effects}
-          initialViewState={INITIAL_VIEW_STATE}
+          initialViewState={this.state.viewport}
           viewState={viewState}
           controller={true}
         >

@@ -100,7 +100,7 @@ export const FlyContainer = styled.div`
   width: auto;
   height: 160px;
   padding: 5px;
-  border: 3px solid ${teal};
+  border: 1px solid ${teal};
   z-index: 105;
   font-size: 10px;
   cursor: "pointer";
