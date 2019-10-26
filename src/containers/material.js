@@ -116,8 +116,6 @@ const Material = (props) => {
     }
 
 
-
-
     return (
         <div>
             <MuiThemeProvider theme={theme}>
@@ -151,12 +149,15 @@ const Material = (props) => {
                         color='secondary'
                         label="Simple message" onChange={(e) => setMessage(e.target.value)}
                         value={message}
+                        onFocus={() => { setMessage('.') }}
                         inputprops={{
                             endAdornment: <InputAdornment position="end" variant="outlined"><Icon color='primary'>alarm</Icon></InputAdornment>,
                         }}
                     />
                     <div className={classes.container} >{message}</div>
-                    <StyledButton variant="contained" color="secondary" size='small' >
+                    <StyledButton variant="contained" color="secondary" size='small' onClick={() => {
+                        setMessage('type something...')
+                    }} >
                         start
                     </StyledButton>
                 </MaterialContainer>

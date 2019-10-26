@@ -33,8 +33,13 @@ export const Nav = () => {
               <LinkText>map</LinkText>
             </Circle>
           </Link>
-          <Link style={{ textDecoration: "none" }} to={"/tiny"}>
+          {/* <Link style={{ textDecoration: "none" }} to={"/tiny"}>
             <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} label={'tiny'}>
+              <LinkText>tiny</LinkText>
+            </Circle>
+          </Link> */}
+          <Link style={{ textDecoration: "none" }} to={"/mapexperiment"}>
+            <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} label={'map extrusion'}>
               <LinkText>tiny</LinkText>
             </Circle>
           </Link>
