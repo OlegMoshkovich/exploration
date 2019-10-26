@@ -16,7 +16,7 @@ import { createStore } from "redux";
 import { Basic } from "./containers/Form"
 import { TypeMessage } from "./containers/typeWriter"
 import { Articles } from "./containers/Articles"
-
+import { Hover } from "./containers/hover"
 
 
 
@@ -37,6 +37,7 @@ const routing = (
         <Route exact path="/form" component={Basic} />
         <Route exact path="/type" component={TypeMessage} />
         <Route exact path="/articles" component={Articles} />
+        <Route exact path="/hover" component={Hover} />
 
 
       </div>

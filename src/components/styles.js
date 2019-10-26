@@ -78,14 +78,31 @@ display:flex;
 flex-direction:column;
 justify-content: space-around;
 align-items: center;
-top:100px;
-right:100px;
-width:60px;
-height:250px;
+top:${props => props.top || '100px'} ;
+right:90px;
+width:auto;
+height:310px;
+border-right:1px dotted ${teal};
+padding:0px 20px 0px 0px;
+// background-color:${pink};
+z-index:300;
+`;
+
+export const LinkContainerBorder = styled.div`
+position: absolute;
+// display:flex;
+flex-direction:column;
+justify-content: space-around;
+align-items: center;
+top:${props => props.top || '100px'} ;
+right:90px;
+width:auto;
+height:310px;
 border:2px solid ${teal};
 // background-color:${pink};
 z-index:300;
 `;
+
 export const LinkText = styled.div`
   color: black;
   z-index: 100;
@@ -105,6 +122,16 @@ export const Element = styled.div`
   }
 `;
 
+export const Text = styled.div`
+  display: flex;
+  color:blue;
+  font-family:Nunito;
+  font-weight: bold;
+  ${Element}:hover & {
+    display:'none'
+  }
+`;
+
 export const TextContainer = styled.div`
   position: absolute;
   display: flex;
@@ -117,5 +144,6 @@ export const TextContainer = styled.div`
   top: ${props => props.top};
   left: ${props => props.left};
   z-index: 200;
-  font-family: "Nunito", sans-serif;
+  font-family:Nunito;
+  // font-weight: bold;
 `;

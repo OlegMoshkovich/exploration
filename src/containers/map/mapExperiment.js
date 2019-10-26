@@ -80,14 +80,6 @@ class MapExperiment extends Component {
     const { data = DATA_URL } = this.props;
 
     return [
-      // only needed when using shadows - a plane for shadows to drop on
-      // new PolygonLayer({
-      //   id: 'ground',
-      //   data: landCover,
-      //   stroked: false,
-      //   getPolygon: f => f,
-      //   getFillColor: [0, 0, 0, 0]
-      // }),
       new GeoJsonLayer({
         id: 'geojson',
         data,

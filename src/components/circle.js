@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TweenOne from "rc-tween-one";
 import styled from "styled-components";
 import { Element } from "./styles";
-import { teal } from './colors'
+import { teal, pink, green } from './colors'
 
 const Container = styled.div`
   display: flex;
@@ -10,14 +10,32 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
+
   z-index: 200;
 `;
+
+const Text = styled.div`
+  flex: none;
+  font-size: 15px;
+  color:transparent;
+  text-align:right;
+  margin: 0px 20px 0px 0px;
+  font-family:Nunito;
+  font-weight: bold;
+  width: 80px;
+  // font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  ${Container}:hover & {
+    color:${green};
+  }
+`;
+
 
 export const Circle = props => {
   const [pause, setPause] = useState(false);
   const animation = props.animation;
   return (
     <Container key={props.index + "container"}>
+      <Text>{props.label || ''}</Text>
       <TweenOne
         key={props.index + "tween"}
         animation={animation}
@@ -27,13 +45,16 @@ export const Circle = props => {
       >
         <Element
           onClick={() => {
+            console.log('clicked')
             pause ? setPause(false) : setPause(true);
           }}
+
           width={props.width}
           color={props.color || teal}
           key={props.index + "element"}
         />
       </TweenOne>
+
     </Container>
   );
 };
