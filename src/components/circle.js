@@ -25,7 +25,7 @@ const Text = styled.div`
   width: 80px;
   // font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   ${Container}:hover & {
-    color:${green};
+    color:${'grey'};
   }
 `;
 
@@ -48,7 +48,6 @@ export const Circle = props => {
             console.log('clicked')
             pause ? setPause(false) : setPause(true);
           }}
-
           width={props.width}
           color={props.color || teal}
           key={props.index + "element"}

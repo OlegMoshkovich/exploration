@@ -24,7 +24,7 @@ export const Nav = () => {
             </Circle>
           </Link>
           <Link style={{ textDecoration: "none" }} to={"/map"}>
-            <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} color={'yellow'} label={'map'}>
+            <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} label={'map'}>
               <LinkText>map</LinkText>
             </Circle>
           </Link>
@@ -33,7 +33,6 @@ export const Nav = () => {
               <LinkText>map</LinkText>
             </Circle>
           </Link>
-
           <Link style={{ textDecoration: "none" }} to={"/tiny"}>
             <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} label={'tiny'}>
               <LinkText>tiny</LinkText>
@@ -44,27 +43,11 @@ export const Nav = () => {
               <LinkText>material</LinkText>
             </Circle>
           </Link>
-
-          {/* <Link style={{ textDecoration: "none" }} to={"/type"}>
-          <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} color={'yellow'}>
-            <LinkText>type</LinkText>
-          </Circle>
-        </Link> */}
           <Link style={{ textDecoration: "none" }} to={"/articles"}>
             <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} color={'yellow'} label={'dynamic type'}>
               <LinkText>articles</LinkText>
             </Circle>
           </Link>
-          {/* <Link style={{ textDecoration: "none" }} to={"/articles "}>
-          <LinkCircle size={"35px"}>
-            <LinkText>articles</LinkText>
-          </LinkCircle>
-        </Link> */}
-          {/* <Link style={{ textDecoration: "none" }} to={"/tiny"}>
-        <LinkCircle size={"35px"}>
-          <LinkText>tiny</LinkText>
-        </LinkCircle>
-      </Link> */}
         </LinkContainer>
 
 

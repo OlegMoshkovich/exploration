@@ -77,7 +77,7 @@ export const FlyCircle = styled.div`
   height: 20px;
   // border-radius: 50%;
   padding: 2px 0px 0px 2px;
-  background-color: ${green};
+  background-color: ${teal};
   border: 1px solid ${teal};
   color: black;
   z-index: 105;

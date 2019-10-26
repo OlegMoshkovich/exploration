@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Circle } from '../components/circle'
+import { Circle } from '../components/circle';
+import { CanvasComponent } from '../components/canvas'
 
 
 const Link = styled.div`
@@ -30,14 +31,11 @@ const Icon = styled.div`
 export const Hover = () => {
     return (
         <div>
-            <Link href="#">
 
-                <Icon >
-                    home
-                </Icon>
-                <Circle width={"30px"} animation={[{ scale: 0.7 }]} repeat={1} />
 
-            </Link>
+            < CanvasComponent />
+
+
 
 
         </div>

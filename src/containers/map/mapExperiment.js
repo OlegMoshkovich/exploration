@@ -16,20 +16,20 @@ const DATA_URL =
 export const COLOR_SCALE = scaleThreshold()
   .domain([-0.6, -0.45, -0.3, -0.15, 0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1.05, 1.2])
   .range([
-    [65, 182, 196],
-    [127, 205, 187],
-    [199, 233, 180],
-    [237, 248, 177],
+    [0, 0, 0],
+    // [127, 205, 187],
+    // [199, 233, 180],
+    // [237, 248, 177],
     // zero
-    [255, 255, 204],
-    [255, 237, 160],
-    [254, 217, 118],
-    [254, 178, 76],
-    [253, 141, 60],
-    [252, 78, 42],
-    [227, 26, 28],
-    [189, 0, 38],
-    [128, 0, 38]
+    // [255, 255, 204],
+    // [255, 237, 160],
+    // [254, 217, 118],
+    // [254, 178, 76],
+    // [253, 141, 60],
+    // [252, 78, 42],
+    // [227, 26, 28],
+    // [189, 0, 38],
+    [255, 255, 255]
   ]);
 
 const INITIAL_VIEW_STATE = {
@@ -79,6 +79,7 @@ class MapExperiment extends Component {
   _renderLayers() {
     const { data = DATA_URL } = this.props;
 
+    console.log('render layer', data)
     return [
       new GeoJsonLayer({
         id: 'geojson',
@@ -102,7 +103,8 @@ class MapExperiment extends Component {
     return (
       hoveredObject && (
         <div className="tooltip" style={{ top: y, left: x }}>
-          <div>
+          hi
+          {/* <div>
             <b>Average Property Value</b>
           </div>
           <div>
@@ -114,7 +116,7 @@ class MapExperiment extends Component {
           <div>
             <b>Growth</b>
           </div>
-          <div>{Math.round(hoveredObject.properties.growth * 100)}%</div>
+          <div>{Math.round(hoveredObject.properties.growth * 100)}%</div> */}
         </div>
       )
     );

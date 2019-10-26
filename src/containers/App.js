@@ -7,6 +7,7 @@ import {
 } from "../components/styles";
 import { Nav } from "../components/NavMenu";
 import styled from 'styled-components';
+import { teal } from "../components/colors"
 
 
 const AppContainer = styled.div`
@@ -29,6 +30,7 @@ text-decoration: none;
  };
  &:visited {
     color: blue;
+    font-weight:'bold';
   }
 `;
 
@@ -67,7 +69,7 @@ function App() {
       <TextContainer top={'100px'} left={'100px'}>
         <div>Hi, I am Oleg. </div>
         <div>I use this page to experiment.</div>
-        <div>At the moment I am attending <LinkA href="https://www.recurse.com/">Recusrse Center</LinkA> in New York.</div>
+        <div>At the moment I am attending <LinkA href="https://www.recurse.com/">Recurse Center</LinkA> in New York.</div>
         <div>Yellow dot will take you to the current experiment.</div>
         <div>Some of my previous work is displayed <LinkA href="http://www.olegmoshkovich.com">here</LinkA></div>
       </TextContainer>

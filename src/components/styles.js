@@ -82,7 +82,7 @@ top:${props => props.top || '100px'} ;
 right:90px;
 width:auto;
 height:310px;
-border-right:1px dotted ${teal};
+border-right:10px solid ${teal};
 padding:0px 20px 0px 0px;
 // background-color:${pink};
 z-index:300;
@@ -118,7 +118,7 @@ export const Element = styled.div`
   background-color: ${props => props.color};
   color: white;
   &:hover {
-    background-color: ${green};
+    background-color: ${'white'};
   }
 `;
 
