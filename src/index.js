@@ -17,6 +17,7 @@ import { Basic } from "./containers/Form"
 import { TypeMessage } from "./containers/typeWriter"
 import { Articles } from "./containers/Articles"
 import { Hover } from "./containers/hover"
+import { mapThree } from './containers/mapThree'
 
 
 
@@ -38,6 +39,7 @@ const routing = (
         <Route exact path="/type" component={TypeMessage} />
         <Route exact path="/articles" component={Articles} />
         <Route exact path="/hover" component={Hover} />
+        <Route exact path="/mapthree" component={mapThree} />
 
 
       </div>

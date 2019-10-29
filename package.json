@@ -20,6 +20,7 @@
     "global": "^4.4.0",
     "install": "^0.13.0",
     "luma.gl": "^7.3.2",
+    "mapbox-gl": "^1.5.0",
     "npm": "^6.11.3",
     "rc-animate": "^2.10.0",
     "rc-tween-one": "^2.6.3",
@@ -32,7 +33,8 @@
     "react-router-dom": "^5.1.0",
     "react-scripts": "3.1.2",
     "redux": "^4.0.4",
-    "styled-components": "^5.0.0-beta.9"
+    "styled-components": "^5.0.0-beta.9",
+    "three": "^0.109.0"
   },
   "scripts": {
     "start": "react-scripts start",
