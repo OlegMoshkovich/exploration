@@ -3,7 +3,9 @@ import mapboxgl from 'mapbox-gl'
 import * as THREE from "three";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
+import { Nav } from '../components/NavMenu'
 mapboxgl.accessToken = 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA';
+
 
 export class mapThree extends React.Component {
 
@@ -136,6 +138,7 @@ export class mapThree extends React.Component {
 
         return (
             <div >
+                <Nav />
                 {/* <div style={{ width: '2000px', height: '2000px' }}>
                     <div>{`Longitude: ${lng} Latitude: ${lat} Zoom: ${zoom}`}</div>
                 </div> */}

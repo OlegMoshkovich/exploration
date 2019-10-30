@@ -29,7 +29,7 @@ export const Nav = () => {
             </Circle>
           </Link>
           <Link style={{ textDecoration: "none" }} to={"/maptrips"}>
-            <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} label={'map path'} >
+            <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} label={'path'} >
               <LinkText>map</LinkText>
             </Circle>
           </Link>
@@ -39,8 +39,13 @@ export const Nav = () => {
             </Circle>
           </Link> */}
           <Link style={{ textDecoration: "none" }} to={"/mapexperiment"}>
-            <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} label={'map extrusion'}>
-              <LinkText>tiny</LinkText>
+            <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} label={'blocks'}>
+              <LinkText>mapExtrusion</LinkText>
+            </Circle>
+          </Link>
+          <Link style={{ textDecoration: "none" }} to={"/mapthree"}>
+            <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} label={'3D'}>
+              <LinkText>map3D</LinkText>
             </Circle>
           </Link>
           <Link style={{ textDecoration: "none" }} to={"/material"}>
