@@ -58,7 +58,6 @@ export class DestinationMarkerDrag extends Component {
           onDragStart={this._onMarkerDragStart}
           onDrag={this._onMarkerDrag}
           onDragEnd={this._onMarkerDragEnd}
-
         >
           <Pin onClick={this.togglePopUp} color={this.props.color} />
         </Marker>
@@ -75,7 +74,7 @@ export class DestinationMarkerDrag extends Component {
             <div
               style={{
                 margin: "5px 0px 3px 0px",
-                fontSize: "10px"
+                fontSize: "10px",
               }}
             >
               {name}

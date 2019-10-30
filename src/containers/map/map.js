@@ -10,7 +10,7 @@ import { Title } from "./title";
 import { FlyDestinations } from "./flyNav";
 import DestinationMarker from "./marker";
 import DestinationMarkerForm from "./markerForm"
-import DestinationMarkerDrag from './markerDrag'
+import DestinationMarkerDrag from './markerDragForm'
 import { connect } from "react-redux";
 import { globalPopUp } from "../../actions/popUpState";
 import { markersData } from './markers'

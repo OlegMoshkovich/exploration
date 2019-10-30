@@ -44,7 +44,7 @@ export const PopUpWindowImage = props => {
   const { src, bottom, left } = props;
   return (
     <Draggable>
-      <Rectangle style={{ backgroundColor: 'yellow' }} bottom={bottom || "150px"} left={left || "200px"}>
+      <Rectangle style={{ backgroundColor: 'yellow' }} bottom={bottom || "150px"} left={left || "290px"}>
         <Image
           src={
             src ||
@@ -59,7 +59,11 @@ export const PopUpWindowImage = props => {
 };
 
 export const PopUpWindowForm = props => {
+  const { src, bottom, left } = props;
   return (
-    <BasicForm />
+    <Rectangle style={{ backgroundColor: 'yellow' }} bottom={bottom || "150px"} left={left || "-440px"}>
+      <BasicForm />
+    </Rectangle >
+
   );
 };

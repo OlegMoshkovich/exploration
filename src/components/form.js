@@ -36,16 +36,16 @@ export const BasicForm = props => {
 
 
     return (
-        <div>
+        <div >
             < Formik
-                initialValues={{ name: '', comment: '' }}
+                initialValues={{ field1: '', field2: '' }}
 
                 validate={values => {
                     let errors = {};
-                    if (!values.name) {
-                        errors.name = 'Name is Required';
-                    } else if (!values.comment) {
-                        errors.comment = 'Comment is required';
+                    if (!values.field1) {
+                        errors.field1 = 'Required';
+                    } else if (!values.field2) {
+                        errors.field2 = 'Required';
                     }
                     return errors;
                 }}
@@ -71,28 +71,28 @@ export const BasicForm = props => {
                                 <OutlinedInput
                                     multiline
                                     style={{ backgroundColor: '#B7F1FD' }}
-                                    placeholder="name"
+                                    placeholder="field1"
                                     color='yellow'
-                                    type="name"
-                                    name="name"
+                                    type="field1"
+                                    name="field1"
                                     onChange={handleChange}
                                     onBlur={handleBlur}
-                                    value={values.email}
+                                    value={values.field1}
                                 />
 
-                                {errors.name && touched.name && errors.name}
+                                {errors.field1 && touched.field1 && errors.field1}
                                 <OutlinedInput
                                     style={{ backgroundColor: '#B7F1FD' }}
-                                    placeholder="comment"
+                                    placeholder="field2"
                                     multiline
                                     color='primary'
-                                    type="comment"
-                                    name="comment"
+                                    type="field2"
+                                    name="field2"
                                     onChange={handleChange}
                                     onBlur={handleBlur}
-                                    value={values.comment}
+                                    value={values.field2}
                                 />
-                                {errors.comment && touched.comment && errors.comment}
+                                {errors.field2 && touched.field2 && errors.field2}
                                 <StyledButton type="submit" disabled={isSubmitting}
                                 // onClick={alert('here you go')}
                                 >
@@ -100,8 +100,8 @@ export const BasicForm = props => {
                                  </StyledButton>
 
                             </Container>
-                            <div>{values.name}</div>
-                            <div>{values.comment}</div>
+                            <div>{values.field1}</div>
+                            <div>{values.field2}</div>
                         </form>
                     )}
             </Formik >
