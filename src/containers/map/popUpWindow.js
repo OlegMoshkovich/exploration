@@ -5,6 +5,7 @@ import {
   Circle,
   Image
 } from "./styles";
+import { teal, green } from '../../components/colors'
 import { BasicForm } from "../../components/form"
 
 export const PopUpWindowVideo = props => {
@@ -12,7 +13,7 @@ export const PopUpWindowVideo = props => {
   return (
     <div>
       <Draggable>
-        <Rectangle bottom={bottom || "-240px"} left={left || "200px"}>
+        <Rectangle style={{ backgroundColor: teal }} bottom={bottom || "-100px"} left={left || "300px"}>
           <iframe
             title={'video'}
             src={video || ""}
@@ -26,7 +27,7 @@ export const PopUpWindowVideo = props => {
             <div
               style={{
                 cursor: "all-scroll",
-                fontSize: "9px",
+                fontSize: "20px",
                 color: "#FF00D6"
               }}
             >
@@ -43,7 +44,7 @@ export const PopUpWindowImage = props => {
   const { src, bottom, left } = props;
   return (
     <Draggable>
-      <Rectangle style={{ backgroundColor: 'yellow' }} bottom={bottom || "-240px"} left={left || "200px"}>
+      <Rectangle style={{ backgroundColor: 'yellow' }} bottom={bottom || "150px"} left={left || "200px"}>
         <Image
           src={
             src ||
@@ -51,18 +52,7 @@ export const PopUpWindowImage = props => {
           }
           style={{ height: "200px", width: "auto", padding: "10px" }}
         />
-
-        <Circle>
-          <div
-            style={{
-              cursor: "all-scroll",
-              fontSize: "9px",
-              color: "#FF00D6"
-            }}
-          >
-
-          </div>
-        </Circle>
+        <Circle />
       </Rectangle>
     </Draggable>
   );

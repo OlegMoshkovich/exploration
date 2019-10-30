@@ -17,7 +17,7 @@ export const markersData = [{
     type: 'media',
     longitude: -73.97752525741629,
     latitude: 40.7523,
-    name: "grand central",
+    name: "deck of cards - move by dragging on the circle",
     color: pink,
     images: [
         "https://cornerbycorner.files.wordpress.com/2012/09/grand-central.jpg",
