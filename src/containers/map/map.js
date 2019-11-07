@@ -3,7 +3,6 @@ import {
   InteractiveMap,
   FlyToInterpolator
 } from "react-map-gl";
-
 import { Nav } from "../../components/NavMenu";
 import { Exit } from "./exit";
 import { Title } from "./title";
@@ -14,6 +13,8 @@ import DestinationMarkerDrag from './markerDragForm'
 import { connect } from "react-redux";
 import { globalPopUp } from "../../actions/popUpState";
 import { markersData } from './markers'
+import { ExitCircle } from './styles'
+import { Toggle } from './toggle'
 
 class Map extends Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class Map extends Component {
       display: "block",
       style: "mapbox://styles/mapbox/light-v9",
       showPopup: false,
+      menu: true,
       viewport: {
         width: window.innerWidth,
         height: window.innerHeight,
@@ -75,6 +77,12 @@ class Map extends Component {
       transitionDuration: speed
     });
   };
+  toggleSwitch = () => {
+    console.log('menu state', this.state.menu)
+    this.setState({
+      menu: !this.state.menu
+    })
+  }
 
   render() {
     return (
@@ -83,8 +91,15 @@ class Map extends Component {
         {/* title */}
         <Title title={"Experiment"} />
         <Exit />
-        <Nav />
-        <FlyDestinations flyTo={this._goToViewport} />
+        <Toggle switch={this.toggleSwitch} />
+        {this.state.menu ?
+          <div>
+            <Nav />
+            <FlyDestinations flyTo={this._goToViewport} />
+          </div> : ''
+        }
+
+
         <InteractiveMap
           {...this.state.viewport}
           mapboxApiAccessToken={
