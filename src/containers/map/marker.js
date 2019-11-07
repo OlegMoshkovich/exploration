@@ -95,5 +95,4 @@ const mapSateToProps = state => ({ globalPopUpState: state.popUpState.globalPopU
 
 export default connect(
   mapSateToProps,
-
 )(DestinationMarker);

@@ -1,5 +1,6 @@
 
 import styled from "styled-components";
+import { device } from '../../utils/devices'
 
 
 const green = "#C0F75E";
@@ -12,23 +13,27 @@ export const Rectangle = styled.div`
   bottom: ${props => props.bottom || "100px"};
   left: ${props => props.left || "100px"};
   width: auto;
-  border-radius: 2%;
   height: auto;
+  border-radius: 2%;
   padding: 4px;
   background-color: #c0f75e;
-  border: 1px solid ${teal};
+  // border: 1px solid ${teal};
   // color: #F3C242;
   color: black;
   z-index: 105;
   font-size: 10px;
   cursor: "all-scroll";
 `;
+
 export const Image = styled.img`
-  width: 200px;
-  height: auto;
+width: auto;
+height: 200px;
   padding: 10px;
-  // border-radius:15%;
+  @media (max-width: 768px) {
+    height: 100px;
+  }
 `;
+
 export const Text = styled.div`
 display:${props => props.display || "block"};
 width: auto;
