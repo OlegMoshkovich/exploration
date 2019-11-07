@@ -23,15 +23,20 @@ export const Rectangle = styled.div`
   z-index: 105;
   font-size: 10px;
   cursor: "all-scroll";
+  @media (max-width: 768px) {
+    bottom: 170px;
+    left: -120px;
+  }
+
 `;
 
 export const Image = styled.img`
 width: auto;
 height: 200px;
-  padding: 10px;
-  @media (max-width: 768px) {
-    height: 100px;
-  }
+padding: 10px;
+@media (max-width: 768px) {
+  height: 100px;
+}
 `;
 
 export const Text = styled.div`

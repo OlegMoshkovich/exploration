@@ -12,8 +12,8 @@ import { BasicForm } from "../../components/form"
 export const RectangleVideo = styled.div`
   position: absolute;
   // display: ${props => props.display || "block"};
-  bottom: ${props => props.bottom || "100px"};
-  left: ${props => props.left || "100px"};
+  bottom: -100px;
+  left: 300px;
   width: 200px;
   height: 160px;
   border-radius: 2%;
@@ -24,6 +24,8 @@ export const RectangleVideo = styled.div`
   @media (max-width: 768px) {
     width: 110px;
     height: 90px;
+    bottom: 50px;
+    left: 50px;
   }
 `;
 
