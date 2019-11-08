@@ -89,7 +89,7 @@ class Map extends Component {
 
       <div style={{ backgroundColor: 'black' }}>
         {/* title */}
-        <Title title={"Experiment"} />
+        {/* <Title title={"Experiment"} /> */}
         <Exit />
         <Toggle switch={this.toggleSwitch} />
         {this.state.menu ?

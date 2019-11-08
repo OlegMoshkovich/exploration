@@ -81,6 +81,24 @@ export const ExitCircle = styled.div`
   cursor: "pointer";
 `;
 
+export const ToggleCircle = styled.div`
+  position: absolute;
+  display: ${props => props.display || "block"};
+  bottom: ${props => props.bottom || "150px"};
+  left: ${props => props.left || "45px"};
+  width: 15px;
+  border-radius: 50%;
+  height: 15px;
+  padding: 5px 5px 5px 5px;
+  background-color: ${props => (props.toggle ? "yellow" : teal)};
+  border: 10px solid ${teal};
+  // color: #F3C242;
+  color: black;
+  z-index: 105;
+  font-size: 10px;
+  cursor: "pointer";
+`;
+
 export const FlyCircle = styled.div`
   display: ${props => props.display || "block"};
   width: auto || 20px;
