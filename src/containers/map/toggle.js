@@ -11,7 +11,8 @@ export const Toggle = (props) => {
 
   function toggle() {
     state ? setState(false) : setState(true);
-    console.log('console from the menu switch', props)
+    //when function is passed to the functional compoenet you have to actually call that funciton
+    //just like it is done here
     return props.switch()
   }
 

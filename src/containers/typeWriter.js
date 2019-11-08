@@ -3,12 +3,11 @@ import { longMessage } from '../data'
 import { Nav } from '../components/NavMenu'
 
 const CONSTANTS = {
-    DELETING_SPEED: 10,
-    TYPING_SPEED: 100,
+    DELETING_SPEED: 100,
+    TYPING_SPEED: 50,
 }
 
 export const TypeWriter = ({ messages, heading }) => {
-    // console.log('messages', messages)
 
     const [state, setState] = useState({
         text: "",
@@ -16,7 +15,7 @@ export const TypeWriter = ({ messages, heading }) => {
         isDeleting: false,
         loopNum: 10,
         Loop: 0,
-        typingSpeed: CONSTANTS.TYPING_SPEED,
+        typingSpeed: CONSTANTS.TYPING_SPEED
     });
 
     useEffect(
@@ -57,21 +56,20 @@ export const TypeWriter = ({ messages, heading }) => {
     }, [state.text, state.message, state.isDeleting, messages]);
 
     function getCurrentText(currentState) {
-        console.log('current state form get current text', currentState)
         return (
             currentState.isDeleting
                 ? currentState.message.substring(0, currentState.text.length - 1)
                 : currentState.message.substring(0, currentState.text.length + 1)
         )
-
     }
 
     function getMessage(currentState, data) {
-        console.log('data from get message', data)
         return data[Number(currentState.loopNum) % Number(data.length)];
     }
 
     function getTypingSpeed(currentState) {
+        console.log('get current typing speed is called', currentState)
+
         return currentState.isDeleting
             ? CONSTANTS.TYPING_SPEED
             : CONSTANTS.DELETING_SPEED;
