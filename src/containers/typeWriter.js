@@ -1,11 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { longMessage } from '../data'
 import { Nav } from '../components/NavMenu'
+import styled from 'styled-components'
+import { teal } from '../components/colors'
 
 const CONSTANTS = {
     DELETING_SPEED: 100,
     TYPING_SPEED: 50,
 }
+
+const Text = styled.div`
+color:${teal};
+font-size:100px;
+font-weight: bold;
+@media (max-width: 768px) {
+   position:absolute;
+   top:40px;
+   padding:0px 20px 0px 20px;
+   font-size:40px;
+  }
+`
 
 export const TypeWriter = ({ messages, heading }) => {
 
@@ -76,9 +90,11 @@ export const TypeWriter = ({ messages, heading }) => {
     }
 
     return (
-        <h1>
-            <span style={{ fontSize: '100px' }}>{state.text}</span>
-        </h1>
+        <Text>
+            {state.text}
+        </Text>
+
+
     );
 }
 

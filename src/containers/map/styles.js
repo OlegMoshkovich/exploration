@@ -92,7 +92,6 @@ export const ToggleCircle = styled.div`
   padding: 5px 5px 5px 5px;
   background-color: ${props => (props.toggle ? "yellow" : teal)};
   border: 10px solid ${teal};
-  // color: #F3C242;
   color: black;
   z-index: 105;
   font-size: 10px;
