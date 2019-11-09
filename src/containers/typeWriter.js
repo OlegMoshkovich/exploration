@@ -47,6 +47,7 @@ export const TypeWriter = ({ messages, heading }) => {
             return () => clearTimeout(timer);
         }, []);
 
+
     useEffect(() => {
         setState(cs => ({
             ...cs,
@@ -82,8 +83,7 @@ export const TypeWriter = ({ messages, heading }) => {
     }
 
     function getTypingSpeed(currentState) {
-        console.log('get current typing speed is called', currentState)
-
+        console.log('get current typing speed is called', currentState.isDeleting)
         return currentState.isDeleting
             ? CONSTANTS.TYPING_SPEED
             : CONSTANTS.DELETING_SPEED;
@@ -93,8 +93,6 @@ export const TypeWriter = ({ messages, heading }) => {
         <Text>
             {state.text}
         </Text>
-
-
     );
 }
 

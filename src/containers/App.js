@@ -71,7 +71,7 @@ function App() {
         <div>I use this page to experiment.</div>
         <div>At the moment I am attending <LinkA href="https://www.recurse.com/">Recurse Center</LinkA> in New York.</div>
         <div>Yellow dot will take you to the current experiment.</div>
-        <div>Some of my previous work is displayed <LinkA href="http://www.olegmoshkovich.com">here</LinkA></div>
+        <div>Some of my previous work is displayed <LinkA href="https://www.olegmoshkovich.com">here</LinkA></div>
       </TextContainer>
 
     </AppContainer >
