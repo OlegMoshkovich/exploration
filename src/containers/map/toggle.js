@@ -8,6 +8,7 @@ import { isProperty } from "@babel/types";
 
 export const Toggle = (props) => {
   const [state, setState] = useState('true');
+  console.log('props from the toggle', props)
 
   function toggle() {
     state ? setState(false) : setState(true);

@@ -83,22 +83,24 @@ class Map extends Component {
       menu: !this.state.menu
     })
   }
+  makeMarker = () => {
+    console.log('in the make marker--viewPortState', this.state.viewport)
+  }
 
   render() {
     return (
 
       <div style={{ backgroundColor: 'black' }}>
-        {/* title */}
-        {/* <Title title={"Experiment"} /> */}
         <Exit />
+        <Toggle switch={this.makeMarker} />
         <Toggle switch={this.toggleSwitch} />
+
         {this.state.menu ?
           <div>
             <Nav />
             <FlyDestinations flyTo={this._goToViewport} />
           </div> : ''
         }
-
 
         <InteractiveMap
           {...this.state.viewport}
