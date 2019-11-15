@@ -25,7 +25,7 @@ const Text = styled.div`
   width: 80px;
   // font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   ${Container}:hover & {
-    color:${'grey'};
+    color:${'white'};
   }
 `;
 

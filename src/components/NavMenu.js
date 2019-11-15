@@ -16,13 +16,14 @@ export const Nav = () => {
     <div>
 
       <Draggable>
-
         <LinkContainer top={'100px'}>
+
           <Link style={{ textDecoration: "none" }} to={"/"}>
             <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} label={'home'}>
               <LinkText>home</LinkText>
             </Circle>
           </Link>
+
           <Link style={{ textDecoration: "none" }} to={"/map"}>
             <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} label={'map'}>
               <LinkText>map</LinkText>
@@ -33,11 +34,6 @@ export const Nav = () => {
               <LinkText>map</LinkText>
             </Circle>
           </Link>
-          {/* <Link style={{ textDecoration: "none" }} to={"/tiny"}>
-            <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} label={'tiny'}>
-              <LinkText>tiny</LinkText>
-            </Circle>
-          </Link> */}
           <Link style={{ textDecoration: "none" }} to={"/mapexperiment"}>
             <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} label={'blocks'}>
               <LinkText>mapExtrusion</LinkText>
