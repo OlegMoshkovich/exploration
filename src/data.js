@@ -31,7 +31,6 @@ export const components = [
       // { left: '40%' },
       // { top: '60px' },
       { scale: .3 },
-
       //   { scale: 1 }
       // { top: 0 },
       // { left: '0%' },
@@ -44,27 +43,11 @@ export const components = [
       // { left: '40%' },
       // { top: '60px' },
       { scale: .3 },
-
       //   { scale: 1 }
       // { top: 0 },
       // { left: '0%' },
     ]
   },
-  // {
-  //   width: "30px",
-  //   animation: [
-  //     { marginBottom: '550px' },
-  //     // { left: '40%' },
-  //     // { top: '60px' },
-  //     { scale: .3 },
-
-  //     //   { scale: 1 }
-  //     // { top: 0 },
-  //     // { left: '0%' },
-  //   ]
-  // },
-
-
 ];
 export const longMessage = `
 I don’t know who sold progressive Democrats on the idea that the way to beat Donald Trump is to abolish the private health insurance of 160 million Americans and offer instead “Medicare for all” (and Mexico will pay for it), but it’s a political loser and an easy target for Trump to feast on. A much better campaign theme is hiding in plain sight. I call it “the Earth Race.”

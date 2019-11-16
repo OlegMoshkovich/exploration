@@ -1,9 +1,5 @@
 
 import styled from "styled-components";
-import { device } from '../../utils/devices'
-
-
-const green = "#C0F75E";
 const teal = "#B7F1FD";
 const pink = "#FF00D6";
 
@@ -90,7 +86,7 @@ export const ToggleCircle = styled.div`
   border-radius: 50%;
   height: 15px;
   padding: 5px 5px 5px 5px;
-  background-color: ${props => (props.toggle ? "yellow" : teal)};
+  background-color: ${props => (props.toggle ? props.color : teal)};
   border: 10px solid ${teal};
   color: black;
   z-index: 105;

@@ -21,7 +21,7 @@ font-weight: bold;
   }
 `
 
-export const TypeWriter = ({ messages, heading }) => {
+export const TypeWriter = ({ messages }) => {
 
     const [state, setState] = useState({
         text: "",
@@ -45,7 +45,7 @@ export const TypeWriter = ({ messages, heading }) => {
             };
             handleType();
             return () => clearTimeout(timer);
-        }, []);
+        }, [state.typingSpeed]);
 
 
     useEffect(() => {

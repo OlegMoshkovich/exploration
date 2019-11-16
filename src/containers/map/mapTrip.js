@@ -1,6 +1,5 @@
 /* global window */
 import React, { Component } from 'react';
-import { render } from 'react-dom';
 import { StaticMap } from 'react-map-gl';
 import { PhongMaterial } from '@luma.gl/core';
 import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
@@ -11,7 +10,6 @@ import { Nav } from '../../components/NavMenu'
 import { trips } from '../../data'
 import { FlyDestinations } from "./flyNav";
 import {
-  InteractiveMap,
   FlyToInterpolator
 } from "react-map-gl";
 

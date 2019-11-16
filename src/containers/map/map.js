@@ -41,6 +41,7 @@ class Map extends Component {
         x: 0,
         y: 0
       },
+      markers: [],
       popUpState: true
     };
   }
@@ -48,6 +49,7 @@ class Map extends Component {
   componentDidMount() {
     window.addEventListener("resize", this._resize);
     this._resize();
+    this.setState({ markers: markersData }, () => console.log('STATE OF THE MAP --- markers', this.state.markers))
   }
   componentWillUnmount() {
     window.removeEventListener("resize", this._resize);
@@ -85,6 +87,17 @@ class Map extends Component {
   }
   makeMarker = () => {
     console.log('in the make marker--viewPortState', this.state.viewport)
+    this.setState({
+      markers: [...this.state.markers,
+      {
+        type: 'drag',
+        longitude: this.state.viewport.longitude,
+        latitude: this.state.viewport.latitude,
+        name: "new marker",
+        color: 'red',
+      }
+      ]
+    })
   }
 
   render() {
@@ -92,8 +105,8 @@ class Map extends Component {
 
       <div style={{ backgroundColor: 'black' }}>
         <Exit />
-        <Toggle switch={this.makeMarker} />
-        <Toggle switch={this.toggleSwitch} />
+        <Toggle switch={this.makeMarker} color={'white'} />
+        <Toggle switch={this.toggleSwitch} color={'yellow'} />
 
         {this.state.menu ?
           <div>

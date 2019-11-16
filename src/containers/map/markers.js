@@ -1,12 +1,5 @@
 import { pink, teal } from '../../components/colors'
 export const markersData = [
-    //     {
-    //     type: 'form',
-    //     longitude: -73.97181704026718,
-    //     latitude: 40.760357318442715,
-    //     name: "This marker is static",
-    //     color: 'green',
-    // },
     {
         type: 'drag',
         longitude: - 73.97181704026718,

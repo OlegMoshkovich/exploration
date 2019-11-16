@@ -7,8 +7,6 @@ import {
 } from "../components/styles";
 import { Nav } from "../components/NavMenu";
 import styled from 'styled-components';
-import { teal } from "../components/colors"
-
 
 const AppContainer = styled.div`
   display: flex;
@@ -18,8 +16,6 @@ const AppContainer = styled.div`
   height: ${props => props.height};
   width:${props => props.width};
 `;
-
-
 
 const LinkA = styled.a`
 color:blue;
@@ -33,7 +29,6 @@ text-decoration: none;
     font-weight:'bold';
   }
 `;
-
 
 function App() {
   const [repeat, setRepeat] = useState(3);
@@ -59,8 +54,6 @@ function App() {
           );
         })}
       </Container>
-
-
       <TextContainer top={'490px'} left={'500px'}>
         <div>simple experiment - unconstrained </div>
         <div> reminder -- does not matter how slow - as long as you are moving
@@ -73,7 +66,6 @@ function App() {
         <div>Yellow dot will take you to the current experiment.</div>
         <div>Some of my previous work is displayed <LinkA href="https://www.olegmoshkovich.com">here</LinkA></div>
       </TextContainer>
-
     </AppContainer >
   );
 }

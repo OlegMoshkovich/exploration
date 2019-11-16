@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TweenOne from "rc-tween-one";
 import styled from "styled-components";
 import { Element } from "./styles";
-import { teal, pink, green } from './colors'
+import { teal, } from './colors'
 
 const Container = styled.div`
   display: flex;
