@@ -38,7 +38,7 @@ export class DestinationMarker extends Component {
       globalPopUpState,
       videos,
     } = this.props;
-    console.log('FROM MARKER', this.props.longtitute)
+
     const { showPopUp } = this.state;
 
     if (globalPopUpState && showPopUp) {
@@ -92,8 +92,9 @@ export class DestinationMarker extends Component {
     );
   }
 }
-const mapSateToProps = state => ({ globalPopUpState: state.popUpState.globalPopUp });
+
+const mapStateToProps = state => ({ globalPopUpState: state.popUpState.enabled });
 
 export default connect(
-  mapSateToProps,
+  mapStateToProps,
 )(DestinationMarker);

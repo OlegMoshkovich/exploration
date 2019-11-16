@@ -1,10 +1,11 @@
 const initialState = {
-  globalPopUp: false
+  enabled: false
 };
+
 const popUpState = (state = initialState, action) => {
   switch (action.type) {
     case "GLOBAL_POPUP":
-      return { ...initialState, globalPopUp: action.payload };
+      return { ...initialState, enabled: action.payload };
     default:
       return initialState;
   }

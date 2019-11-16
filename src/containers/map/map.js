@@ -14,10 +14,12 @@ import { connect } from "react-redux";
 import { globalPopUp } from "../../actions/popUpState";
 import { markersData } from './markers'
 import { Toggle } from './toggle'
-import { teal, pink } from '../../components/colors'
+import { teal, pink, green } from '../../components/colors'
+
 
 
 class Map extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -70,7 +72,6 @@ class Map extends Component {
       height: window.innerHeight
     });
   };
-
   _goToViewport = (latitude, longitude, speed = 5000, zoom = 17) => {
     this._onViewportChange({
       latitude: latitude,
@@ -80,6 +81,12 @@ class Map extends Component {
       transitionDuration: speed
     });
   };
+
+  toggleGlobalState = () => {
+    const { globalPopUpState, globalPopUp } = this.props
+    console.log('pop up state from the toggle global', globalPopUpState)
+    globalPopUpState.enabled ? globalPopUp(false) : globalPopUp(true)
+  }
   toggleMenu = () => {
     console.log('menu state', this.state.menu)
     this.setState({
@@ -101,22 +108,34 @@ class Map extends Component {
       ]
     })
   }
+  deleteMarker = () => {
+    console.log('delete is hit', this.state.markers)
+    // const newMarkers = this.state.markers.filter(marker => marker.type === 'media')
+    const newMarkers = this.state.markers
+    const minusLastMarker = newMarkers.splice(0, 1)
+
+    console.log('new array', newMarkers)
+    // this.setState({ markers: newMarkers })
+    this.setState({ markers: newMarkers })
+
+  }
   record = (coord) => {
     const { markers } = this.state
     const longitude = coord[0]
     const latitude = coord[1]
     console.log('record is hit', longitude)
     console.log('state from the record', markers)
-
-
   }
 
   render() {
     return (
       <div style={{ backgroundColor: 'black' }}>
-        <Exit />
-        <Toggle switch={this.makeMarker} color={'white'} color1={'white'} />
+
+
+        <Toggle switch={this.toggleGlobalState} color={'white'} color1={teal} />
+        <Toggle switch={this.makeMarker} color={pink} color1={pink} />
         <Toggle switch={this.toggleMenu} color={teal} color1={'yellow'} />
+        <Toggle switch={this.deleteMarker} color={teal} color1={green} />
         {
           this.state.menu ?
             <div>

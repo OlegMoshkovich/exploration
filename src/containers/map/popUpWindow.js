@@ -41,7 +41,7 @@ export const PopUpWindowVideo = props => {
             src={video || ""}
             frameBorder="0"
             allow="autoplay; fullscreen"
-            allowfullscreen
+            allowFullScreen
             style={{
               padding: '2px',
               width: '100%',
