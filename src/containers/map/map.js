@@ -5,7 +5,7 @@ import {
 } from "react-map-gl";
 import { Nav } from "../../components/NavMenu";
 import { Exit } from "./exit";
-import { Title } from "./title";
+
 import { FlyDestinations } from "./flyNav";
 import DestinationMarker from "./marker";
 import DestinationMarkerForm from "./markerForm"
@@ -13,8 +13,9 @@ import DestinationMarkerDrag from './markerDragForm'
 import { connect } from "react-redux";
 import { globalPopUp } from "../../actions/popUpState";
 import { markersData } from './markers'
-import { ExitCircle } from './styles'
 import { Toggle } from './toggle'
+import { teal, pink } from '../../components/colors'
+
 
 class Map extends Component {
   constructor(props) {
@@ -79,7 +80,7 @@ class Map extends Component {
       transitionDuration: speed
     });
   };
-  toggleSwitch = () => {
+  toggleMenu = () => {
     console.log('menu state', this.state.menu)
     this.setState({
       menu: !this.state.menu
@@ -87,35 +88,35 @@ class Map extends Component {
   }
   makeMarker = () => {
     console.log('in the make marker--viewPortState', this.state.viewport)
+    console.log('the current state of markers', this.state.markers)
     this.setState({
       markers: [...this.state.markers,
       {
         type: 'drag',
         longitude: this.state.viewport.longitude,
         latitude: this.state.viewport.latitude,
-        name: "new marker",
-        color: 'red',
-      }
+        name: "move the marker",
+        color: pink,
+      },
       ]
     })
   }
 
   render() {
     return (
-
       <div style={{ backgroundColor: 'black' }}>
         <Exit />
-        <Toggle switch={this.makeMarker} color={'white'} />
-        <Toggle switch={this.toggleSwitch} color={'yellow'} />
-
-        {this.state.menu ?
-          <div>
-            <Nav />
-            <FlyDestinations flyTo={this._goToViewport} />
-          </div> : ''
+        <Toggle switch={this.makeMarker} color={'white'} color1={'white'} />
+        <Toggle switch={this.toggleMenu} color={teal} color1={'yellow'} />
+        {
+          this.state.menu ?
+            <div>
+              <Nav />
+              <FlyDestinations flyTo={this._goToViewport} />
+            </div> : ''
         }
 
-        <InteractiveMap
+        < InteractiveMap
           {...this.state.viewport}
           mapboxApiAccessToken={
             "pk.eyJ1Ijoib2xlZ21vc2hrb3ZpY2giLCJhIjoiY2pmeTFidnQzMGUwaDMycTd6aGlseXF6ayJ9._4zzVy5_Q5lPjIiN56SMyQ"
@@ -126,7 +127,8 @@ class Map extends Component {
             });
           }}
         >
-          {markersData.map((marker, i) => {
+          {this.state.markers.map((marker, i) => {
+            console.log('I AM IN THE MAP LOOP OF THE MARKERS')
             const Types = { form: DestinationMarkerForm, media: DestinationMarker, drag: DestinationMarkerDrag }
             const Component = Types[marker.type]
             return (

@@ -19,6 +19,7 @@ export const Toggle = (props) => {
     >
       <ToggleCircle
         color={props.color}
+        color1={props.color1}
         toggle={state}
         onClick={toggle}
       />
