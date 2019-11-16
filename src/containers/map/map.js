@@ -101,6 +101,15 @@ class Map extends Component {
       ]
     })
   }
+  record = (coord) => {
+    const { markers } = this.state
+    const longitude = coord[0]
+    const latitude = coord[1]
+    console.log('record is hit', longitude)
+    console.log('state from the record', markers)
+
+
+  }
 
   render() {
     return (
@@ -115,7 +124,6 @@ class Map extends Component {
               <FlyDestinations flyTo={this._goToViewport} />
             </div> : ''
         }
-
         < InteractiveMap
           {...this.state.viewport}
           mapboxApiAccessToken={
@@ -128,7 +136,6 @@ class Map extends Component {
           }}
         >
           {this.state.markers.map((marker, i) => {
-            console.log('I AM IN THE MAP LOOP OF THE MARKERS')
             const Types = { form: DestinationMarkerForm, media: DestinationMarker, drag: DestinationMarkerDrag }
             const Component = Types[marker.type]
             return (
@@ -136,6 +143,7 @@ class Map extends Component {
                 key={i}
                 longitude={marker.longitude}
                 latitude={marker.latitude}
+                record={this.record}
                 name={marker.name}
                 images={marker.images}
                 videos={marker.videos}

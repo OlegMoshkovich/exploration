@@ -15,8 +15,12 @@ export class DestinationMarkerDrag extends Component {
       },
     };
   }
-
+  _onMarkerDragStart = event => {
+    this.props.record(event.lngLat);
+    console.log('------ on drag start', event)
+  }
   _onMarkerDragEnd = event => {
+    console.log('event on the drag end', event)
     this.setState({
       marker: {
         longitude: event.lngLat[0],
@@ -46,6 +50,8 @@ export class DestinationMarkerDrag extends Component {
     if (globalPopUpState && showPopUp) {
       this.setState({ showPopUp: false })
     }
+
+    console.log('from the drag form', this.state.marker.longitude)
 
     return (
       <div>

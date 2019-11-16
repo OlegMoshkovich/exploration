@@ -38,6 +38,7 @@ export class DestinationMarker extends Component {
       globalPopUpState,
       videos,
     } = this.props;
+    console.log('FROM MARKER', this.props.longtitute)
     const { showPopUp } = this.state;
 
     if (globalPopUpState && showPopUp) {

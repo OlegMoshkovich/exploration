@@ -2,6 +2,8 @@ import { pink, teal } from '../../components/colors'
 export const markersData = [
     {
         type: 'drag',
+        field1: '',
+        field2: '',
         longitude: - 73.97181704026718,
         latitude: 40.80,
         name: "move the marker",
