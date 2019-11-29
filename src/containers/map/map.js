@@ -16,11 +16,12 @@ import { markersData } from './markers'
 import { Toggle } from './toggle'
 import { teal, pink, green } from '../../components/colors'
 import Drawer from '@material-ui/core/Drawer';
+import { BasicForm } from "../../components/form"
+import { Rectangle } from './styles'
 
 
 
 class Map extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -51,7 +52,6 @@ class Map extends Component {
       markerInfo: 'hello'
     };
   }
-
   componentDidMount() {
     window.addEventListener("resize", this._resize);
     this._resize();
@@ -84,7 +84,6 @@ class Map extends Component {
       transitionDuration: speed
     });
   };
-
   toggleGlobalState = () => {
     const { globalPopUpState, globalPopUp } = this.props
     console.log('pop up state from the toggle global', globalPopUpState)
@@ -134,8 +133,6 @@ class Map extends Component {
     this.state.drawer ? this.setState({ drawer: !this.state.drawer }) : this.setState({ drawer: !this.state.drawer, markerInfo: param })
 
   };
-
-
   render() {
     return (
       <div style={{ backgroundColor: 'black' }}>
@@ -182,7 +179,10 @@ class Map extends Component {
         </InteractiveMap>
         <Drawer anchor="bottom" open={this.state.drawer} onClose={this.toggleDrawer}>
           <div>{this.state.markerInfo}</div>
+
+          <BasicForm />
         </Drawer>
+
       </div>
     );
   }

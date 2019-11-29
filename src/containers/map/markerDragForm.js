@@ -3,6 +3,7 @@ import { Marker, Popup } from "react-map-gl";
 import Pin from "./pin";
 import { connect } from "react-redux";
 import { BasicForm } from '../../components/form'
+import { Rectangle } from './styles'
 
 export class DestinationMarkerDrag extends Component {
   constructor(props) {

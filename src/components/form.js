@@ -33,7 +33,7 @@ export const BasicForm = props => {
             }
         }
     })(Button);
-
+    console.log('the form is called')
 
     return (
         <div >
