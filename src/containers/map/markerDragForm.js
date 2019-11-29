@@ -52,6 +52,7 @@ export class DestinationMarkerDrag extends Component {
     }
 
     console.log('from the drag form', this.state.marker.longitude)
+    console.log('print from the form marker', this.props)
 
     return (
       <div>
@@ -65,7 +66,8 @@ export class DestinationMarkerDrag extends Component {
           onDrag={this._onMarkerDrag}
           onDragEnd={this._onMarkerDragEnd}
         >
-          <Pin onClick={this.togglePopUp} color={this.props.color} />
+          {/* <Pin onClick={this.togglePopUp} color={this.props.color} /> */}
+          <Pin onClick={() => this.props.onClick(name)} color={this.props.color} />
         </Marker>
 
         {showPopUp && (

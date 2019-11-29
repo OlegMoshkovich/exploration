@@ -15,6 +15,7 @@ import { globalPopUp } from "../../actions/popUpState";
 import { markersData } from './markers'
 import { Toggle } from './toggle'
 import { teal, pink, green } from '../../components/colors'
+import Drawer from '@material-ui/core/Drawer';
 
 
 
@@ -23,6 +24,7 @@ class Map extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      drawer: false,
       display: "block",
       style: "mapbox://styles/mapbox/light-v9",
       showPopup: false,
@@ -45,7 +47,8 @@ class Map extends Component {
         y: 0
       },
       markers: [],
-      popUpState: true
+      popUpState: true,
+      markerInfo: 'hello'
     };
   }
 
@@ -126,20 +129,25 @@ class Map extends Component {
     console.log('record is hit', longitude)
     console.log('state from the record', markers)
   }
+  toggleDrawer = (param) => {
+    console.log('toggle drawer is triggered---passed parameter', param)
+    this.state.drawer ? this.setState({ drawer: !this.state.drawer }) : this.setState({ drawer: !this.state.drawer, markerInfo: param })
+
+  };
+
 
   render() {
     return (
       <div style={{ backgroundColor: 'black' }}>
-
-
-        <Toggle switch={this.toggleGlobalState} color={'white'} color1={teal} />
+        {/* <Toggle switch={this.deleteMarker} color={teal} color1={green} />
         <Toggle switch={this.makeMarker} color={pink} color1={pink} />
-        <Toggle switch={this.toggleMenu} color={teal} color1={'yellow'} />
-        <Toggle switch={this.deleteMarker} color={teal} color1={green} />
+        <Toggle switch={this.toggleGlobalState} color={'white'} color1={teal} />
+        <Toggle switch={this.toggleMenu} color={teal} color1={'yellow'} /> */}
+        <Toggle switch={this.toggleDrawer} color={teal} color1={'yellow'} />
         {
           this.state.menu ?
             <div>
-              <Nav />
+              {/* <Nav /> */}
               <FlyDestinations flyTo={this._goToViewport} />
             </div> : ''
         }
@@ -167,10 +175,14 @@ class Map extends Component {
                 images={marker.images}
                 videos={marker.videos}
                 color={marker.color}
+                onClick={(param) => this.toggleDrawer(param)}
               />)
           })
           }
         </InteractiveMap>
+        <Drawer anchor="bottom" open={this.state.drawer} onClose={this.toggleDrawer}>
+          <div>{this.state.markerInfo}</div>
+        </Drawer>
       </div>
     );
   }

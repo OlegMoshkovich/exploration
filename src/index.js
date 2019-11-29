@@ -28,8 +28,8 @@ const routing = (
     <Provider store={store}>
       <Router>
         <div>
-          <Route exact path="/" component={App} />
-          <Route exact path="/map" component={Map} />
+          {/* <Route exact path="/" component={App} /> */}
+          <Route exact path="/" component={Map} />
           <Route exact path="/mapexperiment" component={MapExperiment} />
           <Route exact path="/maptrips" component={MapTrip} />
           <Route exact path="/tiny" component={Tiny} />

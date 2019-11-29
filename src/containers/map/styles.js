@@ -108,8 +108,10 @@ export const FlyCircle = styled.div`
   cursor: "pointer";
 `;
 export const FlyText = styled.div`
-  margin: 4px 4px 0px 2px;
-  font-size: 7px;
+  margin: 4px 4px px 2px;
+  font-size: 8px;
+  font-family: "Helvetica";
+  font-style:"Bold";
   cursor: pointer;
 `;
 
