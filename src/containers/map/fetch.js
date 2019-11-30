@@ -14,22 +14,42 @@ class FireFetch extends Component {
         const snapshot = await firestore.collection("markers").get();
         snapshot.forEach(doc => {
             const data = doc.data();
-            console.log('data', data);
+            // console.log('data', data);
         })
         const markers = snapshot.docs.map(doc => {
-            return { ...doc.data() }
+            const markerObj = { ...doc.data() }
+            let extractedVals = {}
+            Object.keys(markerObj).forEach(key => {
+                // console.log('printing', key)
+                // console.log('printing', markerObj[key])
+
+                if (key === "latitude") {
+                    console.log('latitude equal to =', markerObj[key])
+
+                }
+                if (key === "longitude") {
+                    console.log('latitude equal to =', markerObj[key])
+                    console.log('converted latitude equal to =', parseFloat(markerObj[key]))
+                    extractedVals = { longitude: parseFloat(markerObj[key]) }
+                    console.log('extracted value', extractedVals)
+                }
+            })
+            const updatedMarker = Object.assign(markerObj, extractedVals)
+            console.log('after object.assign', updatedMarker)
+            return { ...updatedMarker }
+
         })
-        this.setState({ markers }, () => console.log('this is the markers from the state', this.state.markers))
+        this.setState({ markers })
         this.props.setMarkers(markers)
-        console.log(this.props)
+        // console.log(this.props)
     }
     componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log('props from the update method', this.props)
+        // console.log('props from the update method', this.props)
     }
 
 
     componentWillUnmount = () => {
-        this.unsubscribe();
+        // this.unsubscribe();
     };
 
 
@@ -38,7 +58,7 @@ class FireFetch extends Component {
 
         return (
 
-            <div>firebase component</div>
+            <div style={{ position: 'absolute' }}>hi</div>
 
         );
     }

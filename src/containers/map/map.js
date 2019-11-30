@@ -59,9 +59,21 @@ class Map extends Component {
     window.addEventListener("resize", this._resize);
     this._resize();
     this.setState({ markers: markersData })
+    console.log('printing from the map', this.props.globalMarkers)
   }
+
   componentWillUnmount() {
     window.removeEventListener("resize", this._resize);
+  }
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (prevProps.globalMarkers !== this.props.globalMarkers) {
+      // console.log('printing from the map -- from the if loop', this.props.globalMarkers)
+      const updatedMarkers = [...this.state.markers, ...this.props.globalMarkers]
+      console.log('updated markers from the update method', updatedMarkers)
+      this.setState({ markers: updatedMarkers })
+    }
+    // console.log('prev props from the component did up date', prevProps)
+
   }
   _onViewportChange(viewport) {
     this.setState({
@@ -142,6 +154,7 @@ class Map extends Component {
   }
 
   render() {
+
     return (
       <div style={{ backgroundColor: 'black' }}>
         {/* <Toggle switch={this.deleteMarker} color={teal} color1={green} /> */}
@@ -204,7 +217,7 @@ class Map extends Component {
   }
 }
 
-const mapStateToProps = state => ({ globalPopUpState: state.popUpState });
+const mapStateToProps = state => ({ globalPopUpState: state.popUpState, globalMarkers: state.setMarkers.markers });
 
 export default connect(
   mapStateToProps,
