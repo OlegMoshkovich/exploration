@@ -1,64 +1,51 @@
 import React, { Component } from "react";
-import { firestore } from "../firebase";
-
+import { firestore } from "../../firebase";
+import { setMarkers } from '../../actions/markers'
+import { connect } from "react-redux";
 
 class FireFetch extends Component {
     state = {
-        posts: []
+        markers: []
     };
 
     unsubscribe = null;
 
     componentDidMount = async () => {
-        this.unsubscribe = firestore.collection("posts").onSnapshot(snapshot => {
-            const posts = snapshot.docs.map(collectIdsAndDocs);
-            this.setState({ posts });
-        });
+        const snapshot = await firestore.collection("markers").get();
+        snapshot.forEach(doc => {
+            const data = doc.data();
+            console.log('data', data);
+        })
+        const markers = snapshot.docs.map(doc => {
+            return { ...doc.data() }
+        })
+        this.setState({ markers }, () => console.log('this is the markers from the state', this.state.markers))
+        this.props.setMarkers(markers)
+        console.log(this.props)
+    }
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log('props from the update method', this.props)
+    }
 
-        //.then method is called whenever the firebase returns something - or whenever the promise is resolves
-        const snapshot = await firestore.collection("posts").get();
-
-
-    };
 
     componentWillUnmount = () => {
         this.unsubscribe();
     };
 
-    handleCreate = async post => {
-        // const { posts } = this.state;
-        // const docRef = await 
-        firestore.collection("posts").add(post);
-        // const doc = await docRef.get();
-        // const newPost = collectIdsAndDocs(doc);
-        // this.setState({ posts: [newPost, ...posts] });
-    };
-
-    handleRemove = async id => {
-        // const allPosts = this.state.posts;
-        //using short hand notation insted of spelling out the collection etc
-        //we can call method delete() on the docs -- so in this case
-        //we are getting the post with a particular id and we are deleting it
-        // await 
-        firestore.doc(`posts/${id}`).delete();
-        // const posts = allPosts.filter(post => post.id !== id);
-        // this.setState({ posts });
-    };
 
     render() {
         const { posts } = this.state;
 
         return (
-            <main className="Application">
-                <h1>Think Piece</h1>
-                <Posts
-                    posts={posts}
-                    onCreate={this.handleCreate}
-                    onRemove={this.handleRemove}
-                />
-            </main>
+
+            <div>firebase component</div>
+
         );
     }
 }
 
-export default FireFetch;
+const mapStateToProps = state => ({ globalMarkers: state.setMarkers.markers });
+
+export default connect(mapStateToProps, { setMarkers })(FireFetch);
+
+

@@ -9,13 +9,13 @@ const Empty = () => {
         </div>
     )
 }
-const Fetched = () => {
-    return (
-        <div>
-            fetched
-        </div>
-    )
-}
+// const Fetched = () => {
+//     return (
+//         <div>
+//             fetched
+//         </div>
+//     )
+// }
 
 export const Articles = () => {
     const key = 'mnnfCWd6y4tQ4IipGbUkIZXICpFqbHH1'

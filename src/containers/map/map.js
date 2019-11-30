@@ -150,7 +150,7 @@ class Map extends Component {
         <Toggle switch={this.makeMarker} color={'white'} color1={'white'} />
         <Toggle switch={this.toggleMenu} color={teal} color1={'yellow'} />
         <Toggle switch={this.toggleGlobalState} color={'red'} color1={'red'} />
-
+        <FireFetch />
 
         {
           this.state.menu ?
