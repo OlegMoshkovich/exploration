@@ -95,7 +95,7 @@ export const PopUpWindowImage = props => {
   return (
     <Draggable>
       <RectangleImage style={{ backgroundColor: 'white' }} bottom={bottom || "150px"} left={left || "290px"}>
-        <Image
+        <Image onClick={() => console.log('image is clicked', props.src)}
           src={
             src ||
             "https://nordnorge.com/sites/n/nordnorge.com/files/570f0fc155e7b311737aa885d54880c8.jpg"

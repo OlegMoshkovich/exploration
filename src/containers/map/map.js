@@ -21,12 +21,14 @@ import { BasicForm } from "../../components/form"
 import { DrawerForm } from "../../components/drawerForm"
 import { Rectangle } from './styles'
 import Button from '@material-ui/core/Button';
+import { Modal } from '../modal'
 
 
 class Map extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      showModal: false,
       drawer: false,
       display: "block",
       style: "mapbox://styles/mapbox/light-v9",
@@ -145,6 +147,9 @@ class Map extends Component {
   toggleDrawer = (param) => {
     this.state.drawer ? this.setState({ drawer: !this.state.drawer }) : this.setState({ drawer: !this.state.drawer, markerInfo: param })
   };
+  toggleModal = () => {
+    this.setState({ showModal: !this.state.showModal })
+  }
   captureInput = (input) => {
     const filteredMarker = this.state.markers.filter(el => el.name !== this.state.markerInfo)
     const activeMarker = this.state.markers.filter(el => el.name === this.state.markerInfo)
