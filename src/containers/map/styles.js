@@ -23,7 +23,6 @@ export const Rectangle = styled.div`
     bottom: 170px;
     left: -120px;
   }
-
 `;
 
 export const Image = styled.img`
@@ -46,6 +45,7 @@ color = #C0F75E;
 z-index:105;
 font-size:10px;
 `;
+
 export const Circle = styled.div`
 // position = absolute;
 width: 10px;
@@ -107,9 +107,10 @@ export const FlyCircle = styled.div`
   font-size: 6px;
   cursor: "pointer";
 `;
+
 export const FlyText = styled.div`
   margin: 4px 4px px 2px;
-  font-size: 8px;
+  font-size: 15px;
   font-family: "Helvetica";
   font-style:"Bold";
   cursor: pointer;
@@ -123,7 +124,7 @@ export const FlyContainer = styled.div`
   top: ${props => props.bottom || "100px"};
   left: ${props => props.left || "80px"};
   width: auto;
-  height: 160px;
+  height: 80px;
   padding: 5px;
   border: 1px solid ${teal};
   z-index: 105;

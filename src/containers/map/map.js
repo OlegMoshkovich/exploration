@@ -144,9 +144,10 @@ class Map extends Component {
       <div style={{ backgroundColor: 'black' }}>
         {/* <Toggle switch={this.deleteMarker} color={teal} color1={green} /> */}
         {/* <Toggle switch={this.toggleDrawer} color={teal} color1={'white'} /> */}
-        <Toggle switch={this.toggleGlobalState} color={'red'} color1={'red'} />
+
         <Toggle switch={this.makeMarker} color={'white'} color1={'white'} />
         <Toggle switch={this.toggleMenu} color={teal} color1={'yellow'} />
+        <Toggle switch={this.toggleGlobalState} color={'red'} color1={'red'} />
 
 
         {
@@ -187,6 +188,7 @@ class Map extends Component {
           }
         </InteractiveMap>
         <Drawer anchor="bottom" open={this.state.drawer} onClose={this.toggleDrawer}>
+          <div> click submit twice</div>
           <div style={{ height: '300px' }}>
             <DrawerForm captureInput={(input) => this.captureInput(input)} />
           </div>

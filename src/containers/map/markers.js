@@ -23,9 +23,10 @@ export const markersData = [
             "http://trn.trains.com/~/media/images/railroad-news/news-wire/2016-and-prior/2015/10/grandcentral.jpg"
         ],
         videos: ["https://player.vimeo.com/video/123730837#t=29s",
-            "https://player.vimeo.com/video/123730837#t=29s",
-            "https://player.vimeo.com/video/123730837#t=49s",
-            "https://player.vimeo.com/video/123730837#t=19s"]
+            // "https://player.vimeo.com/video/123730837#t=29s",
+            // "https://player.vimeo.com/video/123730837#t=49s",
+            // "https://player.vimeo.com/video/123730837#t=19s"
+        ]
     },
     {
         type: 'media',
@@ -42,15 +43,15 @@ export const markersData = [
         ],
         videos: ["https://player.vimeo.com/video/239261005#t=29s"]
     },
-    {
-        type: 'media',
-        longitude: 113.5767,
-        latitude: 22.271,
-        name: "Zhuhai Cultural Center",
-        color: pink,
-        images: [
-            "http://www.olegmoshkovich.com/img/imgPortfolio/ribbon_realized.png"
-        ],
-        videos: ["https://player.vimeo.com/video/32440857#t=2s"]
-    },
+    // {
+    //     type: 'media',
+    //     longitude: 113.5767,
+    //     latitude: 22.271,
+    //     name: "Zhuhai Cultural Center",
+    //     color: pink,
+    //     images: [
+    //         "http://www.olegmoshkovich.com/img/imgPortfolio/ribbon_realized.png"
+    //     ],
+    //     videos: ["https://player.vimeo.com/video/32440857#t=2s"]
+    // },
 ]

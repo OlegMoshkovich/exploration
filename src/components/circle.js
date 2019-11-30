@@ -35,7 +35,7 @@ export const Circle = props => {
   const animation = props.animation;
   return (
     <Container key={props.index + "container"}>
-      <Text>{props.label || ''}</Text>
+      {/* <Text>{props.label || ''}</Text> */}
       <TweenOne
         key={props.index + "tween"}
         animation={animation}

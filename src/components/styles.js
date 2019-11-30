@@ -81,27 +81,13 @@ align-items: center;
 top:${props => props.top || '100px'} ;
 right:90px;
 width:auto;
-height:310px;
-border-right:10px solid ${teal};
+height:150px;
+border-right:20px solid ${teal};
 padding:0px 20px 0px 0px;
-// background-color:${pink};
 z-index:300;
 `;
 
-export const LinkContainerBorder = styled.div`
-position: absolute;
-// display:flex;
-flex-direction:column;
-justify-content: space-around;
-align-items: center;
-top:${props => props.top || '100px'} ;
-right:90px;
-width:auto;
-height:310px;
-border:2px solid ${teal};
-// background-color:${pink};
-z-index:300;
-`;
+
 
 export const LinkText = styled.div`
   color: black;
