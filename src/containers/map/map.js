@@ -143,12 +143,12 @@ class Map extends Component {
     return (
       <div style={{ backgroundColor: 'black' }}>
         {/* <Toggle switch={this.deleteMarker} color={teal} color1={green} /> */}
+        {/* <Toggle switch={this.toggleDrawer} color={teal} color1={'white'} /> */}
         <Toggle switch={this.toggleGlobalState} color={'red'} color1={'red'} />
         <Toggle switch={this.makeMarker} color={'white'} color1={'white'} />
         <Toggle switch={this.toggleMenu} color={teal} color1={'yellow'} />
 
 
-        {/* <Toggle switch={this.toggleDrawer} color={teal} color1={'white'} /> */}
         {
           this.state.menu ?
             <div>
@@ -187,18 +187,10 @@ class Map extends Component {
           }
         </InteractiveMap>
         <Drawer anchor="bottom" open={this.state.drawer} onClose={this.toggleDrawer}>
-          {/* <div>{this.state.markerInfo}</div> */}
-          {/* <Button variant="contained" onClick={() => console.log('markers', this.state.markers)} >
-            print props
-          </Button> */}
           <div style={{ height: '300px' }}>
             <DrawerForm captureInput={(input) => this.captureInput(input)} />
           </div>
-
-
-
         </Drawer>
-
       </div>
     );
   }

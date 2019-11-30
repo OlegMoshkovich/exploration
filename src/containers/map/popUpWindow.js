@@ -35,7 +35,6 @@ export const PopUpWindowVideo = props => {
     <div>
       <Draggable>
         <RectangleVideo style={{ backgroundColor: teal }} bottom={bottom || "-100px"} left={left || "300px"}>
-
           <iframe
             title={'video'}
             src={video || ""}
@@ -50,16 +49,6 @@ export const PopUpWindowVideo = props => {
               color: '#c0f75e'
             }}
           ></iframe>
-
-          {/* <Circle /> */}
-          {/* <div
-              style={{
-                cursor: "all-scroll",
-                fontSize: "20px",
-                color: "#FF00D6"
-              }}
-            /> */}
-          {/* </Circle> */}
         </RectangleVideo>
       </Draggable>
     </div >
@@ -70,7 +59,7 @@ export const PopUpWindowImage = props => {
   const { src, bottom, left } = props;
   return (
     <Draggable>
-      <Rectangle style={{ backgroundColor: 'yellow' }} bottom={bottom || "150px"} left={left || "290px"}>
+      <Rectangle style={{ backgroundColor: 'white' }} bottom={bottom || "150px"} left={left || "290px"}>
         <Image
           src={
             src ||
