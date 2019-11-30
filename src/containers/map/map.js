@@ -18,7 +18,7 @@ import { teal, pink, green } from '../../components/colors'
 import Drawer from '@material-ui/core/Drawer';
 import { BasicForm } from "../../components/form"
 import { Rectangle } from './styles'
-
+import Button from '@material-ui/core/Button';
 
 
 class Map extends Component {
@@ -49,13 +49,14 @@ class Map extends Component {
       },
       markers: [],
       popUpState: true,
-      markerInfo: 'hello'
+      markerInfo: 'hello',
+      formInfo: {}
     };
   }
   componentDidMount() {
     window.addEventListener("resize", this._resize);
     this._resize();
-    this.setState({ markers: markersData }, () => console.log('STATE OF THE MAP --- markers', this.state.markers))
+    this.setState({ markers: markersData })
   }
   componentWillUnmount() {
     window.removeEventListener("resize", this._resize);
@@ -125,14 +126,18 @@ class Map extends Component {
     const { markers } = this.state
     const longitude = coord[0]
     const latitude = coord[1]
-    console.log('record is hit', longitude)
-    console.log('state from the record', markers)
   }
   toggleDrawer = (param) => {
-    console.log('toggle drawer is triggered---passed parameter', param)
     this.state.drawer ? this.setState({ drawer: !this.state.drawer }) : this.setState({ drawer: !this.state.drawer, markerInfo: param })
-
   };
+  captureInput = (input) => {
+    const filteredMarker = this.state.markers.filter(el => el.name !== this.state.markerInfo)
+    const activeMarker = this.state.markers.filter(el => el.name === this.state.markerInfo)
+    const updatedMarker = Object.assign(...activeMarker, input);
+    const updatedMarkers = [...filteredMarker, updatedMarker]
+    console.log('updated markers', updatedMarkers)
+
+  }
   render() {
     return (
       <div style={{ backgroundColor: 'black' }}>
@@ -167,6 +172,7 @@ class Map extends Component {
                 key={i}
                 longitude={marker.longitude}
                 latitude={marker.latitude}
+                field1={marker.field1}
                 record={this.record}
                 name={marker.name}
                 images={marker.images}
@@ -179,8 +185,15 @@ class Map extends Component {
         </InteractiveMap>
         <Drawer anchor="bottom" open={this.state.drawer} onClose={this.toggleDrawer}>
           <div>{this.state.markerInfo}</div>
+          <Button variant="contained" onClick={() => console.log('markers', this.state.markers)} >
+            print props
+          </Button>
+          <div style={{ height: '500px' }}>
+            <BasicForm captureInput={(input) => this.captureInput(input)} />
+          </div>
 
-          <BasicForm />
+
+
         </Drawer>
 
       </div>

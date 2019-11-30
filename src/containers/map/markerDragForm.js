@@ -4,6 +4,7 @@ import Pin from "./pin";
 import { connect } from "react-redux";
 import { BasicForm } from '../../components/form'
 import { Rectangle } from './styles'
+import { Toggle } from './toggle'
 
 export class DestinationMarkerDrag extends Component {
   constructor(props) {
@@ -45,15 +46,13 @@ export class DestinationMarkerDrag extends Component {
       offsetTop,
       name,
       globalPopUpState,
+      field1
     } = this.props;
 
     const { showPopUp, marker } = this.state;
     if (globalPopUpState && showPopUp) {
       this.setState({ showPopUp: false })
     }
-
-    console.log('from the drag form', this.state.marker.longitude)
-    console.log('print from the form marker', this.props)
 
     return (
       <div>
@@ -67,8 +66,8 @@ export class DestinationMarkerDrag extends Component {
           onDrag={this._onMarkerDrag}
           onDragEnd={this._onMarkerDragEnd}
         >
-          {/* <Pin onClick={this.togglePopUp} color={this.props.color} /> */}
-          <Pin onClick={() => this.props.onClick(name)} color={this.props.color} />
+          <Pin onClick={this.togglePopUp} color={this.props.color} />
+          {/* <Pin onClick={() => this.props.onClick(name)} color={this.props.color} /> */}
         </Marker>
 
         {showPopUp && (
@@ -86,9 +85,12 @@ export class DestinationMarkerDrag extends Component {
                 fontSize: "10px",
               }}
             >
-              {name}
-              <BasicForm />
+              {field1}
+              {/* <BasicForm /> */}
+
             </div>
+            <Toggle switch={() => this.props.onClick(name)} />
+
 
           </Popup>
         )}

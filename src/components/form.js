@@ -33,7 +33,7 @@ export const BasicForm = props => {
             }
         }
     })(Button);
-    console.log('the form is called')
+
 
     return (
         <div >
@@ -94,7 +94,7 @@ export const BasicForm = props => {
                                 />
                                 {errors.field2 && touched.field2 && errors.field2}
                                 <StyledButton type="submit" disabled={isSubmitting}
-                                // onClick={alert('here you go')}
+                                    onClick={() => props.captureInput(formValues)}
                                 >
                                     Submit
                                  </StyledButton>

@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import { Marker, Popup } from "react-map-gl";
 import Pin from "./pin";
-
 import { PopUpWindowForm } from './popUpWindow'
 import { connect } from "react-redux";
-
 
 export class DestinationMarkerForm extends Component {
   constructor(props) {
