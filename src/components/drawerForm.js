@@ -36,29 +36,24 @@ export const DrawerForm = props => {
 
 
     return (
-        <div >
+        <div style={{ border: '1px solid blue' }}>
+
             < Formik
                 initialValues={{ field1: '' }}
-
                 validate={values => {
                     let errors = {};
                     if (!values.field1) {
                         errors.field1 = 'Required';
                     }
-                    console.log('errors fromt the form errors', errors)
-
                     return errors;
                 }}
 
                 onSubmit={(values, { setSubmitting }) => {
+                    console.log('submit is pressed')
                     setFormValues(values);
                     setSubmitting(false)
-                    console.log('current state values', formValues)
-
-                    console.log('values from the marker form', values)
-                    // Object.keys(formValues).length === 0 ? setColor('black') : setColor('yellow')
+                    props.captureInput(formValues)
                 }}
-
             >
                 {({
                     values,
@@ -83,8 +78,8 @@ export const DrawerForm = props => {
                                     value={values.field1}
                                 />
 
-                                {/* {errors.field1 && touched.field1 && errors.field1}
-                                <OutlinedInput
+                                {errors.field1 && touched.field1 && errors.field1}
+                                {/* <OutlinedInput
                                     style={{ backgroundColor: '#B7F1FD' }}
                                     placeholder="field2"
                                     multiline
@@ -98,20 +93,20 @@ export const DrawerForm = props => {
                                 {errors.field2 && touched.field2 && errors.field2} */}
 
                                 <StyledButton type="submit" disabled={isSubmitting}
-                                    onClick={() => props.captureInput(formValues)}
+
                                 >
                                     Submit
                                  </StyledButton>
 
                             </Container>
-                            <div>{values.field1}</div>
+                            {/* <div>{values.field1}</div> */}
                             {/* <div>{values.field2}</div> */}
                         </form>
                     )}
             </Formik >
 
 
-        </div>
+        </div >
     )
 }
 

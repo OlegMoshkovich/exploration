@@ -9,8 +9,6 @@ export const Toggle = (props) => {
 
   function toggle() {
     state ? setState(false) : setState(true);
-    //when function is passed to the functional compoenet you have to actually call that funciton
-    //just like it is done here
     return props.switch()
   }
 

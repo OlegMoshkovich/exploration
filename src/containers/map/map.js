@@ -88,7 +88,7 @@ class Map extends Component {
   };
   toggleGlobalState = () => {
     const { globalPopUpState, globalPopUp } = this.props
-    console.log('pop up state from the toggle global', globalPopUpState)
+    // console.log('pop up state from the toggle global', globalPopUpState)
     globalPopUpState.enabled ? globalPopUp(false) : globalPopUp(true)
   }
   toggleMenu = () => {
@@ -107,6 +107,7 @@ class Map extends Component {
         longitude: this.state.viewport.longitude,
         latitude: this.state.viewport.latitude,
         name: "move the marker",
+        field1: 'hello',
         color: pink,
       },
       ]
@@ -137,8 +138,8 @@ class Map extends Component {
     const updatedMarker = Object.assign(...activeMarker, input);
     const updatedMarkers = [...filteredMarker, updatedMarker]
     console.log('updated markers', updatedMarkers)
-
   }
+
   render() {
     return (
       <div style={{ backgroundColor: 'black' }}>
@@ -187,13 +188,17 @@ class Map extends Component {
           })
           }
         </InteractiveMap>
+
         <Drawer anchor="bottom" open={this.state.drawer} onClose={this.toggleDrawer}>
-          <div> click submit twice</div>
-          <div style={{ height: '300px' }}>
-            <DrawerForm captureInput={(input) => this.captureInput(input)} />
+
+          <div style={{ height: '300px', display: 'flex', justifyContent: 'center', alignSelf: 'center' }}>
+            <div style={{ height: '50px', width: '200px', backgroundColor: 'blue' }}>
+              <DrawerForm captureInput={(input) => this.captureInput(input)} />
+            </div>
           </div>
         </Drawer>
-      </div>
+
+      </div >
     );
   }
 }
