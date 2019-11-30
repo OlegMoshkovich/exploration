@@ -5,6 +5,7 @@ import {
 } from "react-map-gl";
 import { Nav } from "../../components/NavMenu";
 import { Exit } from "./exit";
+import FireFetch from "./fetch"
 
 import { FlyDestinations } from "./flyNav";
 import DestinationMarker from "./marker";
