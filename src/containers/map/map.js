@@ -17,6 +17,7 @@ import { Toggle } from './toggle'
 import { teal, pink, green } from '../../components/colors'
 import Drawer from '@material-ui/core/Drawer';
 import { BasicForm } from "../../components/form"
+import { DrawerForm } from "../../components/drawerForm"
 import { Rectangle } from './styles'
 import Button from '@material-ui/core/Button';
 
@@ -29,7 +30,7 @@ class Map extends Component {
       display: "block",
       style: "mapbox://styles/mapbox/light-v9",
       showPopup: false,
-      menu: true,
+      menu: false,
       viewport: {
         width: window.innerWidth,
         height: window.innerHeight,
@@ -141,15 +142,17 @@ class Map extends Component {
   render() {
     return (
       <div style={{ backgroundColor: 'black' }}>
-        {/* <Toggle switch={this.deleteMarker} color={teal} color1={green} />
-        <Toggle switch={this.makeMarker} color={pink} color1={pink} />
-        <Toggle switch={this.toggleGlobalState} color={'white'} color1={teal} />
-        <Toggle switch={this.toggleMenu} color={teal} color1={'yellow'} /> */}
-        <Toggle switch={this.toggleDrawer} color={teal} color1={'yellow'} />
+        {/* <Toggle switch={this.deleteMarker} color={teal} color1={green} /> */}
+        <Toggle switch={this.toggleGlobalState} color={'red'} color1={'red'} />
+        <Toggle switch={this.makeMarker} color={'white'} color1={'white'} />
+        <Toggle switch={this.toggleMenu} color={teal} color1={'yellow'} />
+
+
+        {/* <Toggle switch={this.toggleDrawer} color={teal} color1={'white'} /> */}
         {
           this.state.menu ?
             <div>
-              {/* <Nav /> */}
+              <Nav />
               <FlyDestinations flyTo={this._goToViewport} />
             </div> : ''
         }
@@ -184,12 +187,12 @@ class Map extends Component {
           }
         </InteractiveMap>
         <Drawer anchor="bottom" open={this.state.drawer} onClose={this.toggleDrawer}>
-          <div>{this.state.markerInfo}</div>
-          <Button variant="contained" onClick={() => console.log('markers', this.state.markers)} >
+          {/* <div>{this.state.markerInfo}</div> */}
+          {/* <Button variant="contained" onClick={() => console.log('markers', this.state.markers)} >
             print props
-          </Button>
-          <div style={{ height: '500px' }}>
-            <BasicForm captureInput={(input) => this.captureInput(input)} />
+          </Button> */}
+          <div style={{ height: '300px' }}>
+            <DrawerForm captureInput={(input) => this.captureInput(input)} />
           </div>
 
 

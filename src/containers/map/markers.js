@@ -7,7 +7,7 @@ export const markersData = [
         longitude: - 73.97181704026718,
         latitude: 40.80,
         name: "move the marker",
-        color: teal,
+        color: pink,
     },
     {
         type: 'media',

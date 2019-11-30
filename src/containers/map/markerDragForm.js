@@ -89,8 +89,9 @@ export class DestinationMarkerDrag extends Component {
               {/* <BasicForm /> */}
 
             </div>
-            <Toggle switch={() => this.props.onClick(name)} />
-
+            <div style={{ position: 'absolute', top: '200px', right: '0px' }}>
+              <Toggle switch={() => this.props.onClick(name)} color={'blue'} color1={'blue'} />
+            </div>
 
           </Popup>
         )}
