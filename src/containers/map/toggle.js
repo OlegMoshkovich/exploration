@@ -6,6 +6,7 @@ import { ToggleCircle, Image } from "./styles";
 
 export const Toggle = (props) => {
   const [state, setState] = useState('true');
+  console.log('props.children from the toggle', props)
 
 
   function toggle() {
