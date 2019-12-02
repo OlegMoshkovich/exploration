@@ -24,18 +24,18 @@ class FireFetch extends Component {
                 // console.log('printing', markerObj[key])
 
                 if (key === "latitude") {
-                    console.log('latitude equal to =', markerObj[key])
+                    // console.log('latitude equal to =', markerObj[key])
 
                 }
                 if (key === "longitude") {
-                    console.log('latitude equal to =', markerObj[key])
-                    console.log('converted latitude equal to =', parseFloat(markerObj[key]))
+                    // console.log('latitude equal to =', markerObj[key])
+                    // console.log('converted latitude equal to =', parseFloat(markerObj[key]))
                     extractedVals = { longitude: parseFloat(markerObj[key]) }
-                    console.log('extracted value', extractedVals)
+                    // console.log('extracted value', extractedVals)
                 }
             })
             const updatedMarker = Object.assign(markerObj, extractedVals)
-            console.log('after object.assign', updatedMarker)
+            // console.log('after object.assign', updatedMarker)
             return { ...updatedMarker }
 
         })

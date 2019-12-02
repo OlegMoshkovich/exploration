@@ -61,7 +61,7 @@ class Map extends Component {
     window.addEventListener("resize", this._resize);
     this._resize();
     this.setState({ markers: markersData })
-    console.log('printing from the map', this.props.globalMarkers)
+    // console.log('printing from the map', this.props.globalMarkers)
   }
 
   componentWillUnmount() {
@@ -71,7 +71,7 @@ class Map extends Component {
     if (prevProps.globalMarkers !== this.props.globalMarkers) {
       // console.log('printing from the map -- from the if loop', this.props.globalMarkers)
       const updatedMarkers = [...this.state.markers, ...this.props.globalMarkers]
-      console.log('updated markers from the update method', updatedMarkers)
+      // console.log('updated markers from the update method', updatedMarkers)
       this.setState({ markers: updatedMarkers })
     }
     // console.log('prev props from the component did up date', prevProps)
@@ -107,7 +107,7 @@ class Map extends Component {
     globalPopUpState.enabled ? globalPopUp(false) : globalPopUp(true)
   }
   toggleMenu = () => {
-    console.log('menu state', this.state.menu)
+    // console.log('menu state', this.state.menu)
     this.setState({
       menu: !this.state.menu
     })
@@ -172,6 +172,13 @@ class Map extends Component {
           </svg>
         </Toggle>
 
+        <Toggle switch={this.toggleGlobalState} color={'red'} color1={teal} >
+          <svg x="0px" y="0px" viewBox="0 0 100 101.48">
+            <rect x="46.5" y="12.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -21.3227 49.4251)" width="5" height="75.9" />
+            <rect x="12.05" y="47.95" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -21.0298 50.1322)" width="75.9" height="5" />
+          </svg>
+        </Toggle>
+
         <Toggle switch={this.toggleMenu} color={'yellow'} color1={teal} >
           <svg x="0px" y="0px" viewBox="0 0 100 101.48">
             <g>
@@ -179,13 +186,6 @@ class Map extends Component {
               <rect x="12.05" y="47.5" width="75.9" height="5" />
               <rect x="12.05" y="67.93" width="75.9" height="5" />
             </g>
-          </svg>
-        </Toggle>
-
-        <Toggle switch={this.toggleGlobalState} color={'red'} color1={teal} >
-          <svg x="0px" y="0px" viewBox="0 0 100 101.48">
-            <rect x="46.5" y="12.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -21.3227 49.4251)" width="5" height="75.9" />
-            <rect x="12.05" y="47.95" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -21.0298 50.1322)" width="75.9" height="5" />
           </svg>
         </Toggle>
         <FireFetch />
