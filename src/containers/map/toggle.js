@@ -22,14 +22,7 @@ export const Toggle = (props) => {
         toggle={state}
         onClick={toggle}
       >
-        <svg x="0px" y="0px"
-          viewBox="0 0 100 101.48"  >
-          <g>
-            <rect x="12.05" y="27.07" width="75.9" height="5" />
-            <rect x="12.05" y="47.5" width="75.9" height="5" />
-            <rect x="12.05" y="67.93" width="75.9" height="5" />
-          </g>
-        </svg>
+        {props.children}
       </ToggleCircle>
     </Draggable >
   );

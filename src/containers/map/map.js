@@ -165,9 +165,29 @@ class Map extends Component {
         {/* <Toggle switch={this.deleteMarker} color={teal} color1={green} /> */}
         {/* <Toggle switch={this.toggleDrawer} color={teal} color1={'white'} /> */}
 
-        <Toggle switch={this.makeMarker} color={'white'} color1={'white'} />
-        <Toggle switch={this.toggleMenu} color={teal} color1={'yellow'} />
-        <Toggle switch={this.toggleGlobalState} color={'red'} color1={'red'} />
+        <Toggle switch={this.makeMarker} color={'white'} color1={'white'} >
+          <svg x="0px" y="0px" viewBox="0 0 100 101.48"  >
+            <rect x="11.55" y="45.5" width="75.9" height="5" />
+            <rect x="48.5" y="12.05" width="5" height="75.9" />
+          </svg>
+        </Toggle>
+
+        <Toggle switch={this.toggleMenu} color={'yellow'} color1={teal} >
+          <svg x="0px" y="0px" viewBox="0 0 100 101.48">
+            <g>
+              <rect x="12.05" y="27.07" width="75.9" height="5" />
+              <rect x="12.05" y="47.5" width="75.9" height="5" />
+              <rect x="12.05" y="67.93" width="75.9" height="5" />
+            </g>
+          </svg>
+        </Toggle>
+
+        <Toggle switch={this.toggleGlobalState} color={'red'} color1={teal} >
+          <svg x="0px" y="0px" viewBox="0 0 100 101.48">
+            <rect x="46.5" y="12.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -21.3227 49.4251)" width="5" height="75.9" />
+            <rect x="12.05" y="47.95" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -21.0298 50.1322)" width="75.9" height="5" />
+          </svg>
+        </Toggle>
         <FireFetch />
 
         {
