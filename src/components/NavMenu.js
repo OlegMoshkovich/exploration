@@ -11,29 +11,15 @@ export const Nav = () => {
   const [text, setText] = useState('hello')
   const [positionX, setPositionX] = useState(20)
   const [positionY, setPositionY] = useState(100)
-  // const handleStart = () => {
-  //   console.log('handle start')
-  // }
-
-  // const handleDrag = (e, ui) => {
-  //   // console.log('dragging X', ui.deltaX)
-  //   const pos = 100 + position.x
-  //   const updated = `${pos}px`
-  //   console.log('updated', updated)
-  // }
 
   const handleStop = (e, ui) => {
     setPositionY(ui.lastY)
-    // console.log('dragging is stopped', position)
-
   }
   console.log('state of the position', positionY)
   return (
     <div>
 
       <Draggable
-        // onStart={handleStart}
-        // onDrag={handleDrag}
         onStop={handleStop}>
 
         <LinkContainer top={`${positionY}px`}>
