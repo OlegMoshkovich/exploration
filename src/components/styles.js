@@ -79,7 +79,7 @@ flex-direction:column;
 justify-content: space-around;
 align-items: center;
 top:${props => props.top || '100px'} ;
-right:90px;
+right:${props => props.right || '100px'};
 width:auto;
 height:150px;
 border-right:20px solid ${teal};

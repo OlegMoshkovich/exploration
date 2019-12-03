@@ -1,28 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { LinkContainer, LinkText, Text, LinkContainerBorder } from "./styles";
 import { Link } from "react-router-dom";
 import { Circle } from "./circle";
 import Draggable from "react-draggable";
 import { green } from './colors'
+import { getThemeProps } from "@material-ui/styles";
 
-export const Nav = () => {
+export const Nav = (props) => {
 
   const [repeat] = useState(1);
-  const [text, setText] = useState('hello')
-  const [positionX, setPositionX] = useState(20)
-  const [positionY, setPositionY] = useState(100)
+  const [positionX, setPositionX] = useState(props.position.right)
+  const [positionY, setPositionY] = useState(props.position.top)
+
+  useEffect(() => {
+    console.log('use effect is ran')
+    setPositionX(props.position.right)
+    setPositionY(props.position.top)
+
+  }, []);
+
 
   const handleStop = (e, ui) => {
-    setPositionY(ui.lastY)
+    // console.log('from the handle stop', ui.lastX)
+    // console.log('from the handle stop', ui.lastY)
+    // setPositionX(Math.abs(ui.lastX))
+    // setPositionY(Math.abs(ui.lastY))
+    console.log('props from the nav menu', props)
+    props.capturePosition({ top: Math.abs(Math.floor(ui.lastY)), right: Math.abs(Math.floor(ui.lastX)) })
   }
-  console.log('state of the position', positionY)
+
+
+  // console.log('state of the position YY', positionY)
+  // console.log('state of the position XX', positionX)
   return (
     <div>
 
       <Draggable
         onStop={handleStop}>
 
-        <LinkContainer top={`${positionY}px`}>
+        <LinkContainer
+          top={`${positionY}px`} right={`${positionX}px`}
+        >
 
           <Link style={{ textDecoration: "none" }} to={"/"}>
             <Circle repeat={repeat} width={"30px"} animation={[{ scale: 0.7 }]} label={'home'}>

@@ -29,6 +29,7 @@ class Map extends Component {
     super(props);
     this.state = {
       showModal: false,
+      navPosition: { top: 100, right: 100 },
       drawer: false,
       display: "block",
       style: "mapbox://styles/mapbox/light-v9",
@@ -157,6 +158,10 @@ class Map extends Component {
     const updatedMarkers = [...filteredMarker, updatedMarker]
     console.log('updated markers', updatedMarkers)
   }
+  capturePosition = (position) => {
+    this.setState({ navPosition: position })
+    console.log('input from the capture position', position)
+  }
 
   render() {
 
@@ -193,7 +198,7 @@ class Map extends Component {
         {
           this.state.menu ?
             <div>
-              <Nav />
+              <Nav capturePosition={this.capturePosition} position={this.state.navPosition} />
               <FlyDestinations flyTo={this._goToViewport} />
             </div> : ''
         }
