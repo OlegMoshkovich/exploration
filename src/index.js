@@ -19,6 +19,7 @@ import { Articles } from "./containers/Articles"
 import { Hover } from "./containers/hover"
 import { mapThree } from './containers/mapThree'
 import HttpsRedirect from 'react-https-redirect';
+import { emilie } from './containers/emilie'
 
 
 const store = createStore(experimentApp);
@@ -40,6 +41,7 @@ const routing = (
           <Route exact path="/articles" component={Articles} />
           <Route exact path="/hover" component={Hover} />
           <Route exact path="/mapthree" component={mapThree} />
+          <Route exact path="/emilie" component={emilie} />
         </div>
       </Router>
     </Provider>
