@@ -20,3 +20,68 @@
 .App-link {
   color: #09d3ac;
 }
+
+.sign {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  border:'1px solid green'
+}
+.rect{
+  /* border:1px solid red; */
+  height:600px;
+  width: 600px;
+}
+.App-link {
+  color: #09d3ac;
+}
+.cls-1 {
+  fill: #7bc473;
+stroke: #010101;
+}
+
+.cls-2 {
+  fill: #030303;
+}
+
+.cls-3, .cls-4, .cls-5, .cls-7 {
+  fill: none;
+}
+
+.cls-3 {
+  stroke: #02a0a9;
+}
+
+.cls-4 {
+  stroke: #009ea8;
+}
+.admin {
+  cursor: pointer;
+}
+
+.cls-5 {
+  stroke: #e81e25;
+  fill:transparent;
+}
+.cls-5-rec {
+  stroke: #e81e25;
+  fill:transparent;
+}
+.cls-5-rec {
+  stroke: yellow;
+  fill:yellow
+}
+.cls-6 {
+  fill: #fff;
+}
+
+.cls-7 {
+  stroke: #2e3192;
+}
+
+
